@@ -1,48 +1,74 @@
 /**
- * 工具函数：防抖
+ * 工具函数
+ */
+
+/**
+ * 防抖函数 - 延迟执行函数，直到最后一次调用后等待delay毫秒
  * @param {Function} fn - 要防抖的函数
- * @param {number} delay - 延迟时间（毫秒）
- * @returns {Function} 防抖后的函数
+ * @param {number} delay - 延迟时间(毫秒)
+ * @returns {Function} - 防抖后的函数
  */
 export function debounce(fn, delay = 300) {
-  let timer = null
+  let timer = null;
   return function (...args) {
-    clearTimeout(timer)
-    timer = setTimeout(() => fn.apply(this, args), delay)
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(() => {
+      fn.apply(this, args);
+    }, delay);
+  };
+}
+
+/**
+ * 格式化日期 - 将ISO日期字符串格式化为可读格式
+ * @param {string} isoString - ISO格式日期字符串
+ * @param {boolean} includeTime - 是否包含时间
+ * @returns {string} - 格式化后的日期字符串
+ */
+export function formatDate(isoString, includeTime = false) {
+  if (!isoString) return '';
+  
+  const date = new Date(isoString);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  
+  if (!includeTime) {
+    return `${year}-${month}-${day}`;
   }
+  
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+  return `${year}-${month}-${day} ${hours}:${minutes}`;
 }
 
 /**
- * 工具函数：节流
- * @param {Function} fn - 要节流的函数
- * @param {number} interval - 间隔时间（毫秒）
- * @returns {Function} 节流后的函数
+ * 过滤资源 - 根据搜索关键词过滤资源列表
+ * @param {Array} resources - 资源列表
+ * @param {string} query - 搜索关键词
+ * @returns {Array} - 过滤后的资源列表
  */
-export function throttle(fn, interval = 200) {
-  let lastTime = 0
-  return function (...args) {
-    const now = Date.now()
-    if (now - lastTime >= interval) {
-      lastTime = now
-      fn.apply(this, args)
-    }
-  }
+export function filterResources(resources, query) {
+  if (!query || !query.trim()) return resources;
+  
+  const lowerQuery = query.toLowerCase();
+  return resources.filter(resource => {
+    return (
+      resource.name.toLowerCase().includes(lowerQuery) ||
+      resource.description.toLowerCase().includes(lowerQuery) ||
+      resource.tags.some(tag => tag.toLowerCase().includes(lowerQuery))
+    );
+  });
 }
 
 /**
- * 工具函数：生成唯一 ID
- * @returns {string} 唯一 ID
+ * 按游戏版本过滤资源
+ * @param {Array} resources - 资源列表
+ * @param {string} version - 游戏版本 ('ALL' | 'D2' | 'D3' | 'D4')
+ * @returns {Array} - 过滤后的资源列表
  */
-export function generateId() {
-  return Date.now().toString(36) + Math.random().toString(36).substr(2, 9)
-}
-
-/**
- * 工具函数：深拷贝
- * @param {*} obj - 要拷贝的对象
- * @returns {*} 拷贝后的对象
- */
-export function deepClone(obj) {
-  if (obj === null || typeof obj !== 'object') return obj
-  return JSON.parse(JSON.stringify(obj))
+export function filterByGameVersion(resources, version) {
+  if (!version || version === 'ALL') return resources;
+  return resources.filter(resource => 
+    resource.gameVersion === version || resource.gameVersion === 'ALL'
+  );
 }

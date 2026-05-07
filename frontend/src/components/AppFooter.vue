@@ -1,84 +1,90 @@
-<script setup>
-/**
- * AppFooter - 页脚组件
- * 包含免责声明、数据源说明、GitHub链接、版权信息
- */
-const currentYear = new Date().getFullYear()
-</script>
-
 <template>
-  <footer class="bg-primary-dark border-t border-gray-700 mt-auto">
-    <div class="container mx-auto px-4 py-8">
-      <!-- 免责声明 -->
-      <div class="mb-6 p-4 bg-dark-card rounded-lg">
-        <h3 class="text-accent font-semibold mb-2 text-sm">⚠️ 免责声明</h3>
-        <p class="text-gray-400 text-xs leading-relaxed">
-          本网站为魔兽世界玩家自发制作的<strong class="text-dark-text">非官方粉丝站点</strong>，
-          与暴雪娱乐（Blizzard Entertainment）无任何关联。所有魔兽世界相关商标与版权
-          均归暴雪娱乐所有。本站仅提供工具导航服务，所有外部链接内容由对应网站负责。
-        </p>
-      </div>
-
-      <!-- 信息链接 -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-        <!-- 数据源说明 -->
+  <footer class="diablo-frame mt-12 py-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- 关于本站 -->
         <div>
-          <h4 class="text-white font-semibold mb-2 text-sm">数据源</h4>
-          <ul class="space-y-1 text-xs text-gray-400">
-            <li>• Raider.IO - 大秘境数据</li>
-            <li>• Warcraft Logs - 战斗日志</li>
-            <li>• Wowhead - 游戏数据库</li>
-            <li>• NGA - 国内玩家社区</li>
-          </ul>
-        </div>
-
-        <!-- 相关链接 -->
-        <div>
-          <h4 class="text-white font-semibold mb-2 text-sm">相关链接</h4>
-          <ul class="space-y-1 text-xs">
-            <li>
-              <a href="https://worldofwarcraft.com" target="_blank" rel="noopener" class="text-gray-400 hover:text-accent transition-colors">
-                魔兽世界官网
-              </a>
-            </li>
-            <li>
-              <a href="https://battle.net" target="_blank" rel="noopener" class="text-gray-400 hover:text-accent transition-colors">
-                Battle.net
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com" target="_blank" rel="noopener" class="text-gray-400 hover:text-accent transition-colors">
-                GitHub 源码
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- 关于项目 -->
-        <div>
-          <h4 class="text-white font-semibold mb-2 text-sm">关于本站</h4>
-          <p class="text-xs text-gray-400 leading-relaxed">
-            魔兽世界玩家导航站致力于为玩家提供便捷的工具链接服务，
-            帮助玩家快速找到所需的游戏工具和攻略资源。
+          <h3 class="diablo-title text-lg mb-4">关于本站</h3>
+          <p class="text-sm text-gray-400">
+            暗黑破坏神玩家导航站，为暗黑系列（D2/D3/D4）玩家提供一站式资源入口。
+            聚合攻略、工具、新闻，让玩家快速找到所需内容。
           </p>
         </div>
+
+        <!-- 快速链接 -->
+        <div>
+          <h3 class="diablo-title text-lg mb-4">快速链接</h3>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <RouterLink to="/" class="text-gray-400 hover:text-diablo-gold transition-colors">
+                首页
+              </RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/guides" class="text-gray-400 hover:text-diablo-gold transition-colors">
+                攻略社区
+              </RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/tools" class="text-gray-400 hover:text-diablo-gold transition-colors">
+                工具集合
+              </RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/news" class="text-gray-400 hover:text-diablo-gold transition-colors">
+                新闻资讯
+              </RouterLink>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 友情链接 -->
+        <div>
+          <h3 class="diablo-title text-lg mb-4">相关资源</h3>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a 
+                href="https://maxroll.gg" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="text-gray-400 hover:text-diablo-gold transition-colors"
+              >
+                MAXROLL.gg
+              </a>
+            </li>
+            <li>
+              <a 
+                href="https://bbs.d.163.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="text-gray-400 hover:text-diablo-gold transition-colors"
+              >
+                凯恩之角
+              </a>
+            </li>
+            <li>
+              <a 
+                href="https://github.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="text-gray-400 hover:text-diablo-gold transition-colors"
+              >
+                GitHub
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
 
-      <!-- 底部版权 -->
-      <div class="pt-6 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center gap-2">
-        <p class="text-xs text-gray-500">
-          © {{ currentYear }} 魔兽世界玩家导航 - 非官方粉丝站点
-        </p>
-        <p class="text-xs text-gray-500">
-          World of Warcraft is a trademark of Blizzard Entertainment
-        </p>
+      <!-- 版权信息 -->
+      <div class="mt-8 pt-8 diablo-divider border-t text-center text-sm text-gray-500">
+        <p>&copy; 2026 暗黑导航站 - 本站仅供学习交流使用</p>
+        <p class="mt-2">暗黑破坏神为暴雪娱乐注册商标，本站与暴雪娱乐无关</p>
       </div>
     </div>
   </footer>
 </template>
 
-<style scoped>
-a:hover {
-  text-decoration: underline;
-}
-</style>
+<script setup>
+// Footer组件无需额外逻辑
+</script>

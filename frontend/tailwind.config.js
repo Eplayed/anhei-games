@@ -2,28 +2,24 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
+    "./src/**/*.{vue,js,ts,jsx,tsx}"
   ],
   theme: {
     extend: {
       colors: {
-        primary: {
-          DEFAULT: '#1a365d',
-          light: '#2d4a7a',
-          dark: '#0f2439',
-        },
-        accent: {
-          DEFAULT: '#f6ad55',
-          light: '#f8c47e',
-          dark: '#e6942e',
-        },
-        dark: {
-          bg: '#1a202c',
-          card: '#2d3748',
-          text: '#e2e8f0',
-        }
+        'diablo-gold': '#c8860a',
+        'diablo-dark': '#1a1a1a',
+        'diablo-gray': '#2d2d2d',
+        'diablo-blood': '#8b0000',
+        'diablo-light-gray': '#e0e0e0',
+        'diablo-medium-gray': '#8a8a8a',
+        'diablo-orange': '#f0a030'
       },
-    },
+      fontFamily: {
+        'gothic': ['Cinzel', 'MedievalSharp', 'serif'],
+        'pixel': ['Press Start 2P', 'monospace']
+      }
+    }
   },
-  plugins: [],
+  plugins: []
 }

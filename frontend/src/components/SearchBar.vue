@@ -1,81 +1,69 @@
-<script setup>
-/**
- * SearchBar - 搜索栏组件
- * 支持防抖搜索、实时过滤、清除按钮
- */
-import { ref, watch } from 'vue'
-import { debounce } from '@/utils/helpers'
-
-const emit = defineEmits(['search'])
-
-// 搜索关键词
-const searchQuery = ref('')
-
-// 是否显示清除按钮
-const showClear = ref(false)
-
-// 防抖处理搜索
-const debouncedSearch = debounce((value) => {
-  emit('search', value)
-}, 300)
-
-// 监听搜索输入
-function handleInput(value) {
-  searchQuery.value = value
-  showClear.value = value.length > 0
-  debouncedSearch(value)
-}
-
-// 清除搜索
-function handleClear() {
-  searchQuery.value = ''
-  showClear.value = false
-  emit('search', '')
-}
-</script>
-
 <template>
-  <div class="search-bar w-full max-w-md mx-auto">
-    <el-input
-      :model-value="searchQuery"
-      placeholder="搜索工具名称、描述或标签..."
-      size="large"
-      clearable
-      class="search-input"
+  <div class="relative">
+    <input
+      type="text"
+      :value="modelValue"
       @input="handleInput"
-      @clear="handleClear"
+      placeholder="搜索资源..."
+      class="diablo-input w-full pl-10 pr-4 py-2 rounded"
+    />
+    
+    <!-- 搜索图标 -->
+    <svg
+      class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
     >
-      <template #prefix>
-        <el-icon class="text-gray-400">
-          <Search />
-        </el-icon>
-      </template>
-    </el-input>
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+      />
+    </svg>
+    
+    <!-- 清除按钮 -->
+    <button
+      v-if="modelValue"
+      class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-light-text"
+      @click="clearSearch"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
   </div>
 </template>
 
-<style scoped>
-.search-bar :deep(.el-input__wrapper) {
-  background-color: #2d3748;
-  border: 1px solid #4a5568;
-  box-shadow: none;
-  transition: all 0.3s;
-}
+<script setup>
+import { debounce } from '../utils/helpers.js';
 
-.search-bar :deep(.el-input__wrapper:hover) {
-  border-color: #f6ad55;
-}
+const props = defineProps({
+  modelValue: {
+    type: String,
+    default: ''
+  },
+  debounceDelay: {
+    type: Number,
+    default: 300
+  }
+});
 
-.search-bar :deep(.el-input__wrapper.is-focus) {
-  border-color: #f6ad55;
-  box-shadow: 0 0 0 1px #f6ad55;
-}
+const emit = defineEmits(['update:modelValue', 'search']);
 
-.search-bar :deep(.el-input__inner) {
-  color: #e2e8f0;
-}
+const debouncedSearch = debounce((value) => {
+  emit('search', value);
+}, props.debounceDelay);
 
-.search-bar :deep(.el-input__inner::placeholder) {
-  color: #718096;
-}
-</style>
+const handleInput = (e) => {
+  const value = e.target.value;
+  emit('update:modelValue', value);
+  debouncedSearch(value);
+};
+
+const clearSearch = () => {
+  emit('update:modelValue', '');
+  emit('search', '');
+};
+</script>

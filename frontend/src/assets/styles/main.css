@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 全局样式 - 暗黑原版UI风 */
+body {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  font-family: 'Gothic', 'Cinzel', serif;
+}
+
+/* 暗黑主题自定义样式 */
+.diablo-border {
+  border: 2px solid #c8860a;
+  box-shadow: 0 0 10px rgba(200, 134, 10, 0.5);
+}
+
+.diablo-bg {
+  background-color: #2d2d2d;
+}
+
+.diablo-text {
+  color: #c8860a;
+}
+
+.diablo-button {
+  background-color: #c8860a;
+  color: #1a1a1a;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.diablo-button:hover {
+  background-color: #f0a030;
+}
+
+/* 卡片悬停效果 */
+.card-hover:hover {
+  border-color: #c8860a;
+  box-shadow: 0 0 15px rgba(200, 134, 10, 0.7);
+}

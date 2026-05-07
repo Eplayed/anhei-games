@@ -1,0 +1,27 @@
+{
+  "name": "暗黑导航 - 暗黑破坏神玩家导航站",
+  "short_name": "暗黑导航",
+  "description": "暗黑破坏神玩家导航站，为D2/D3/D4玩家提供一站式资源入口",
+  "theme_color": "#1a1a1a",
+  "background_color": "#1a1a1a",
+  "display": "standalone",
+  "orientation": "any",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [],
+  "categories": ["games", "utilities"]
+}

@@ -1,141 +1,127 @@
-<script setup>
-/**
- * AppHeader - 顶部导航栏组件
- * 包含 Logo、搜索栏、导航链接
- */
-import { ref } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
-import SearchBar from './SearchBar.vue'
-
-const router = useRouter()
-const route = useRoute()
-
-// 移动端菜单是否展开
-const mobileMenuOpen = ref(false)
-
-// 导航链接
-const navLinks = [
-  { name: '首页', path: '/' },
-  { name: '收藏', path: '/favorites' },
-  { name: '关于', path: '/about' }
-]
-
-// 判断当前路由是否激活
-function isActive(path) {
-  if (path === '/') {
-    return route.path === '/'
-  }
-  return route.path.startsWith(path)
-}
-
-// 处理搜索
-function handleSearch(query) {
-  // 如果是首页，直接传递搜索词
-  if (route.path === '/') {
-    // 通过事件总线或 store 传递
-    // 这里简单使用 router 跳转带参数
-    router.push({ path: '/', query: query ? { search: query } : {} })
-  } else {
-    // 非首页先跳转到首页再搜索
-    router.push({ path: '/', query: query ? { search: query } : {} })
-  }
-}
-
-// 切换移动端菜单
-function toggleMobileMenu() {
-  mobileMenuOpen.value = !mobileMenuOpen.value
-}
-</script>
-
 <template>
-  <header class="bg-primary-dark border-b border-gray-700 sticky top-0 z-50">
-    <div class="container mx-auto px-4">
-      <!-- 桌面端导航 -->
-      <div class="hidden md:flex items-center justify-between h-16">
-        <!-- Logo + 网站名称 -->
-        <router-link to="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
-          <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-            <span class="text-primary-dark font-bold text-xl">W</span>
-          </div>
-          <span class="text-white font-bold text-lg hidden lg:block">魔兽导航</span>
-        </router-link>
-
-        <!-- 搜索栏 -->
-        <div class="flex-1 max-w-md mx-8">
-          <SearchBar @search="handleSearch" />
-        </div>
-
-        <!-- 导航链接 -->
-        <nav class="flex items-center gap-6">
-          <router-link
-            v-for="link in navLinks"
-            :key="link.path"
-            :to="link.path"
-            class="text-sm font-medium transition-colors"
-            :class="isActive(link.path) ? 'text-accent' : 'text-dark-text hover:text-white'"
-          >
-            {{ link.name }}
-          </router-link>
-        </nav>
+  <header class="diablo-frame sticky top-0 z-50 mb-6">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <!-- Logo和站点名称 -->
+      <div class="flex items-center space-x-4">
+        <h1 class="diablo-title text-2xl md:text-3xl font-bold">
+          暗黑导航
+        </h1>
       </div>
 
-      <!-- 移动端导航 -->
-      <div class="md:hidden flex items-center justify-between h-16">
-        <!-- Logo -->
-        <router-link to="/" class="flex items-center gap-2">
-          <div class="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
-            <span class="text-primary-dark font-bold">W</span>
-          </div>
-          <span class="text-white font-bold text-sm">魔兽导航</span>
-        </router-link>
-
-        <!-- 移动端菜单按钮 -->
-        <button
-          class="text-dark-text hover:text-white p-2"
-          @click="toggleMobileMenu"
+      <!-- 导航链接 - 桌面端 -->
+      <nav class="hidden md:flex space-x-6">
+        <RouterLink 
+          to="/" 
+          class="text-light-text hover:text-diablo-gold transition-colors"
+          active-class="text-diablo-gold"
         >
-          <el-icon :size="24">
-            <component :is="mobileMenuOpen ? 'Close' : 'Menu'" />
-          </el-icon>
-        </button>
-      </div>
-
-      <!-- 移动端搜索栏 -->
-      <div class="md:hidden pb-3">
-        <SearchBar @search="handleSearch" />
-      </div>
-
-      <!-- 移动端菜单 -->
-      <transition name="slide-down">
-        <nav
-          v-if="mobileMenuOpen"
-          class="md:hidden py-3 border-t border-gray-700"
+          首页
+        </RouterLink>
+        <RouterLink 
+          to="/guides" 
+          class="text-light-text hover:text-diablo-gold transition-colors"
+          active-class="text-diablo-gold"
         >
-          <router-link
-            v-for="link in navLinks"
-            :key="link.path"
-            :to="link.path"
-            class="block py-2 text-sm font-medium transition-colors"
-            :class="isActive(link.path) ? 'text-accent' : 'text-dark-text hover:text-white'"
-            @click="mobileMenuOpen = false"
-          >
-            {{ link.name }}
-          </router-link>
-        </nav>
-      </transition>
+          攻略社区
+        </RouterLink>
+        <RouterLink 
+          to="/tools" 
+          class="text-light-text hover:text-diablo-gold transition-colors"
+          active-class="text-diablo-gold"
+        >
+          工具集合
+        </RouterLink>
+        <RouterLink 
+          to="/news" 
+          class="text-light-text hover:text-diablo-gold transition-colors"
+          active-class="text-diablo-gold"
+        >
+          新闻资讯
+        </RouterLink>
+      </nav>
+
+      <!-- 游戏版本切换 -->
+      <GameVersionTabs 
+        :currentVersion="currentVersion" 
+        @update:version="(v) => $emit('update:version', v)" 
+      />
+
+      <!-- 移动端汉堡菜单 -->
+      <button 
+        class="md:hidden diablo-btn px-3 py-2"
+        @click="mobileMenuOpen = !mobileMenuOpen"
+      >
+        <span class="sr-only">菜单</span>
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path 
+            v-if="!mobileMenuOpen"
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            stroke-width="2" 
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+          <path 
+            v-else
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            stroke-width="2" 
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <!-- 移动端导航菜单 -->
+    <div 
+      v-if="mobileMenuOpen" 
+      class="md:hidden diablo-frame mt-2 mx-4 p-4"
+    >
+      <nav class="flex flex-col space-y-3">
+        <RouterLink 
+          to="/" 
+          class="text-light-text hover:text-diablo-gold transition-colors"
+          @click="mobileMenuOpen = false"
+        >
+          首页
+        </RouterLink>
+        <RouterLink 
+          to="/guides" 
+          class="text-light-text hover:text-diablo-gold transition-colors"
+          @click="mobileMenuOpen = false"
+        >
+          攻略社区
+        </RouterLink>
+        <RouterLink 
+          to="/tools" 
+          class="text-light-text hover:text-diablo-gold transition-colors"
+          @click="mobileMenuOpen = false"
+        >
+          工具集合
+        </RouterLink>
+        <RouterLink 
+          to="/news" 
+          class="text-light-text hover:text-diablo-gold transition-colors"
+          @click="mobileMenuOpen = false"
+        >
+          新闻资讯
+        </RouterLink>
+      </nav>
     </div>
   </header>
 </template>
 
-<style scoped>
-.slide-down-enter-active,
-.slide-down-leave-active {
-  transition: all 0.3s ease;
-}
+<script setup>
+import { ref } from 'vue';
+import GameVersionTabs from './GameVersionTabs.vue';
 
-.slide-down-enter-from,
-.slide-down-leave-to {
-  opacity: 0;
-  transform: translateY(-10px);
-}
-</style>
+defineProps({
+  currentVersion: {
+    type: String,
+    default: 'ALL'
+  }
+});
+
+const emit = defineEmits(['update:version']);
+
+const mobileMenuOpen = ref(false);
+</script>
