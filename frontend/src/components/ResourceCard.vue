@@ -45,10 +45,11 @@
         
         <!-- 收藏按钮 -->
         <button
-          class="text-2xl hover:scale-110 transition-transform"
+          class="text-2xl hover:scale-110 transition-transform min-h-[44px] min-w-[44px] flex items-center justify-center touch-manipulation"
           :class="isFav ? 'text-red-500' : 'text-gray-400'"
           @click="toggleFav"
           :title="isFav ? '取消收藏' : '添加收藏'"
+          :aria-label="isFav ? '取消收藏' : '添加收藏'"
         >
           {{ isFav ? '❤️' : '🤍' }}
         </button>

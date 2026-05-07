@@ -12,31 +12,38 @@
       <nav class="hidden md:flex space-x-6">
         <RouterLink 
           to="/" 
-          class="text-light-text hover:text-diablo-gold transition-colors"
+          class="text-light-text hover:text-diablo-gold transition-colors px-3 py-2 rounded"
           active-class="text-diablo-gold"
         >
           首页
         </RouterLink>
         <RouterLink 
           to="/guides" 
-          class="text-light-text hover:text-diablo-gold transition-colors"
+          class="text-light-text hover:text-diablo-gold transition-colors px-3 py-2 rounded"
           active-class="text-diablo-gold"
         >
           攻略社区
         </RouterLink>
         <RouterLink 
           to="/tools" 
-          class="text-light-text hover:text-diablo-gold transition-colors"
+          class="text-light-text hover:text-diablo-gold transition-colors px-3 py-2 rounded"
           active-class="text-diablo-gold"
         >
           工具集合
         </RouterLink>
         <RouterLink 
           to="/news" 
-          class="text-light-text hover:text-diablo-gold transition-colors"
+          class="text-light-text hover:text-diablo-gold transition-colors px-3 py-2 rounded"
           active-class="text-diablo-gold"
         >
           新闻资讯
+        </RouterLink>
+        <RouterLink 
+          to="/favorites" 
+          class="text-light-text hover:text-diablo-gold transition-colors px-3 py-2 rounded"
+          active-class="text-diablo-gold"
+        >
+          我的收藏
         </RouterLink>
       </nav>
 
@@ -46,12 +53,13 @@
         @update:version="(v) => $emit('update:version', v)" 
       />
 
-      <!-- 移动端汉堡菜单 -->
+      <!-- 移动端汉堡菜单按钮 -->
       <button 
-        class="md:hidden diablo-btn px-3 py-2"
+        class="md:hidden diablo-btn px-3 py-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
         @click="mobileMenuOpen = !mobileMenuOpen"
+        :aria-label="mobileMenuOpen ? '关闭菜单' : '打开菜单'"
       >
-        <span class="sr-only">菜单</span>
+        <span class="sr-only">{{ mobileMenuOpen ? '关闭菜单' : '打开菜单' }}</span>
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path 
             v-if="!mobileMenuOpen"
@@ -72,41 +80,57 @@
     </div>
 
     <!-- 移动端导航菜单 -->
-    <div 
-      v-if="mobileMenuOpen" 
-      class="md:hidden diablo-frame mt-2 mx-4 p-4"
+    <Transition
+      enter-active-class="transition duration-200 ease-out"
+      enter-from-class="transform -translate-y-2 opacity-0"
+      enter-to-class="transform translate-y-0 opacity-100"
+      leave-active-class="transition duration-150 ease-in"
+      leave-from-class="transform translate-y-0 opacity-100"
+      leave-to-class="transform -translate-y-2 opacity-0"
     >
-      <nav class="flex flex-col space-y-3">
-        <RouterLink 
-          to="/" 
-          class="text-light-text hover:text-diablo-gold transition-colors"
-          @click="mobileMenuOpen = false"
-        >
-          首页
-        </RouterLink>
-        <RouterLink 
-          to="/guides" 
-          class="text-light-text hover:text-diablo-gold transition-colors"
-          @click="mobileMenuOpen = false"
-        >
-          攻略社区
-        </RouterLink>
-        <RouterLink 
-          to="/tools" 
-          class="text-light-text hover:text-diablo-gold transition-colors"
-          @click="mobileMenuOpen = false"
-        >
-          工具集合
-        </RouterLink>
-        <RouterLink 
-          to="/news" 
-          class="text-light-text hover:text-diablo-gold transition-colors"
-          @click="mobileMenuOpen = false"
-        >
-          新闻资讯
-        </RouterLink>
-      </nav>
-    </div>
+      <div 
+        v-if="mobileMenuOpen" 
+        class="md:hidden diablo-frame mt-2 mx-4 p-4"
+      >
+        <nav class="flex flex-col space-y-2">
+          <RouterLink 
+            to="/" 
+            class="text-light-text hover:text-diablo-gold transition-colors px-4 py-3 rounded hover:bg-[#2a2a2a] touch-manipulation"
+            @click="mobileMenuOpen = false"
+          >
+            首页
+          </RouterLink>
+          <RouterLink 
+            to="/guides" 
+            class="text-light-text hover:text-diablo-gold transition-colors px-4 py-3 rounded hover:bg-[#2a2a2a] touch-manipulation"
+            @click="mobileMenuOpen = false"
+          >
+            攻略社区
+          </RouterLink>
+          <RouterLink 
+            to="/tools" 
+            class="text-light-text hover:text-diablo-gold transition-colors px-4 py-3 rounded hover:bg-[#2a2a2a] touch-manipulation"
+            @click="mobileMenuOpen = false"
+          >
+            工具集合
+          </RouterLink>
+          <RouterLink 
+            to="/news" 
+            class="text-light-text hover:text-diablo-gold transition-colors px-4 py-3 rounded hover:bg-[#2a2a2a] touch-manipulation"
+            @click="mobileMenuOpen = false"
+          >
+            新闻资讯
+          </RouterLink>
+          <RouterLink 
+            to="/favorites" 
+            class="text-light-text hover:text-diablo-gold transition-colors px-4 py-3 rounded hover:bg-[#2a2a2a] touch-manipulation"
+            @click="mobileMenuOpen = false"
+          >
+            我的收藏
+          </RouterLink>
+        </nav>
+      </div>
+    </Transition>
   </header>
 </template>
 

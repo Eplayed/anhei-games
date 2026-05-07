@@ -16,23 +16,28 @@
           <h3 class="diablo-title text-lg mb-4">快速链接</h3>
           <ul class="space-y-2 text-sm">
             <li>
-              <RouterLink to="/" class="text-gray-400 hover:text-diablo-gold transition-colors">
+              <RouterLink to="/" class="text-gray-400 hover:text-diablo-gold transition-colors inline-block py-1 touch-manipulation">
                 首页
               </RouterLink>
             </li>
             <li>
-              <RouterLink to="/guides" class="text-gray-400 hover:text-diablo-gold transition-colors">
+              <RouterLink to="/guides" class="text-gray-400 hover:text-diablo-gold transition-colors inline-block py-1 touch-manipulation">
                 攻略社区
               </RouterLink>
             </li>
             <li>
-              <RouterLink to="/tools" class="text-gray-400 hover:text-diablo-gold transition-colors">
+              <RouterLink to="/tools" class="text-gray-400 hover:text-diablo-gold transition-colors inline-block py-1 touch-manipulation">
                 工具集合
               </RouterLink>
             </li>
             <li>
-              <RouterLink to="/news" class="text-gray-400 hover:text-diablo-gold transition-colors">
+              <RouterLink to="/news" class="text-gray-400 hover:text-diablo-gold transition-colors inline-block py-1 touch-manipulation">
                 新闻资讯
+              </RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/favorites" class="text-gray-400 hover:text-diablo-gold transition-colors inline-block py-1 touch-manipulation">
+                我的收藏
               </RouterLink>
             </li>
           </ul>
@@ -47,7 +52,7 @@
                 href="https://maxroll.gg" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                class="text-gray-400 hover:text-diablo-gold transition-colors"
+                class="text-gray-400 hover:text-diablo-gold transition-colors inline-block py-1 touch-manipulation"
               >
                 MAXROLL.gg
               </a>
@@ -57,7 +62,7 @@
                 href="https://bbs.d.163.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                class="text-gray-400 hover:text-diablo-gold transition-colors"
+                class="text-gray-400 hover:text-diablo-gold transition-colors inline-block py-1 touch-manipulation"
               >
                 凯恩之角
               </a>
@@ -67,7 +72,7 @@
                 href="https://github.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                class="text-gray-400 hover:text-diablo-gold transition-colors"
+                class="text-gray-400 hover:text-diablo-gold transition-colors inline-block py-1 touch-manipulation"
               >
                 GitHub
               </a>

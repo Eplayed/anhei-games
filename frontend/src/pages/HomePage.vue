@@ -23,7 +23,7 @@
     <!-- 游戏版本快速入口 -->
     <section class="mb-12">
       <h3 class="diablo-title text-2xl mb-6">选择游戏版本</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
         <div 
           v-for="game in games"
           :key="game.version"
@@ -40,7 +40,7 @@
     <!-- 热门资源推荐 -->
     <section class="mb-12">
       <h3 class="diablo-title text-2xl mb-6">热门资源</h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         <ResourceCard 
           v-for="resource in hotResources"
           :key="resource.id"

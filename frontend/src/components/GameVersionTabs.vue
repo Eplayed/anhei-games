@@ -1,9 +1,9 @@
 <template>
-  <div class="flex space-x-2">
+  <div class="flex space-x-2 flex-wrap gap-2">
     <button
       v-for="version in versions"
       :key="version.value"
-      class="px-3 py-1 rounded transition-all"
+      class="px-4 py-2 rounded transition-all min-h-[44px] touch-manipulation"
       :class="{
         'diablo-btn': currentVersion === version.value,
         'bg-dark-card border border-diablo-gold text-light-text hover:border-diablo-gold-light': currentVersion !== version.value
