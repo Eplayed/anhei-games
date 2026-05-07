@@ -2,7 +2,12 @@
 
 /* 全局样式 - 暗黑原版UI风 */
 body {
-  background-color: #1a1a1a;
+  background: 
+    linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.9)), 
+    url("/diablo4-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: #e0e0e0;
   font-family: 'Gothic', 'Cinzel', serif;
 }

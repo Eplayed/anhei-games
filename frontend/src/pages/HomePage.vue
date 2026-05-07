@@ -1,5 +1,10 @@
 <template>
   <div>
+    <!-- 蓝贴速递 -->
+    <section class="mb-12">
+      <BluePost :posts="latestBluePosts" />
+    </section>
+
     <!-- Hero区域 -->
     <section class="text-center mb-12">
       <h2 class="diablo-title text-4xl md:text-5xl font-bold mb-4">
@@ -57,7 +62,9 @@ import { useRouter } from 'vue-router';
 import SearchBar from '../components/SearchBar.vue';
 import ResourceCard from '../components/ResourceCard.vue';
 import SeasonCountdown from '../components/SeasonCountdown.vue';
+import BluePost from '../components/BluePost.vue';
 import { resources } from '../data/resources.js';
+import { bluePosts } from '../data/bluePosts.js';
 
 const router = useRouter();
 const searchQuery = ref('');
@@ -88,6 +95,10 @@ const games = [
 
 const hotResources = computed(() => {
   return resources.filter(r => r.isHot);
+});
+
+const latestBluePosts = computed(() => {
+  return bluePosts.slice(0, 5);
 });
 
 const handleSearch = (query) => {

@@ -53,6 +53,33 @@
         @update:version="(v) => $emit('update:version', v)" 
       />
 
+      <!-- 工具按钮组 -->
+      <div class="hidden md:flex items-center space-x-2">
+        <button
+          class="px-3 py-2 rounded border border-[#c8860a] text-[#c8860a] hover:bg-[#c8860a] hover:text-[#1a1a1a] transition-colors text-sm"
+          @click="setHomepageRef.openModal()"
+          title="设为首页"
+        >
+          📌 设为主页
+        </button>
+        
+        <button
+          class="px-3 py-2 rounded border border-[#c8860a] text-[#c8860a] hover:bg-[#c8860a] hover:text-[#1a1a1a] transition-colors text-sm"
+          @click="openBattleNet()"
+          title="启动战网"
+        >
+          🎮 启动战网
+        </button>
+
+        <button
+          class="px-3 py-2 rounded border border-[#c8860a] text-[#c8860a] hover:bg-[#c8860a] hover:text-[#1a1a1a] transition-colors text-sm"
+          @click="toggleThemeColor()"
+          title="切换主题色"
+        >
+          🎨 切换主题
+        </button>
+      </div>
+
       <!-- 移动端汉堡菜单按钮 -->
       <button 
         class="md:hidden diablo-btn px-3 py-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
@@ -128,15 +155,43 @@
           >
             我的收藏
           </RouterLink>
+          
+          <!-- 移动端工具按钮 -->
+          <div class="pt-2 border-t border-[#c8860a] space-y-2">
+            <button
+              class="w-full text-left px-4 py-3 rounded hover:bg-[#2a2a2a] touch-manipulation text-[#c8860a]"
+              @click="setHomepageRef.openModal(); mobileMenuOpen = false;"
+            >
+              📌 设为主页
+            </button>
+            
+            <button
+              class="w-full text-left px-4 py-3 rounded hover:bg-[#2a2a2a] touch-manipulation text-[#c8860a]"
+              @click="openBattleNet(); mobileMenuOpen = false;"
+            >
+              🎮 启动战网
+            </button>
+
+            <button
+              class="w-full text-left px-4 py-3 rounded hover:bg-[#2a2a2a] touch-manipulation text-[#c8860a]"
+              @click="toggleThemeColor(); mobileMenuOpen = false;"
+            >
+              🎨 切换主题
+            </button>
+          </div>
         </nav>
       </div>
     </Transition>
+
+    <!-- 设为首页模态框 -->
+    <SetHomepage ref="setHomepageRef" />
   </header>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import GameVersionTabs from './GameVersionTabs.vue';
+import SetHomepage from './SetHomepage.vue';
 
 defineProps({
   currentVersion: {
@@ -148,4 +203,22 @@ defineProps({
 const emit = defineEmits(['update:version']);
 
 const mobileMenuOpen = ref(false);
+const setHomepageRef = ref(null);
+
+const openBattleNet = () => {
+  // 尝试启动 Battle.net 客户端
+  window.location.href = 'battlenet://';
+  // 如果失败，提示用户安装
+  setTimeout(() => {
+    if (confirm('未能启动战网客户端。是否前往下载页面？')) {
+      window.open('https://www.battlenet.com.cn/download/', '_blank');
+    }
+  }, 500);
+};
+
+const toggleThemeColor = () => {
+  // 切换主题色逻辑将在 ThemeSwitcher 组件中实现
+  const event = new CustomEvent('toggle-theme');
+  window.dispatchEvent(event);
+};
 </script>

@@ -7,10 +7,14 @@
     </main>
     
     <AppFooter />
+    
+    <!-- 主题切换器 -->
+    <ThemeSwitcher />
   </div>
 </template>
 
 <script setup>
 import AppHeader from './components/AppHeader.vue'
 import AppFooter from './components/AppFooter.vue'
+import ThemeSwitcher from './components/ThemeSwitcher.vue'
 </script>
