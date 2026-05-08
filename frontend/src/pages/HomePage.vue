@@ -1,113 +1,245 @@
 <template>
   <div>
-    <!-- 蓝贴速递 -->
-    <section class="mb-12">
-      <BluePost :posts="latestBluePosts" />
-    </section>
-
-    <!-- Hero区域 -->
-    <section class="text-center mb-12">
-      <h2 class="diablo-title text-4xl md:text-5xl font-bold mb-4">
+    <!-- Hero 紧凑条：标题 + 搜索 -->
+    <section class="text-center mb-5">
+      <h2 class="diablo-title text-3xl md:text-4xl font-bold mb-2 tracking-tight">
         暗黑破坏神玩家导航
       </h2>
-      <p class="text-xl text-gray-400 mb-8">
-        一站式资源入口 - D2 / D3 / D4
+      <p class="text-sm mb-4" style="color: var(--ink-mute)">
+        {{ currentVersionName() }} &middot; 一站式资源入口
       </p>
-      
-      <!-- 搜索栏 -->
-      <div class="max-w-2xl mx-auto">
+      <div class="max-w-xl mx-auto">
         <SearchBar v-model="searchQuery" @search="handleSearch" />
       </div>
     </section>
 
-    <!-- 赛季倒计时 -->
-    <section class="mb-12 max-w-md mx-auto">
-      <SeasonCountdown />
+    <!-- D4 专属：事件倒计时 (4列) -->
+    <section v-if="currentVersion === 'D4'" class="mb-5">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+        <!-- 世界 Boss -->
+        <div class="diablo-card py-3 px-4">
+          <div class="flex items-center gap-1.5 mb-2">
+            <span class="text-base">&#x1F479;</span>
+            <h4 class="diablo-title text-xs uppercase tracking-widest">世界 Boss</h4>
+          </div>
+          <p class="text-xs font-bold mb-1 truncate" style="color: var(--brand-gold)">{{ boss.bossName }}</p>
+          <div class="text-2xl font-bold tracking-wider text-center font-mono" style="color: var(--ink-heading)">
+            {{ bossCountdown }}
+          </div>
+          <p class="text-center mt-0.5" style="font: var(--micro); color: var(--ink-stone)">{{ bossStartTime }}</p>
+        </div>
+
+        <!-- 军团事件 -->
+        <div class="diablo-card py-3 px-4">
+          <div class="flex items-center gap-1.5 mb-2">
+            <span class="text-base">&#x1F5E1;&#xFE0F;</span>
+            <h4 class="diablo-title text-xs uppercase tracking-widest">军团事件</h4>
+          </div>
+          <p class="text-xs font-bold mb-1" style="color: var(--brand-gold)">军团来袭</p>
+          <div class="text-2xl font-bold tracking-wider text-center font-mono" style="color: var(--ink-heading)">
+            {{ legionCountdown }}
+          </div>
+          <p class="text-center mt-0.5" style="font: var(--micro); color: var(--ink-stone)">{{ legionStartTime }}</p>
+        </div>
+
+        <!-- 地狱狂潮 -->
+        <div class="diablo-card py-3 px-4">
+          <div class="flex items-center gap-1.5 mb-2">
+            <span class="text-base">&#x1F525;</span>
+            <h4 class="diablo-title text-xs uppercase tracking-widest">地狱狂潮</h4>
+          </div>
+          <span class="diablo-badge-active" v-if="helltide.inProgress">进行中</span>
+          <span class="diablo-badge-idle" v-else>等待中</span>
+          <div
+            class="text-2xl font-bold tracking-wider text-center mt-1 font-mono"
+            :style="{ color: helltide.inProgress ? 'var(--brand-red-glow)' : 'var(--ink-heading)' }"
+          >
+            {{ helltideCountdown }}
+          </div>
+          <p class="text-center mt-0.5" style="font: var(--micro); color: var(--ink-stone)">
+            {{ helltide.inProgress ? '距结束 ' + helltideEndTime : '距开始 ' + helltideStartTime }}
+          </p>
+        </div>
+
+        <!-- 赛季倒计时 -->
+        <div class="diablo-card py-3 px-4">
+          <div class="flex items-center gap-1.5 mb-2">
+            <span class="text-base">&#x1F3C6;</span>
+            <h4 class="diablo-title text-xs uppercase tracking-widest">赛季倒计时</h4>
+          </div>
+          <p class="text-xs font-bold mb-1" style="color: var(--brand-gold)">{{ seasonName }}</p>
+          <div class="text-2xl font-bold tracking-wider text-center font-mono" style="color: var(--ink-heading)">
+            {{ daysLeft }}
+          </div>
+          <p class="text-center mt-0.5" style="font: var(--micro); color: var(--ink-stone)">天剩余</p>
+        </div>
+      </div>
     </section>
 
-    <!-- 游戏版本快速入口 -->
-    <section class="mb-12">
-      <h3 class="diablo-title text-2xl mb-6">选择游戏版本</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
-        <div 
-          v-for="game in games"
-          :key="game.version"
-          class="diablo-card cursor-pointer text-center"
-          @click="goToGame(game.path)"
+    <!-- D4 专属：版本入口卡片（提示已移至顶部切换） -->
+    <!-- 已移除版本入口卡片，版本切换统一在导航栏 -->
+
+    <!-- 蓝贴速递 -->
+    <section class="mb-5">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="diablo-title text-base uppercase tracking-wider">&#x1F4CB; 蓝贴速递</h3>
+        <router-link
+          to="/news"
+          class="text-xs no-underline transition-opacity hover:opacity-80"
+          style="color: var(--brand-gold)"
         >
-          <div class="text-6xl mb-4">{{ game.icon }}</div>
-          <h4 class="text-2xl font-bold text-[#c8860a] mb-2">{{ game.name }}</h4>
-          <p class="text-gray-400">{{ game.description }}</p>
+          查看全部 &rarr;
+        </router-link>
+      </div>
+      <div class="p-3 space-y-1.5" style="background: var(--canvas-base); border: 1px solid var(--hairline); border-radius: var(--radius-sm);">
+        <a
+          v-for="post in filteredBluePosts"
+          :key="post.id"
+          :href="post.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="diablo-post-item no-underline"
+        >
+          <span
+            class="diablo-tag flex-shrink-0"
+            :style="versionTagStyle(post.gameVersion)"
+          >{{ versionLabel(post.gameVersion) }}</span>
+          <span
+            v-if="post.category"
+            class="diablo-tag flex-shrink-0 text-[10px]"
+            style="border-color: var(--ink-stone); color: var(--ink-mute)"
+          >{{ categoryLabel(post.category) }}</span>
+          <span class="text-sm truncate flex-1" style="color: var(--ink-body)">{{ post.title }}</span>
+          <span class="flex-shrink-0 hidden sm:inline" style="font: var(--micro); color: var(--ink-stone)">{{ post.publishTime }}</span>
+        </a>
+        <!-- 无蓝贴提示 -->
+        <div
+          v-if="filteredBluePosts.length === 0"
+          class="text-center py-4"
+          style="color: var(--ink-stone); font: var(--body-sm)"
+        >
+          暂无该版本的蓝贴资讯
         </div>
       </div>
     </section>
 
     <!-- 热门资源推荐 -->
-    <section class="mb-12">
-      <h3 class="diablo-title text-2xl mb-6">热门资源</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-        <ResourceCard 
-          v-for="resource in hotResources"
+    <section>
+      <h3 class="diablo-title text-base mb-3 uppercase tracking-wider">热门资源</h3>
+      <div class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-2 sm:gap-3">
+        <ResourceCard
+          v-for="resource in filteredHotResources"
           :key="resource.id"
           :resource="resource"
         />
+      </div>
+      <!-- 无资源提示 -->
+      <div
+        v-if="filteredHotResources.length === 0"
+        class="text-center py-6"
+        style="color: var(--ink-stone); font: var(--body-sm)"
+      >
+        暂无该版本的热门资源
       </div>
     </section>
   </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { useRouter } from 'vue-router';
 import SearchBar from '../components/SearchBar.vue';
 import ResourceCard from '../components/ResourceCard.vue';
-import SeasonCountdown from '../components/SeasonCountdown.vue';
-import BluePost from '../components/BluePost.vue';
+import { useVersion } from '../composables/useVersion.js';
+import {
+  getWorldBoss, getLegion, getHelltide,
+  formatCountdown, formatTime
+} from '../utils/d4-events.js';
 import { resources } from '../data/resources.js';
 import { bluePosts } from '../data/bluePosts.js';
+import { filterByGameVersion } from '../utils/helpers.js';
 
-const router = useRouter();
-const searchQuery = ref('');
+var router = useRouter();
+var searchQuery = ref('');
+var { currentVersion, currentVersionName } = useVersion();
 
-const games = [
-  {
-    version: 'D2',
-    name: '暗黑破坏神2',
-    icon: '⚔️',
-    description: 'D2/D2R 攻略、工具、社区',
-    path: '/guides?version=D2'
-  },
-  {
-    version: 'D3',
-    name: '暗黑破坏神3',
-    icon: '🩸',
-    description: 'D3 攻略、工具、社区',
-    path: '/guides?version=D3'
-  },
-  {
-    version: 'D4',
-    name: '暗黑破坏神4',
-    icon: '🔥',
-    description: 'D4 攻略、工具、社区',
-    path: '/guides?version=D4'
-  }
-];
+// ===== 赛季倒计时（D4 专属） =====
+var seasonName = ref('第5赛季');
+var seasonEndDate = ref('2026-08-01');
+var now = ref(Date.now());
+var timer = null;
 
-const hotResources = computed(() => {
-  return resources.filter(r => r.isHot);
+onMounted(function () {
+  timer = setInterval(function () { now.value = Date.now() }, 1000);
+});
+onUnmounted(function () {
+  if (timer) clearInterval(timer);
 });
 
-const latestBluePosts = computed(() => {
-  return bluePosts.slice(0, 5);
+var daysLeft = computed(function () {
+  var diff = new Date(seasonEndDate.value).getTime() - now.value;
+  return Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
 });
 
-const handleSearch = (query) => {
-  if (query.trim()) {
-    router.push({ path: '/guides', query: { search: query } });
-  }
+// ===== D4 事件倒计时（仅 D4 版本展示） =====
+var boss = computed(function () { return getWorldBoss(now.value) });
+var legion = computed(function () { return getLegion(now.value) });
+var helltide = computed(function () { return getHelltide(now.value) });
+
+var bossCountdown = computed(function () { return formatCountdown(boss.value.remaining) });
+var legionCountdown = computed(function () { return formatCountdown(legion.value.remaining) });
+var helltideCountdown = computed(function () {
+  if (helltide.value.inProgress) return formatCountdown(helltide.value.currentEnd.remaining);
+  return formatCountdown(helltide.value.nextStart.remaining);
+});
+var bossStartTime = computed(function () { return formatTime(boss.value.timestamp) });
+var legionStartTime = computed(function () { return formatTime(legion.value.timestamp) });
+var helltideStartTime = computed(function () { return formatTime(helltide.value.nextStart.timestamp) });
+var helltideEndTime = computed(function () {
+  return helltide.value.currentEnd ? formatTime(helltide.value.currentEnd.timestamp) : '';
+});
+
+// ===== 蓝贴 + 热门资源（按版本过滤） =====
+var filteredBluePosts = computed(function () {
+  return filterByGameVersion(bluePosts, currentVersion.value).slice(0, 8);
+});
+
+// 版本标签颜色样式
+var versionTagStyle = function (version) {
+  var colors = {
+    D4: 'border-color: var(--brand-red); color: var(--brand-red)',
+    D3: 'border-color: #f5a623; color: #f5a623',
+    D2: 'border-color: #7ec8e3; color: #7ec8e3'
+  };
+  return colors[version] || '';
 };
 
-const goToGame = (path) => {
-  router.push(path);
+// 版本标签名称
+var versionLabel = function (version) {
+  var labels = { D4: 'D4', D3: 'D3', D2: 'D2' };
+  return labels[version] || version;
+};
+
+// 分类标签名称
+var categoryLabel = function (category) {
+  var labels = {
+    hotfix: '热修复',
+    patch: '补丁',
+    expansion: '扩展',
+    event: '活动',
+    season: '赛季',
+    ladder: '天梯',
+    announcement: '公告'
+  };
+  return labels[category] || category;
+};
+
+var filteredHotResources = computed(function () {
+  var hot = resources.filter(function (r) { return r.isHot });
+  return filterByGameVersion(hot, currentVersion.value);
+});
+
+var handleSearch = function (query) {
+  if (query.trim()) router.push({ path: '/guides', query: { search: query } });
 };
 </script>

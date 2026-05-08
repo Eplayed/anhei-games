@@ -1,46 +1,68 @@
 @import "tailwindcss";
 
-/* 全局样式 - 暗黑原版UI风 */
+/* ========== 全局样式 - 暗黑导航站 v2.0 ========== */
+
+/* ---------- 字体引入 ---------- */
+@font-face {
+  font-family: 'Diablo';
+  src: local('Cinzel'), local('Cinzel Decorative'), local('MedievalSharp');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- body ---------- */
 body {
-  background: 
-    linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.9)), 
-    url("/diablo4-bg.png");
-  background-size: cover;
-  background-position: center;
+  background-color: var(--canvas-deep);
+  background-image:
+    /* 中央金铜色光晕 */
+    radial-gradient(ellipse at 50% 40%, rgba(200, 134, 10, 0.06) 0%, transparent 60%);
+  background-repeat: no-repeat;
   background-attachment: fixed;
-  color: #e0e0e0;
-  font-family: 'Gothic', 'Cinzel', serif;
+
+  color: var(--ink-body);
+  font: var(--body-md);
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--brand-gold-dim) var(--canvas-mid);
 }
 
-/* 暗黑主题自定义样式 */
-.diablo-border {
-  border: 2px solid #c8860a;
-  box-shadow: 0 0 10px rgba(200, 134, 10, 0.5);
+/* ---------- 滚动条 ---------- */
+body::-webkit-scrollbar {
+  width: 6px;
+}
+body::-webkit-scrollbar-track {
+  background: var(--canvas-mid);
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--brand-gold-dim);
+  border-radius: var(--radius-sm);
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-gold);
 }
 
-.diablo-bg {
-  background-color: #2d2d2d;
+/* ---------- 选中文字 ---------- */
+::selection {
+  background: rgba(200, 134, 10, 0.35);
+  color: var(--ink-heading);
 }
 
-.diablo-text {
-  color: #c8860a;
+/* ---------- 全局链接 ---------- */
+a {
+  color: var(--brand-gold);
+  transition: color var(--ease-micro);
+}
+a:hover {
+  color: var(--brand-gold-bright);
 }
 
-.diablo-button {
-  background-color: #c8860a;
-  color: #1a1a1a;
-  border: none;
-  padding: 8px 16px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.diablo-button:hover {
-  background-color: #f0a030;
-}
-
-/* 卡片悬停效果 */
-.card-hover:hover {
-  border-color: #c8860a;
-  box-shadow: 0 0 15px rgba(200, 134, 10, 0.7);
+/* ---------- 标题默认样式 ---------- */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ink-heading);
+  font-family: var(--font-display);
 }

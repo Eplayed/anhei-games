@@ -1,40 +1,27 @@
 <template>
-  <div class="flex space-x-2 flex-wrap gap-2">
+  <div class="flex space-x-1.5 flex-wrap">
     <button
-      v-for="version in versions"
-      :key="version.value"
-      class="px-4 py-2 rounded transition-all min-h-[44px] touch-manipulation"
-      :class="{
-        'diablo-btn': currentVersion === version.value,
-        'bg-dark-card border border-diablo-gold text-light-text hover:border-diablo-gold-light': currentVersion !== version.value
-      }"
-      @click="selectVersion(version.value)"
+      v-for="ver in versions"
+      :key="ver.value"
+      class="px-3 py-1.5 text-xs font-semibold tracking-wide transition-all min-h-[36px] touch-manipulation"
+      :class="currentVersion === ver.value
+        ? 'diablo-btn'
+        : 'diablo-btn-ghost'"
+      @click="currentVersion = ver.value"
     >
-      {{ version.label }}
+      {{ ver.label }}
     </button>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { useVersion } from '../composables/useVersion.js';
 
-const props = defineProps({
-  currentVersion: {
-    type: String,
-    default: 'ALL'
-  }
-});
-
-const emit = defineEmits(['update:version']);
-
-const versions = [
-  { value: 'ALL', label: '全部' },
-  { value: 'D2', label: 'D2' },
-  { value: 'D3', label: 'D3' },
-  { value: 'D4', label: 'D4' }
+var versions = [
+  { value: 'D2', label: '暗黑2' },
+  { value: 'D3', label: '暗黑3' },
+  { value: 'D4', label: '暗黑4' }
 ];
 
-const selectVersion = (version) => {
-  emit('update:version', version);
-};
+var { currentVersion } = useVersion();
 </script>

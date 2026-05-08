@@ -1,103 +1,120 @@
 <template>
-  <div class="diablo-card card-hover">
-    <!-- 资源图标 + 收藏按钮 -->
-    <div class="flex items-start space-x-3 mb-3">
-      <img 
-        v-if="resource.icon" 
-        :src="resource.icon" 
+  <div class="diablo-card hover:scale-[1.02] transition-transform duration-200">
+    <!-- 资源图标 + 名称 + 收藏 -->
+    <div class="flex items-start gap-2 sm:gap-3 mb-2 sm:mb-3">
+      <img
+        v-if="resource.icon"
+        :src="resource.icon"
         :alt="resource.name"
-        class="w-8 h-8 rounded"
+        class="w-6 h-6 sm:w-8 sm:h-8 rounded-sm flex-shrink-0"
+        style="border: 1px solid var(--hairline)"
         @error="handleIconError"
       />
-      <div 
-        v-else 
-        class="w-8 h-8 rounded bg-[#c8860a] flex items-center justify-center text-[#1a1a1a] font-bold"
+      <div
+        v-else
+        class="w-6 h-6 sm:w-8 sm:h-8 rounded-sm flex items-center justify-center text-xs sm:text-sm font-bold flex-shrink-0"
+        style="background: var(--brand-gold-dim); color: var(--ink-on-gold)"
       >
         {{ resource.name.charAt(0) }}
       </div>
-      
-      <!-- 资源名称 -->
-      <div class="flex-1">
-        <h3 class="text-lg font-semibold text-[#e0e0e0] mb-1">
+
+      <!-- 名称 + 标签 -->
+      <div class="flex-1 min-w-0">
+        <h3 class="text-xs sm:text-sm font-semibold mb-1 truncate" style="color: var(--ink-heading)">
           {{ resource.name }}
         </h3>
-        
-        <!-- 标签 -->
-        <div class="flex flex-wrap gap-1 mb-2">
-          <span 
-            v-for="tag in resource.tags" 
+        <div class="flex flex-wrap gap-0.5 sm:gap-1">
+          <span
+            v-for="(tag, index) in displayTags"
             :key="tag"
-            class="text-xs px-2 py-0.5 bg-[#1a1a1a] border border-[#c8860a] text-[#c8860a] rounded"
+            class="diablo-tag text-[10px] sm:text-xs"
           >
             {{ tag }}
           </span>
+          <span
+            v-if="resource.tags.length > maxTags"
+            class="diablo-tag text-[10px] sm:text-xs"
+            style="opacity: 0.6"
+          >
+            +{{ resource.tags.length - maxTags }}
+          </span>
         </div>
       </div>
-      
-      <!-- 热门标记 + 收藏按钮 -->
-      <div class="flex flex-col items-end space-y-2">
-        <span 
-          v-if="resource.isHot" 
-          class="text-xs px-2 py-1 bg-red-600 text-white rounded"
+
+      <!-- HOT + 收藏 -->
+      <div class="flex flex-col items-end space-y-1">
+        <span
+          v-if="resource.isHot"
+          class="diablo-badge-hot text-[10px] sm:text-xs"
         >
           HOT
         </span>
-        
-        <!-- 收藏按钮 -->
+
         <button
-          class="text-2xl hover:scale-110 transition-transform min-h-[44px] min-w-[44px] flex items-center justify-center touch-manipulation"
-          :class="isFav ? 'text-red-500' : 'text-gray-400'"
+          class="text-base sm:text-xl transition-transform min-h-[32px] min-w-[32px] sm:min-h-[44px] sm:min-w-[44px] flex items-center justify-center touch-manipulation"
+          :class="isFav ? 'scale-110' : 'opacity-60 hover:opacity-100'"
           @click="toggleFav"
           :title="isFav ? '取消收藏' : '添加收藏'"
           :aria-label="isFav ? '取消收藏' : '添加收藏'"
         >
-          {{ isFav ? '❤️' : '🤍' }}
+          {{ isFav ? '❤️' : '💍' }}
         </button>
       </div>
     </div>
 
     <!-- 描述 -->
-    <p class="text-sm text-gray-400 mb-3 line-clamp-2">
+    <p class="mb-2 sm:mb-3 text-xs sm:text-sm line-clamp-2" style="color: var(--ink-mute)">
       {{ resource.description }}
     </p>
 
-    <!-- 游戏版本标签 + 访问按钮 -->
-    <div class="flex items-center justify-between">
-      <span class="text-xs px-2 py-1 bg-[#1a1a1a] border border-gray-600 text-gray-400 rounded">
+    <!-- 游戏版本 + 访问按钮 -->
+    <div class="flex items-center justify-between gap-2">
+      <span class="diablo-tag text-[10px] sm:text-xs truncate" style="border-color: var(--ink-stone); color: var(--ink-mute)">
         {{ resource.gameVersion }}
       </span>
-      
-      <!-- 访问按钮 -->
+
       <a
         :href="resource.url"
         target="_blank"
         rel="noopener noreferrer"
-        class="diablo-btn text-sm px-3 py-1"
+        class="diablo-btn text-[10px] sm:text-xs px-2 sm:px-3 py-0.5 sm:py-1 no-underline flex-shrink-0"
       >
-        访问网站 →
+        <span class="hidden sm:inline">访问 →</span>
+        <span class="sm:hidden">→</span>
       </a>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import { isFavorite, toggleFavorite } from '../utils/storage.js';
 
-const props = defineProps({
+var props = defineProps({
   resource: {
     type: Object,
     required: true
   }
 });
 
-const isFav = ref(false);
+var isFav = ref(false);
 
-onMounted(() => {
+var maxTags = computed(function() {
+  if (typeof window !== 'undefined' && window.innerWidth < 640) {
+    return 2;
+  }
+  return 3;
+});
+
+var displayTags = computed(function() {
+  return props.resource.tags.slice(0, maxTags.value);
+});
+
+onMounted(function () {
   isFav.value = isFavorite(props.resource.id);
 });
 
-const toggleFav = () => {
+var toggleFav = function () {
   isFav.value = toggleFavorite(props.resource.id);
 };
 </script>

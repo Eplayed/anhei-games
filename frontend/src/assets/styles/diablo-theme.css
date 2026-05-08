@@ -1,85 +1,293 @@
-/* 暗黑破坏神原版 UI 风格 */
+/* ============================================================
+   暗黑破坏神导航站 - 设计令牌系统 v2.0
+   设计规范：frontend/DESIGN.md
+   灵感：暗黑4官网 / 暴雪暗黑系游戏风格
+   主色调：深暗画布 + 金铜强调 + 血红点缀
+   ============================================================ */
 
-/* CSS 变量定义 */
+/* ---------- CSS 设计令牌 ---------- */
 :root {
-  --color-primary: #c8860a;
-  --color-secondary: #8b6914;
-  --color-hover: #f0a030;
+  /* ===== 品牌色 ===== */
+  --brand-gold: #c8860a;
+  --brand-gold-dim: #8b6914;
+  --brand-gold-bright: #f0a030;
+  --brand-gold-muted: #9a7a2e;
+  --brand-red: #dc2626;
+  --brand-red-glow: #ef4444;
+  --brand-red-dim: #8b0000;
+
+  /* ===== 表面色（Canvas System） ===== */
+  --canvas-deep: #0a0a0f;
+  --canvas-base: #14131c;
+  --canvas-mid: #1e1d28;
+  --canvas-raised: #282734;
+  --canvas-soft: #3a3948;
+
+  /* ===== 文字色 ===== */
+  --ink-heading: #e8dcc8;
+  --ink-body: #c8c5be;
+  --ink-mute: #8a8780;
+  --ink-stone: #5a5852;
+  --ink-ash: #3a3835;
+  --ink-on-gold: #1a1508;
+
+  /* ===== 语义色 ===== */
+  --status-active: #dc2626;
+  --status-success: #22c55e;
+  --status-warning: #eab308;
+  --status-info: #3b82f6;
+
+  /* ===== 边框与线条 ===== */
+  --hairline: rgba(200, 134, 10, 0.2);
+  --hairline-bright: rgba(200, 134, 10, 0.4);
+  --hairline-glow: rgba(200, 134, 10, 0.6);
+  --divider: rgba(200, 134, 10, 0.12);
+
+  /* ===== 字体栈 ===== */
+  --font-display: 'Cinzel', 'Georgia', serif;
+  --font-body: 'Inter', 'system-ui', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+
+  /* ===== 排版阶梯 ===== */
+  --display-xl: 700 48px/1.1 var(--font-display);
+  --display-lg: 700 36px/1.15 var(--font-display);
+  --display-md: 700 28px/1.2 var(--font-display);
+  --heading-xl: 600 24px/1.25 var(--font-display);
+  --heading-lg: 600 20px/1.3 var(--font-display);
+  --heading-md: 600 18px/1.3 var(--font-display);
+  --heading-sm: 600 16px/1.4 var(--font-body);
+  --body-lg: 400 16px/1.7 var(--font-body);
+  --body-md: 400 14px/1.6 var(--font-body);
+  --body-sm: 400 13px/1.5 var(--font-body);
+  --caption: 500 12px/1.4 var(--font-body);
+  --micro: 500 11px/1.3 var(--font-body);
+  --button: 700 13px/1 var(--font-display);
+  --nav-link: 600 12px/1 var(--font-body);
+
+  /* ===== 间距 ===== */
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-super: 64px;
+
+  /* ===== 圆角 ===== */
+  --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-full: 9999px;
+
+  /* ===== 过渡 ===== */
+  --ease-micro: 150ms ease;
+  --ease-base: 200ms ease;
+  --ease-smooth: 300ms ease-out;
 }
 
-/* 复古浮雕边框 */
+
+/* ============================================================
+   组件类
+   ============================================================ */
+
+/* ---------- 装饰性框架（导航栏 / 页脚） ---------- */
 .diablo-frame {
-  border: 2px solid var(--color-primary);
-  background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
-  box-shadow: 
-    inset 1px 1px 2px rgba(200, 134, 10, 0.3),
-    0 4px 12px rgba(0, 0, 0, 0.5);
+  background: var(--canvas-mid);
+  border-bottom: 1px solid var(--divider);
+  position: relative;
 }
 
-/* 暗金色标题 */
+/* ---------- 品牌标题 ---------- */
 .diablo-title {
-  color: var(--color-primary);
-  text-shadow: 0 0 10px rgba(200, 134, 10, 0.5);
-  font-family: 'Cinzel', 'MedievalSharp', serif;
+  color: var(--brand-gold);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 8px rgba(200, 134, 10, 0.25);
 }
 
-/* 血红色点缀 */
-.diablo-accent {
-  color: #8b0000;
-}
-
-/* 卡片样式 */
+/* ---------- 卡片（Level 1 → Level 2 on hover） ---------- */
 .diablo-card {
-  background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
-  border: 1px solid var(--color-primary);
-  border-radius: 8px;
-  padding: 16px;
-  transition: all 0.3s;
+  background: var(--canvas-base);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  padding: var(--space-md);
+  position: relative;
+  overflow: hidden;
+  transition: background var(--ease-base), border-color var(--ease-base);
 }
 
-.diablo-card:hover {
-  border-color: var(--color-hover);
-  box-shadow: 0 0 15px rgba(200, 134, 10, 0.7);
-  transform: translateY(-2px);
-}
-
-/* 按钮样式 */
-.diablo-btn {
-  background: linear-gradient(180deg, var(--color-primary), var(--color-secondary));
-  color: #1a1a1a;
-  border: 1px solid var(--color-hover);
-  padding: 8px 16px;
-  cursor: pointer;
-  font-family: 'Cinzel', serif;
-  transition: all 0.3s;
-}
-
-.diablo-btn:hover {
-  background: linear-gradient(180deg, var(--color-hover), var(--color-primary));
-  box-shadow: 0 0 10px rgba(200, 134, 10, 0.5);
-}
-
-/* 输入框样式 */
-.diablo-input {
-  background-color: #1a1a1a;
-  border: 1px solid var(--color-primary);
-  color: #e0e0e0;
-  padding: 8px 12px;
-}
-
-.diablo-input:focus {
-  border-color: var(--color-hover);
-  box-shadow: 0 0 5px rgba(200, 134, 10, 0.5);
-  outline: none;
-}
-
-/* 分隔线 */
-.diablo-divider {
-  border-color: var(--color-primary);
+/* 卡片顶部金色微光线 */
+.diablo-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--brand-gold), transparent);
   opacity: 0.3;
 }
 
-/* 像素字体 */
-.pixel-font {
-  font-family: 'Press Start 2P', monospace;
+.diablo-card:hover {
+  background: var(--canvas-raised);
+  border-color: var(--hairline-bright);
+}
+
+/* ---------- 按钮（金色实体） ---------- */
+.diablo-btn {
+  background: linear-gradient(180deg, var(--brand-gold), var(--brand-gold-dim));
+  color: var(--ink-on-gold);
+  border: 1px solid var(--brand-gold-bright);
+  border-radius: var(--radius-sm);
+  padding: 8px 20px;
+  font: var(--button);
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all var(--ease-base);
+  position: relative;
+}
+
+.diablo-btn:hover {
+  background: linear-gradient(180deg, var(--brand-gold-bright), var(--brand-gold));
+  box-shadow: 0 0 12px rgba(200, 134, 10, 0.2);
+}
+
+.diablo-btn:active {
+  background: linear-gradient(180deg, var(--brand-gold-dim), var(--brand-gold-dim));
+  box-shadow: 0 0 6px rgba(200, 134, 10, 0.15);
+}
+
+/* ---------- 幽灵按钮（描边） ---------- */
+.diablo-btn-ghost {
+  background: transparent;
+  color: var(--brand-gold);
+  border: 1px solid var(--brand-gold);
+  border-radius: var(--radius-sm);
+  padding: 6px 16px;
+  font: var(--button);
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all var(--ease-base);
+}
+
+.diablo-btn-ghost:hover {
+  background: var(--brand-gold);
+  color: var(--ink-on-gold);
+}
+
+/* ---------- 输入框（Level 1 → Level 3 on focus） ---------- */
+.diablo-input {
+  background: var(--canvas-deep);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  color: var(--ink-body);
+  padding: 10px 14px;
+  font: var(--body-md);
+  transition: border-color var(--ease-base), box-shadow var(--ease-base);
+}
+
+.diablo-input:focus {
+  border-color: var(--hairline-glow);
+  box-shadow: 0 0 12px rgba(200, 134, 10, 0.15), inset 0 0 6px rgba(200, 134, 10, 0.05);
+  outline: none;
+}
+
+.diablo-input::placeholder {
+  color: var(--ink-ash);
+}
+
+/* ---------- 标签 / 徽章 ---------- */
+.diablo-tag {
+  background: var(--canvas-deep);
+  border: 1px solid var(--hairline);
+  color: var(--brand-gold);
+  border-radius: var(--radius-xs);
+  padding: 2px 8px;
+  font: var(--caption);
+}
+
+/* ---------- 热门标记 ---------- */
+.diablo-badge-hot {
+  background: var(--brand-red-dim);
+  color: var(--brand-red-glow);
+  border-radius: var(--radius-xs);
+  padding: 2px 8px;
+  font: var(--caption);
+  font-weight: 700;
+}
+
+/* ---------- 进行中脉冲标记 ---------- */
+.diablo-badge-active {
+  background: var(--brand-red-dim);
+  color: var(--brand-red-glow);
+  border-radius: var(--radius-xs);
+  padding: 2px 8px;
+  font: var(--micro);
+  font-weight: 700;
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* ---------- 等待中标记 ---------- */
+.diablo-badge-idle {
+  background: var(--canvas-raised);
+  color: var(--ink-mute);
+  border-radius: var(--radius-xs);
+  padding: 2px 8px;
+  font: var(--micro);
+  font-weight: 700;
+}
+
+/* ---------- 分隔线 ---------- */
+.diablo-divider {
+  border-color: var(--divider);
+}
+
+/* ---------- RouterLink 激活态 ---------- */
+.router-link-active {
+  color: var(--brand-gold) !important;
+}
+
+.router-link-exact-active {
+  color: var(--brand-gold) !important;
+}
+
+/* ---------- 蓝贴列表项 ---------- */
+.diablo-post-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 6px var(--space-xs);
+  border-left: 2px solid var(--brand-gold);
+  border-radius: var(--radius-xs);
+  transition: background var(--ease-micro);
+}
+
+.diablo-post-item:hover {
+  background: var(--canvas-raised);
+}
+
+/* ---------- 版本卡片角落装饰 ---------- */
+.diablo-corner-accent {
+  position: relative;
+}
+
+.diablo-corner-accent::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid var(--brand-gold);
+  border-bottom: 2px solid var(--brand-gold);
+  opacity: 0.3;
+  border-radius: 0 0 var(--radius-sm) 0;
 }
