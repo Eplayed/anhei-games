@@ -1,8 +1,0 @@
-node_modules
-dist
-.git
-.github
-.workbuddy
-docs
-*.md
-!README.md
