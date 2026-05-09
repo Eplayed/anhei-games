@@ -1,0 +1,49 @@
+name: Sync Blue Posts
+
+on:
+  schedule:
+    # 每周一 10:00 北京时间 (02:00 UTC)
+    - cron: '0 2 * * 1'
+  workflow_dispatch: # 支持手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: cd scripts && npm install
+
+      - name: Fetch blue posts
+        run: node scripts/blueposts-fetcher.mjs
+
+      - name: Check for changes
+        id: check
+        run: |
+          git diff --quiet frontend/src/data/bluePosts.js || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add frontend/src/data/bluePosts.js
+          git commit -m "chore: auto-sync blue posts [skip ci]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: No changes
+        if: steps.check.outputs.changed != 'true'
+        run: echo "No new blue posts, skipping commit."

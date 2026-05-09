@@ -29,3 +29,5 @@ yarn-error.log*
 
 # OS
 Thumbs.db
+node_modules/
+scripts/node_modules/
