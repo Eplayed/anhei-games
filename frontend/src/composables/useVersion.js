@@ -10,6 +10,25 @@ import { useRouter, useRoute } from 'vue-router';
 var currentVersion = ref('D4');
 var initialized = false;
 
+/* 背景图映射（使用 import.meta.env.BASE_URL 自动适配部署路径） */
+var base = import.meta.env.BASE_URL;
+var bgMap = {
+  'D2': base + 'images/bg/d2-bg.jpeg',
+  'D3': base + 'images/bg/d3-bg.jpg',
+  'D4': base + 'images/bg/d4-bg.jpg'
+};
+
+/**
+ * 设置 body 背景图
+ */
+function applyBackgroundImage(version) {
+  var bgUrl = bgMap[version];
+  if (bgUrl) {
+    document.body.style.backgroundImage =
+      'url(' + bgUrl + '), radial-gradient(ellipse at 50% 40%, var(--glow-body) 0%, transparent 60%)';
+  }
+}
+
 /**
  * 在 <html> 上设置主题 CSS 类，并触发过渡动画
  */
@@ -20,6 +39,8 @@ function applyThemeClass(version) {
   // 切换主题类
   root.classList.remove('theme-d2', 'theme-d3', 'theme-d4');
   root.classList.add('theme-' + version.toLowerCase());
+  // 切换背景图
+  applyBackgroundImage(version);
   // 400ms 后移除过渡动画类，避免影响后续交互性能
   setTimeout(function () {
     root.classList.remove('theme-transition');
@@ -51,6 +72,8 @@ export function useVersion() {
     var root = document.documentElement;
     root.classList.remove('theme-d2', 'theme-d3', 'theme-d4');
     root.classList.add('theme-' + initialVersion.toLowerCase());
+    // 立即应用背景图
+    applyBackgroundImage(initialVersion);
 
     // 清理旧的 theme-color localStorage key
     if (localStorage.getItem('theme-color')) {

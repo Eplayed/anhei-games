@@ -14,11 +14,12 @@
 /* ---------- body ---------- */
 body {
   background-color: var(--canvas-deep);
-  background-image:
-    /* 中央金铜色光晕 */
-    radial-gradient(ellipse at 50% 40%, var(--glow-body) 0%, transparent 60%);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  /* 背景图由 useVersion.js 动态设置（自动适配部署路径） */
+  background-size: cover, cover;
+  background-position: center top, center;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed, fixed;
+  background-blend-mode: overlay, normal;
 
   color: var(--ink-body);
   font: var(--body-md);

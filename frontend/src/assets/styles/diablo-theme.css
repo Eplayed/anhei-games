@@ -178,6 +178,7 @@
 .theme-transition *::before,
 .theme-transition *::after {
   transition: background-color 0.4s ease,
+              background-image 0.4s ease,
               border-color 0.4s ease,
               color 0.4s ease,
               box-shadow 0.4s ease,

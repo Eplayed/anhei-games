@@ -31,3 +31,4 @@ yarn-error.log*
 Thumbs.db
 node_modules/
 scripts/node_modules/
+.playwright-cli/
