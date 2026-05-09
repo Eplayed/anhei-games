@@ -3,7 +3,7 @@
     <h3 class="diablo-title text-xl mb-4">赛季倒计时</h3>
     
     <div v-if="daysLeft >= 0" class="text-center">
-      <div class="text-4xl font-bold text-[#c8860a] mb-2">
+      <div class="text-4xl font-bold mb-2" style="color: var(--brand-gold)">
         {{ daysLeft }} 天
       </div>
       <p class="text-gray-400">

@@ -9,13 +9,13 @@
         :href="post.url"
         target="_blank"
         rel="noopener noreferrer"
-        class="block p-3 rounded hover:bg-[#2a2a2a] transition-colors border-l-4 border-[#c8860a]"
+        class="blue-post-link block p-3 rounded transition-colors"
       >
         <div class="flex items-start justify-between mb-1">
-          <h4 class="text-lg text-[#e0e0e0] hover:text-[#c8860a] transition-colors">
+          <h4 class="text-lg blue-post-title transition-colors">
             {{ post.title }}
           </h4>
-          <span class="text-xs px-2 py-1 bg-[#2a2a2a] text-[#c8860a] rounded ml-2 flex-shrink-0">
+          <span class="text-xs px-2 py-1 blue-post-version rounded ml-2 flex-shrink-0">
             {{ post.gameVersion }}
           </span>
         </div>
@@ -39,3 +39,22 @@ const props = defineProps({
   }
 })
 </script>
+
+<style scoped>
+.blue-post-link {
+  border-left: 4px solid var(--brand-gold);
+}
+.blue-post-link:hover {
+  background: var(--canvas-raised);
+}
+.blue-post-title {
+  color: var(--ink-heading);
+}
+.blue-post-title:hover {
+  color: var(--brand-gold);
+}
+.blue-post-version {
+  background: var(--canvas-raised);
+  color: var(--brand-gold);
+}
+</style>

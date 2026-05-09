@@ -16,7 +16,7 @@ body {
   background-color: var(--canvas-deep);
   background-image:
     /* 中央金铜色光晕 */
-    radial-gradient(ellipse at 50% 40%, rgba(200, 134, 10, 0.06) 0%, transparent 60%);
+    radial-gradient(ellipse at 50% 40%, var(--glow-body) 0%, transparent 60%);
   background-repeat: no-repeat;
   background-attachment: fixed;
 
@@ -48,7 +48,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* ---------- 选中文字 ---------- */
 ::selection {
-  background: rgba(200, 134, 10, 0.35);
+  background: var(--glow-selection);
   color: var(--ink-heading);
 }
 

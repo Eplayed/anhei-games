@@ -43,6 +43,10 @@
   --hairline-glow: rgba(200, 134, 10, 0.6);
   --divider: rgba(200, 134, 10, 0.12);
 
+  /* ===== 光晕与选中 ===== */
+  --glow-body: rgba(200, 134, 10, 0.06);
+  --glow-selection: rgba(200, 134, 10, 0.35);
+
   /* ===== 字体栈 ===== */
   --font-display: 'Cinzel', 'Georgia', serif;
   --font-body: 'Inter', 'system-ui', -apple-system, sans-serif;
@@ -89,6 +93,99 @@
 
 
 /* ============================================================
+   版本驱动主题
+   切换游戏版本时，<html> 上的 .theme-d2/.theme-d3/.theme-d4
+   覆盖 :root 中的默认变量，实现全局主题切换
+   ============================================================ */
+
+/* ---------- D2 - 古铜暗绿（老派复古） ---------- */
+.theme-d2 {
+  --brand-gold: #8b7d3c;
+  --brand-gold-dim: #5c5228;
+  --brand-gold-bright: #b8a44e;
+  --brand-gold-muted: #6e6430;
+  --brand-red: #8b3a3a;
+  --brand-red-glow: #a84848;
+  --brand-red-dim: #4a1a1a;
+
+  --canvas-deep: #080a06;
+  --canvas-base: #10120e;
+  --canvas-mid: #1a1d16;
+  --canvas-raised: #242820;
+  --canvas-soft: #363a30;
+
+  --ink-heading: #d4c9a8;
+  --ink-body: #b8b0a0;
+  --ink-mute: #7a7568;
+  --ink-stone: #504c42;
+  --ink-ash: #32302a;
+  --ink-on-gold: #14120a;
+
+  --hairline: rgba(139, 125, 60, 0.2);
+  --hairline-bright: rgba(139, 125, 60, 0.4);
+  --hairline-glow: rgba(139, 125, 60, 0.6);
+  --divider: rgba(139, 125, 60, 0.12);
+
+  --glow-body: rgba(139, 125, 60, 0.06);
+  --glow-selection: rgba(139, 125, 60, 0.35);
+}
+
+/* ---------- D3 - 血红烈焰（高天堂/大天使） ---------- */
+.theme-d3 {
+  --brand-gold: #d4870a;
+  --brand-gold-dim: #9a5f08;
+  --brand-gold-bright: #f5a020;
+  --brand-gold-muted: #a87020;
+  --brand-red: #c41e1e;
+  --brand-red-glow: #e83838;
+  --brand-red-dim: #6b0a0a;
+
+  --canvas-deep: #0c0808;
+  --canvas-base: #161010;
+  --canvas-mid: #201818;
+  --canvas-raised: #2c2020;
+  --canvas-soft: #403030;
+
+  --ink-heading: #ecd0c0;
+  --ink-body: #ccbaba;
+  --ink-mute: #8a7474;
+  --ink-stone: #524848;
+  --ink-ash: #382e2e;
+  --ink-on-gold: #140e06;
+
+  --hairline: rgba(212, 135, 10, 0.2);
+  --hairline-bright: rgba(212, 135, 10, 0.4);
+  --hairline-glow: rgba(212, 135, 10, 0.6);
+  --divider: rgba(212, 135, 10, 0.12);
+
+  --glow-body: rgba(196, 30, 30, 0.06);
+  --glow-selection: rgba(196, 30, 30, 0.35);
+}
+
+/* ---------- D4 - 金铜暗黑（默认，:root 已定义） ---------- */
+.theme-d4 {
+  /* :root 中的值即为 D4 默认，此类仅作占位便于逻辑统一 */
+}
+
+
+/* ============================================================
+   主题切换过渡动画
+   切换版本时 JS 临时添加 .theme-transition 类，
+   400ms 后自动移除，避免首屏性能问题
+   ============================================================ */
+.theme-transition,
+.theme-transition *,
+.theme-transition *::before,
+.theme-transition *::after {
+  transition: background-color 0.4s ease,
+              border-color 0.4s ease,
+              color 0.4s ease,
+              box-shadow 0.4s ease,
+              text-shadow 0.4s ease !important;
+}
+
+
+/* ============================================================
    组件类
    ============================================================ */
 
@@ -105,7 +202,7 @@
   font-family: var(--font-display);
   font-weight: 700;
   letter-spacing: 0.5px;
-  text-shadow: 0 0 8px rgba(200, 134, 10, 0.25);
+  text-shadow: 0 0 8px var(--hairline-bright);
 }
 
 /* ---------- 卡片（Level 1 → Level 2 on hover） ---------- */
@@ -152,12 +249,12 @@
 
 .diablo-btn:hover {
   background: linear-gradient(180deg, var(--brand-gold-bright), var(--brand-gold));
-  box-shadow: 0 0 12px rgba(200, 134, 10, 0.2);
+  box-shadow: 0 0 12px var(--hairline);
 }
 
 .diablo-btn:active {
   background: linear-gradient(180deg, var(--brand-gold-dim), var(--brand-gold-dim));
-  box-shadow: 0 0 6px rgba(200, 134, 10, 0.15);
+  box-shadow: 0 0 6px var(--hairline);
 }
 
 /* ---------- 幽灵按钮（描边） ---------- */
@@ -191,7 +288,7 @@
 
 .diablo-input:focus {
   border-color: var(--hairline-glow);
-  box-shadow: 0 0 12px rgba(200, 134, 10, 0.15), inset 0 0 6px rgba(200, 134, 10, 0.05);
+  box-shadow: 0 0 12px var(--hairline), inset 0 0 6px var(--hairline);
   outline: none;
 }
 

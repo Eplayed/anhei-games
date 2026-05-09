@@ -14,10 +14,10 @@
         </div>
         <div class="mb-2">
           <span class="text-sm text-gray-400">下一个 Boss</span>
-          <p class="text-[#c8860a] font-bold text-base mt-1">{{ boss.bossName }}</p>
+          <p class="font-bold text-base mt-1" style="color: var(--brand-gold)">{{ boss.bossName }}</p>
         </div>
         <div class="text-center py-3">
-          <div class="text-3xl font-bold font-mono tracking-wider text-[#e8dcc8]">
+          <div class="text-3xl font-bold font-mono tracking-wider" style="color: var(--ink-heading)">
             {{ bossCountdown }}
           </div>
           <p class="text-xs text-gray-500 mt-1">{{ boss.startTime }}</p>
@@ -32,10 +32,10 @@
         </div>
         <div class="mb-2">
           <span class="text-sm text-gray-400">下次刷新</span>
-          <p class="text-[#c8860a] font-bold text-base mt-1">军团来袭</p>
+          <p class="font-bold text-base mt-1" style="color: var(--brand-gold)">军团来袭</p>
         </div>
         <div class="text-center py-3">
-          <div class="text-3xl font-bold font-mono tracking-wider text-[#e8dcc8]">
+          <div class="text-3xl font-bold font-mono tracking-wider" style="color: var(--ink-heading)">
             {{ legionCountdown }}
           </div>
           <p class="text-xs text-gray-500 mt-1">{{ legion.startTime }}</p>
@@ -51,9 +51,7 @@
         <div class="mb-2">
           <span
             class="text-xs px-2 py-0.5 rounded font-bold"
-            :class="helltide.inProgress
-              ? 'bg-[#8b0000] text-[#ff6b6b] animate-pulse'
-              : 'bg-[#2a2a2a] text-gray-400'"
+            :class="helltide.inProgress ? 'diablo-badge-active' : 'diablo-badge-idle'"
           >
             {{ helltide.inProgress ? '🔥 进行中' : '⏸ 等待中' }}
           </span>
@@ -61,7 +59,7 @@
         <div class="text-center py-3">
           <div
             class="text-3xl font-bold font-mono tracking-wider"
-            :class="helltide.inProgress ? 'text-[#ff6b6b]' : 'text-[#e8dcc8]'"
+            :style="{ color: helltide.inProgress ? 'var(--brand-red-glow)' : 'var(--ink-heading)' }"
           >
             {{ helltideCountdown }}
           </div>

@@ -72,14 +72,6 @@
         >
           启动战网
         </button>
-
-        <button
-          class="diablo-btn-ghost text-xs px-3 py-1.5"
-          @click="toggleThemeColor()"
-          title="切换主题色"
-        >
-          切换主题
-        </button>
       </div>
 
       <!-- 移动端汉堡菜单 -->
@@ -184,13 +176,6 @@
             >
               启动战网
             </button>
-            <button
-              class="w-full text-left px-4 py-3 text-sm font-semibold transition-colors"
-              style="color: var(--brand-gold)"
-              @click="toggleThemeColor(); mobileMenuOpen = false;"
-            >
-              切换主题
-            </button>
           </div>
         </nav>
       </div>
@@ -218,10 +203,5 @@ var openBattleNet = function () {
       window.open('https://www.battlenet.com.cn/download/', '_blank');
     }
   }, 500);
-};
-
-var toggleThemeColor = function () {
-  var event = new CustomEvent('toggle-theme');
-  window.dispatchEvent(event);
 };
 </script>

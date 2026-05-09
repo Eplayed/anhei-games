@@ -182,7 +182,7 @@ var quickLinks = [
 
 .search-form:focus-within {
   border-color: var(--hairline-glow, rgba(200, 134, 10, 0.6));
-  box-shadow: 0 0 12px rgba(200, 134, 10, 0.15), inset 0 0 6px rgba(200, 134, 10, 0.05);
+  box-shadow: 0 0 12px var(--hairline), inset 0 0 6px var(--hairline);
 }
 
 .search-input {
@@ -217,7 +217,7 @@ var quickLinks = [
 
 .search-btn:hover {
   background: linear-gradient(180deg, var(--brand-gold-bright, #f0a030), var(--brand-gold, #c8860a));
-  box-shadow: 0 0 12px rgba(200, 134, 10, 0.2);
+  box-shadow: 0 0 12px var(--hairline);
 }
 
 .search-btn:active {
