@@ -9,7 +9,7 @@
         {{ currentVersionName() }} &middot; 一站式资源入口
       </p>
       <div class="max-w-xl mx-auto">
-        <SearchBar v-model="searchQuery" @search="handleSearch" />
+        <SearchBar />
       </div>
     </section>
 
@@ -147,7 +147,6 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue';
-import { useRouter } from 'vue-router';
 import SearchBar from '../components/SearchBar.vue';
 import ResourceCard from '../components/ResourceCard.vue';
 import { useVersion } from '../composables/useVersion.js';
@@ -159,8 +158,6 @@ import { resources } from '../data/resources.js';
 import { bluePosts } from '../data/bluePosts.js';
 import { filterByGameVersion } from '../utils/helpers.js';
 
-var router = useRouter();
-var searchQuery = ref('');
 var { currentVersion, currentVersionName } = useVersion();
 
 // ===== 赛季倒计时（D4 专属） =====
@@ -238,8 +235,4 @@ var filteredHotResources = computed(function () {
   var hot = resources.filter(function (r) { return r.isHot });
   return filterByGameVersion(hot, currentVersion.value);
 });
-
-var handleSearch = function (query) {
-  if (query.trim()) router.push({ path: '/guides', query: { search: query } });
-};
 </script>
