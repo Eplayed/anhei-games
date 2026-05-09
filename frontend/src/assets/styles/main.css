@@ -13,13 +13,12 @@
 
 /* ---------- body ---------- */
 body {
-  background-color: var(--canvas-deep);
-  /* 背景图由 useVersion.js 动态设置（自动适配部署路径） */
-  background-size: cover, cover;
-  background-position: center top, center;
-  background-repeat: no-repeat, no-repeat;
-  background-attachment: fixed, fixed;
-  background-blend-mode: overlay, normal;
+  /* 背景图由 useVersion.js 动态设置，无背景色遮挡 */
+  background-color: transparent;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
   color: var(--ink-body);
   font: var(--body-md);
@@ -66,4 +65,21 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
   color: var(--ink-heading);
   font-family: var(--font-display);
+}
+
+/* ---------- 磨砂质感遮罩层 ---------- */
+.diablo-frost-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: rgba(10, 10, 15, 0.72);
+  backdrop-filter: blur(6px) saturate(1.2);
+  -webkit-backdrop-filter: blur(6px) saturate(1.2);
+  pointer-events: none;
+}
+
+/* ---------- 内容层（在磨砂层之上） ---------- */
+.diablo-content-layer {
+  position: relative;
+  z-index: 1;
 }

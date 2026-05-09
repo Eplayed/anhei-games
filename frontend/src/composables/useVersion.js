@@ -24,8 +24,7 @@ var bgMap = {
 function applyBackgroundImage(version) {
   var bgUrl = bgMap[version];
   if (bgUrl) {
-    document.body.style.backgroundImage =
-      'url(' + bgUrl + '), radial-gradient(ellipse at 50% 40%, var(--glow-body) 0%, transparent 60%)';
+    document.body.style.backgroundImage = 'url(' + bgUrl + ')';
   }
 }
 
