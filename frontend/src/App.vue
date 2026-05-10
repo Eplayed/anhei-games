@@ -3,8 +3,10 @@
   <div id="app" class="diablo-content-layer min-h-screen" style="color: var(--ink-body)">
     <AppHeader />
     
-    <main class="container mx-auto px-4 py-8">
-      <RouterView />
+    <main class="container mx-auto px-4">
+      <RouterView v-slot="{ Component }">
+        <component :is="Component" :key="$route.path" class="diablo-page-enter" />
+      </RouterView>
     </main>
     
     <AppFooter />

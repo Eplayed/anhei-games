@@ -1,5 +1,5 @@
 <template>
-  <header class="diablo-frame sticky top-0 z-50 mb-5">
+  <header class="diablo-frost-nav sticky top-0 z-50 mb-5" :class="{ scrolled: isScrolled }">
     <div class="container mx-auto px-4 py-3 flex items-center justify-between">
       <!-- Logo -->
       <div class="flex items-center space-x-3">
@@ -112,7 +112,7 @@
       <div
         v-if="mobileMenuOpen"
         class="md:hidden mx-4 mb-3 p-3"
-        style="background: var(--canvas-base); border: 1px solid var(--hairline); border-radius: var(--radius-sm);"
+        style="background: rgba(20, 19, 28, 0.88); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--hairline); border-radius: var(--radius-sm);"
       >
         <nav class="flex flex-col space-y-1">
           <RouterLink
@@ -187,7 +187,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 import { useRoute } from 'vue-router';
 import GameVersionTabs from './GameVersionTabs.vue';
 import SetHomepage from './SetHomepage.vue';
@@ -195,6 +195,14 @@ import SetHomepage from './SetHomepage.vue';
 var route = useRoute();
 var mobileMenuOpen = ref(false);
 var setHomepageRef = ref(null);
+var isScrolled = ref(false);
+
+// 滚动检测：滚动超过 60px 时增强磨砂
+var onScroll = function () {
+  isScrolled.value = window.scrollY > 60;
+};
+onMounted(function () { window.addEventListener('scroll', onScroll, { passive: true }); });
+onUnmounted(function () { window.removeEventListener('scroll', onScroll); });
 
 var openBattleNet = function () {
   window.location.href = 'battlenet://';

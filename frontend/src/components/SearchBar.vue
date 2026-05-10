@@ -177,12 +177,13 @@ var quickLinks = [
   border: 1px solid var(--hairline, rgba(200, 134, 10, 0.2));
   border-radius: var(--radius-sm, 4px);
   overflow: hidden;
-  transition: border-color var(--ease-base, 200ms ease), box-shadow var(--ease-base, 200ms ease);
+  transition: border-color var(--ease-base, 200ms ease), box-shadow var(--ease-base, 200ms ease), transform 0.2s ease;
 }
 
 .search-form:focus-within {
   border-color: var(--hairline-glow, rgba(200, 134, 10, 0.6));
   box-shadow: 0 0 12px var(--hairline), inset 0 0 6px var(--hairline);
+  transform: scale(1.01);
 }
 
 .search-input {

@@ -1,5 +1,5 @@
 <template>
-  <div class="diablo-card hover:scale-[1.02] transition-transform duration-200">
+  <div class="diablo-card diablo-card-hover transition-all duration-200">
     <!-- 资源图标 + 名称 + 收藏 -->
     <div class="flex items-start gap-2 sm:gap-3 mb-2 sm:mb-3">
       <img

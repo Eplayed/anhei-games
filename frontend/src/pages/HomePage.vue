@@ -1,23 +1,41 @@
 <template>
   <div>
-    <!-- Hero 紧凑条：标题 + 搜索 -->
-    <section class="text-center mb-5">
-      <h2 class="diablo-title text-3xl md:text-4xl font-bold mb-2 tracking-tight">
-        暗黑破坏神玩家导航
-      </h2>
-      <p class="text-sm mb-4" style="color: var(--ink-mute)">
-        {{ currentVersionName() }} &middot; 一站式资源入口
-      </p>
-      <div class="max-w-xl mx-auto">
-        <SearchBar />
+    <!-- ====== P0: 全视口沉浸式 Hero ====== -->
+    <section class="diablo-hero">
+      <div class="diablo-hero-content">
+        <!-- 纪念碑式大标题 -->
+        <h2 class="diablo-hero-title">
+          暗黑破坏神<br class="sm:hidden" />玩家导航
+        </h2>
+        <!-- 版本副标题 -->
+        <p class="diablo-hero-sub">
+          {{ currentVersionName() }} &middot; 一站式资源入口
+        </p>
+        <!-- 搜索框 -->
+        <div class="w-full max-w-xl mx-auto">
+          <SearchBar />
+        </div>
+      </div>
+      <!-- 向下滚动指示器 -->
+      <div class="diablo-hero-scroll" @click="scrollToContent">
+        <svg class="diablo-scroll-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
       </div>
     </section>
 
+    <!-- ====== 主内容区域 ====== -->
+    <div ref="contentRef" class="diablo-main-content">
+
     <!-- D4 专属：事件倒计时 (4列) -->
-    <section v-if="currentVersion === 'D4'" class="mb-5">
+    <section v-if="currentVersion === 'D4'" class="mb-6">
+      <div class="diablo-section-header">
+        <span class="diablo-section-num">I</span>
+        <h3 class="diablo-title uppercase tracking-wider">世界事件</h3>
+      </div>
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
         <!-- 世界 Boss -->
-        <div class="diablo-card py-3 px-4">
+        <div class="diablo-card-glass py-3 px-4">
           <div class="flex items-center gap-1.5 mb-2">
             <span class="text-base">&#x1F479;</span>
             <h4 class="diablo-title text-xs uppercase tracking-widest">世界 Boss</h4>
@@ -30,7 +48,7 @@
         </div>
 
         <!-- 军团事件 -->
-        <div class="diablo-card py-3 px-4">
+        <div class="diablo-card-glass py-3 px-4">
           <div class="flex items-center gap-1.5 mb-2">
             <span class="text-base">&#x1F5E1;&#xFE0F;</span>
             <h4 class="diablo-title text-xs uppercase tracking-widest">军团事件</h4>
@@ -43,7 +61,7 @@
         </div>
 
         <!-- 地狱狂潮 -->
-        <div class="diablo-card py-3 px-4">
+        <div class="diablo-card-glass py-3 px-4">
           <div class="flex items-center gap-1.5 mb-2">
             <span class="text-base">&#x1F525;</span>
             <h4 class="diablo-title text-xs uppercase tracking-widest">地狱狂潮</h4>
@@ -62,7 +80,7 @@
         </div>
 
         <!-- 赛季倒计时 -->
-        <div class="diablo-card py-3 px-4">
+        <div class="diablo-card-glass py-3 px-4">
           <div class="flex items-center gap-1.5 mb-2">
             <span class="text-base">&#x1F3C6;</span>
             <h4 class="diablo-title text-xs uppercase tracking-widest">赛季倒计时</h4>
@@ -76,22 +94,25 @@
       </div>
     </section>
 
-    <!-- D4 专属：版本入口卡片（提示已移至顶部切换） -->
-    <!-- 已移除版本入口卡片，版本切换统一在导航栏 -->
+    <!-- 装饰分隔 -->
+    <div class="diablo-section-divider">
+      <div class="diablo-section-divider-diamond"></div>
+    </div>
 
     <!-- 蓝贴速递 -->
-    <section class="mb-5">
-      <div class="flex items-center justify-between mb-3">
-        <h3 class="diablo-title text-base uppercase tracking-wider">&#x1F4CB; 蓝贴速递</h3>
+    <section class="mb-6">
+      <div class="diablo-section-header">
+        <span class="diablo-section-num">II</span>
+        <h3 class="diablo-title uppercase tracking-wider">蓝贴速递</h3>
         <router-link
           to="/news"
-          class="text-xs no-underline transition-opacity hover:opacity-80"
+          class="text-xs no-underline transition-opacity hover:opacity-80 ml-auto mr-0"
           style="color: var(--brand-gold)"
         >
           查看全部 &rarr;
         </router-link>
       </div>
-      <div class="p-3 space-y-1.5" style="background: var(--canvas-base); border: 1px solid var(--hairline); border-radius: var(--radius-sm);">
+      <div class="diablo-card-glass p-3 space-y-1.5">
         <a
           v-for="post in filteredBluePosts"
           :key="post.id"
@@ -123,14 +144,24 @@
       </div>
     </section>
 
+    <!-- 装饰分隔 -->
+    <div class="diablo-section-divider">
+      <div class="diablo-section-divider-diamond"></div>
+    </div>
+
     <!-- 热门资源推荐 -->
     <section>
-      <h3 class="diablo-title text-base mb-3 uppercase tracking-wider">热门资源</h3>
+      <div class="diablo-section-header">
+        <span class="diablo-section-num">III</span>
+        <h3 class="diablo-title uppercase tracking-wider">热门资源</h3>
+      </div>
       <div class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-2 sm:gap-3">
         <ResourceCard
-          v-for="resource in filteredHotResources"
+          v-for="(resource, idx) in filteredHotResources"
           :key="resource.id"
           :resource="resource"
+          class="diablo-stagger-item"
+          :style="{ animationDelay: (idx * 60) + 'ms' }"
         />
       </div>
       <!-- 无资源提示 -->
@@ -142,6 +173,7 @@
         暂无该版本的热门资源
       </div>
     </section>
+    </div><!-- /diablo-main-content -->
   </div>
 </template>
 
@@ -159,6 +191,14 @@ import { bluePosts } from '../data/bluePosts.js';
 import { filterByGameVersion } from '../utils/helpers.js';
 
 var { currentVersion, currentVersionName } = useVersion();
+
+// ===== Hero 滚动指示 =====
+var contentRef = ref(null);
+var scrollToContent = function () {
+  if (contentRef.value) {
+    contentRef.value.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 
 // ===== 赛季倒计时（D4 专属） =====
 var seasonName = ref('第5赛季');
@@ -236,3 +276,101 @@ var filteredHotResources = computed(function () {
   return filterByGameVersion(hot, currentVersion.value);
 });
 </script>
+
+<style scoped>
+/* ====== 全视口沉浸式 Hero ====== */
+.diablo-hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 80px 16px 120px;
+}
+
+.diablo-hero-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  animation: heroFadeIn 0.8s ease-out;
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 纪念碑式大标题 */
+.diablo-hero-title {
+  font: var(--display-xl);
+  color: var(--brand-gold);
+  letter-spacing: 3px;
+  text-shadow: 0 0 20px var(--hairline-bright), 0 2px 4px rgba(0,0,0,0.5);
+  line-height: 1.15;
+}
+
+@media (max-width: 640px) {
+  .diablo-hero-title {
+    font-size: 32px;
+    letter-spacing: 1px;
+  }
+}
+
+/* 副标题 */
+.diablo-hero-sub {
+  font: var(--heading-lg);
+  color: var(--ink-mute);
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 640px) {
+  .diablo-hero-sub {
+    font-size: 14px;
+  }
+}
+
+/* 滚动指示器 */
+.diablo-hero-scroll {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  opacity: 0.4;
+  transition: opacity var(--ease-base);
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+.diablo-hero-scroll:hover {
+  opacity: 0.8;
+}
+
+.diablo-scroll-icon {
+  width: 28px;
+  height: 28px;
+  color: var(--brand-gold);
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ====== 主内容区域 ====== */
+.diablo-main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 48px;
+}
+</style>

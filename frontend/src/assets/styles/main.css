@@ -83,3 +83,33 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   z-index: 1;
 }
+
+/* ---------- 页面路由切换淡入 ---------- */
+.diablo-page-enter {
+  animation: pageFadeIn 0.35s ease-out;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- 卡片 stagger 入场 ---------- */
+.diablo-stagger-item {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: staggerFadeIn 0.4s ease-out forwards;
+}
+
+@keyframes staggerFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -197,6 +197,22 @@
   position: relative;
 }
 
+/* ---------- 磨砂玻璃导航栏 ---------- */
+.diablo-frost-nav {
+  background: rgba(20, 19, 28, 0.72);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border-bottom: 1px solid var(--hairline);
+  position: relative;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+/* 滚动后增强磨砂强度 */
+.diablo-frost-nav.scrolled {
+  background: rgba(10, 10, 15, 0.88);
+  border-bottom-color: var(--hairline-bright);
+}
+
 /* ---------- 品牌标题 ---------- */
 .diablo-title {
   color: var(--brand-gold);
@@ -232,6 +248,34 @@
 .diablo-card:hover {
   background: var(--canvas-raised);
   border-color: var(--hairline-bright);
+  box-shadow: 0 0 20px rgba(200, 134, 10, 0.06), 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* 卡片 hover 金色顶部光线增强 */
+.diablo-card:hover::before {
+  opacity: 0.6;
+}
+
+/* 卡片交互态（替代 scale 上浮，用边框微光 + 深度提升） */
+.diablo-card-hover:hover {
+  box-shadow: 0 0 24px rgba(200, 134, 10, 0.08), 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* 卡片底部金色边线装饰 */
+.diablo-card-hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--brand-gold), transparent);
+  opacity: 0;
+  transition: opacity var(--ease-base);
+}
+
+.diablo-card-hover:hover::after {
+  opacity: 0.4;
 }
 
 /* ---------- 按钮（金色实体） ---------- */
@@ -388,4 +432,105 @@
   border-bottom: 2px solid var(--brand-gold);
   opacity: 0.3;
   border-radius: 0 0 var(--radius-sm) 0;
+}
+
+/* ---------- 区块装饰标题 ---------- */
+.diablo-section-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  position: relative;
+}
+
+/* 左侧装饰线 */
+.diablo-section-header::before {
+  content: '';
+  flex-shrink: 0;
+  width: 3px;
+  height: 20px;
+  background: var(--brand-gold);
+  border-radius: 1px;
+}
+
+/* 右侧延伸线 */
+.diablo-section-header::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--hairline-bright), transparent);
+  margin-left: var(--space-sm);
+}
+
+.diablo-section-header .diablo-title {
+  flex-shrink: 0;
+  margin: 0;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+/* 区块编号标记 */
+.diablo-section-num {
+  font: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--brand-gold);
+  opacity: 0.35;
+  letter-spacing: 2px;
+  margin-right: var(--space-xxs);
+  flex-shrink: 0;
+}
+
+/* ---------- 磨砂玻璃卡片变体 ---------- */
+.diablo-card-glass {
+  background: rgba(20, 19, 28, 0.55);
+  backdrop-filter: blur(8px) saturate(1.2);
+  -webkit-backdrop-filter: blur(8px) saturate(1.2);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  padding: var(--space-md);
+  position: relative;
+  overflow: hidden;
+  transition: background var(--ease-base), border-color var(--ease-base), box-shadow var(--ease-base);
+}
+
+/* 磨砂噪声纹理 */
+.diablo-card-glass::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.diablo-card-glass:hover {
+  background: rgba(30, 29, 40, 0.65);
+  border-color: var(--hairline-bright);
+  box-shadow: 0 0 16px rgba(200, 134, 10, 0.08);
+}
+
+/* ---------- 区块间装饰分隔条 ---------- */
+.diablo-section-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin: var(--space-xl) 0;
+}
+
+.diablo-section-divider::before,
+.diablo-section-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--hairline), transparent);
+}
+
+.diablo-section-divider-diamond {
+  width: 6px;
+  height: 6px;
+  background: var(--brand-gold);
+  transform: rotate(45deg);
+  opacity: 0.4;
+  flex-shrink: 0;
 }
