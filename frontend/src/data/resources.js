@@ -3,7 +3,7 @@ export const resources = [
   // ==================== Diablo 4 攻略 ====================
   {
     id: 'maxroll-d4',
-    name: 'MAXROLL D4',
+    name: 'MaxRoll D4',
     description: '顶级攻略站，覆盖D4全职业Build推荐、开荒攻略、赛季指南',
     url: 'https://maxroll.gg/d4',
     category: 'guide',
@@ -11,7 +11,7 @@ export const resources = [
     tags: ['Build推荐', '开荒攻略', '赛季指南', '英文'],
     icon: 'https://maxroll.gg/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-07'
+    updateTime: '2026-05-10'
   },
   {
     id: 'icy-veins-d4',
@@ -23,7 +23,7 @@ export const resources = [
     tags: ['Build推荐', '技能详解', '英文'],
     icon: 'https://www.icy-veins.com/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-07'
+    updateTime: '2026-05-10'
   },
   {
     id: 'd4-builds',
@@ -35,8 +35,216 @@ export const resources = [
     tags: ['Build分享', '玩家原创', '英文'],
     icon: 'https://d4builds.gg/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-07'
+    updateTime: '2026-05-10'
   },
+  // --- 新增 D4 中文攻略 ---
+  {
+    id: 'd2core-com',
+    name: '暗黑核',
+    description: '暗黑破坏神核心玩家社区，提供D4攻略、数据库、技能模拟、世界地图、交易市场等功能',
+    url: 'https://www.d2core.com/',
+    category: 'guide',
+    gameVersion: 'D4',
+    tags: ['社区', '攻略', '数据库', '模拟器', '交易'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'kain-zh',
+    name: '凯恩之角',
+    description: '暴雪官方合作中文网站，提供暗黑4资讯、攻略、视频、论坛等全方位内容',
+    url: 'https://hero.d.163.com/',
+    category: 'guide',
+    gameVersion: 'D4',
+    tags: ['攻略', '资讯', '论坛', '官方合作'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'd-163-com',
+    name: '凯恩之角专区',
+    description: '网易163暗黑破坏神专区，提供最新D4资讯、攻略、视频等内容',
+    url: 'https://d.163.com/',
+    category: 'guide',
+    gameVersion: 'D4',
+    tags: ['攻略', '资讯', '专区'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'nga-d4',
+    name: 'NGA暗黑4玩家社区',
+    description: 'NGA玩家社区暗黑破坏神4板块，国内核心玩家聚集地',
+    url: 'https://ngabbs.com/index.php',
+    category: 'guide',
+    gameVersion: 'D4',
+    tags: ['论坛', '社区', '攻略'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-10'
+  },
+
+  // --- 新增 D4 工具 ---
+  {
+    id: 'opgg-d4',
+    name: 'OP.GG暗黑4',
+    description: 'OP.GG暗黑破坏神4数据站，提供Build、强度榜、攻略、装备和版本资讯',
+    url: 'https://op.gg/zh-cn/diablo4',
+    category: 'guide',
+    gameVersion: 'D4',
+    tags: ['数据', '强度榜', '攻略', '装备'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'd4craft-com',
+    name: 'D4Craft Enchanter',
+    description: 'D4附魔模拟器工具，帮助玩家找到最佳附魔方式，支持预测各项属性结果概率',
+    url: 'https://www.d4craft.com/',
+    category: 'tool',
+    gameVersion: 'D4',
+    tags: ['附魔模拟', '工具', '概率计算'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'helltides-pit',
+    name: 'Helltides深渊排行榜',
+    description: '暗黑4深渊秘境(Pit)排行榜，众包数据，玩家可提交深渊跑图记录',
+    url: 'https://helltides.com/pit',
+    category: 'tool',
+    gameVersion: 'D4',
+    tags: ['排行榜', '深渊', '天梯', '排名'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'infinitytools-d4-zh',
+    name: 'InfinityTools中文数据库',
+    description: '完整的中文暗黑4数据库：独特物品、神话、威能、词缀、符文、雕文、徽记、宝石等',
+    url: 'https://tools.infinitybuilds.gg/zh/database',
+    category: 'tool',
+    gameVersion: 'D4',
+    tags: ['数据库', '中文', '物品', '威能', '词缀'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'diablo-trade',
+    name: 'Diablo.trade',
+    description: '暗黑4物品交易市场，可买卖装备和服务，寻找最佳毕业装备',
+    url: 'https://diablo.trade/',
+    category: 'tool',
+    gameVersion: 'D4',
+    tags: ['交易', '市场', '金币'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'd4tracker',
+    name: 'D4Tracker地图工具',
+    description: '暗黑4交互式地图工具，可筛选并追踪进度，支持地城、任务、祭坛等',
+    url: 'https://d4tracker.org/map/',
+    category: 'tool',
+    gameVersion: 'D4',
+    tags: ['地图', '追踪', '进度'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'diablo4-life',
+    name: 'Diablo4.life',
+    description: '社区驱动的D4资源站，提供Build指南、工具、追踪器等',
+    url: 'https://diablo4.life/',
+    category: 'tool',
+    gameVersion: 'D4',
+    tags: ['工具合集', 'Build指南', '追踪器'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'diablo4build',
+    name: 'Diablo4Build',
+    description: '暗黑4 Build规划器，支持技能树、巅峰面板、装备威能选择，关联实时交易价格',
+    url: 'https://diablo4build.com/',
+    category: 'tool',
+    gameVersion: 'D4',
+    tags: ['Build规划', '技能树', '巅峰', '交易价格'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'mobalytics-d4',
+    name: 'Mobalytics暗黑4规划器',
+    description: 'Mobalytics D4 Build规划器，可创建并分享Build给社区',
+    url: 'https://mobalytics.gg/diablo-4/planner/builds',
+    category: 'tool',
+    gameVersion: 'D4',
+    tags: ['Build规划', '分享'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'purediablo-planner',
+    name: 'PureDiablo Build规划器',
+    description: 'PureDiablo暗黑4Build规划器，支持技能、巅峰、装备、威能和赛季内容',
+    url: 'https://www.purediablo.com/build-planner',
+    category: 'tool',
+    gameVersion: 'D4',
+    tags: ['Build规划', '巅峰', '装备'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'd4-market',
+    name: 'D4Market',
+    description: '暗黑4物品市场，支持按赛季、成本、等级、词缀等多维度筛选',
+    url: 'https://www.d4market.net/',
+    category: 'tool',
+    gameVersion: 'D4',
+    tags: ['市场', '交易', '筛选'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'diabloclan-gem',
+    name: 'DiabloClan宝石计算器',
+    description: '传奇宝石升级计算器，可计算宝石升级所需材料和概率',
+    url: 'https://diabloclan.com/GemCalculator',
+    category: 'tool',
+    gameVersion: 'D4',
+    tags: ['宝石', '计算器', '升级'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'bubaigi-d4-pit',
+    name: '不白给D4 S13赛季专题',
+    description: '暗黑4 S13赛季专题页，汇总BD推荐、玩法收益、Boss掉落查询',
+    url: 'https://bubaigi.com/hub/d4-s13',
+    category: 'guide',
+    gameVersion: 'D4',
+    tags: ['赛季专题', 'BD推荐', '掉落查询'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-10'
+  },
+
   // ==================== Diablo 4 工具 ====================
   {
     id: 'maxroll-d4-planner',
@@ -48,7 +256,7 @@ export const resources = [
     tags: ['Build模拟', '技能规划', '英文'],
     icon: 'https://maxroll.gg/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-07'
+    updateTime: '2026-05-10'
   },
   {
     id: 'd4-armory',
@@ -60,8 +268,9 @@ export const resources = [
     tags: ['装备查询', '数据库', '英文'],
     icon: '',
     isHot: false,
-    updateTime: '2026-05-07'
+    updateTime: '2026-05-10'
   },
+
   // ==================== Diablo 3 攻略 ====================
   {
     id: 'maxroll-d3',
@@ -73,7 +282,7 @@ export const resources = [
     tags: ['Build推荐', '赛季攻略', '英文'],
     icon: 'https://maxroll.gg/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-07'
+    updateTime: '2026-05-10'
   },
   {
     id: 'icy-veins-d3',
@@ -85,7 +294,7 @@ export const resources = [
     tags: ['Build推荐', '技能详解', '英文'],
     icon: 'https://www.icy-veins.com/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-07'
+    updateTime: '2026-05-10'
   },
   {
     id: 'diablofans-d3',
@@ -97,8 +306,70 @@ export const resources = [
     tags: ['社区论坛', '攻略分享', '英文'],
     icon: '',
     isHot: false,
-    updateTime: '2026-05-07'
+    updateTime: '2026-05-10'
   },
+  // --- 新增 D3 资源 ---
+  {
+    id: 'kain-163-d3',
+    name: '凯恩之角',
+    description: '暗黑破坏神3中文网，提供数据库、攻略、天梯排名查询等综合服务',
+    url: 'https://d.163.com/db/cn',
+    category: 'guide',
+    gameVersion: 'D3',
+    tags: ['中文攻略', '数据库', '天梯查询', '社区'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'nga-d3-forum',
+    name: 'NGA玩家社区 D3讨论区',
+    description: '国内最大的D3玩家论坛，提供最新资讯、攻略讨论和社区交流',
+    url: 'http://d3.nga.cn/',
+    category: 'guide',
+    gameVersion: 'D3',
+    tags: ['中文论坛', '攻略讨论', '社区'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: '17173-d3',
+    name: '17173暗黑3专区',
+    description: '暗黑破坏神3中文主题站，提供职业攻略、版本追踪和游戏下载',
+    url: 'https://d3.17173.com/index.shtml',
+    category: 'guide',
+    gameVersion: 'D3',
+    tags: ['中文攻略', '职业攻略', '版本追踪'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'gamersky-d3',
+    name: '游民星空暗黑3攻略',
+    description: '提供暗黑破坏神3全攻略、秘籍和游戏指南',
+    url: 'https://gl.ali213.net/z/5794/',
+    category: 'guide',
+    gameVersion: 'D3',
+    tags: ['中文攻略', '游戏指南', '秘籍'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: '3dmgame-d3-forum',
+    name: '3DM论坛暗黑3',
+    description: '3DM论坛暗黑破坏神3专区，提供资讯和玩家讨论',
+    url: 'https://bbs.3dmgame.com/forum-diablo3-350.html',
+    category: 'guide',
+    gameVersion: 'D3',
+    tags: ['中文论坛', '资讯', '玩家讨论'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+
   // ==================== Diablo 3 工具 ====================
   {
     id: 'd3planner',
@@ -110,7 +381,7 @@ export const resources = [
     tags: ['伤害模拟', 'Build规划', '英文'],
     icon: 'https://www.d3planner.com/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-07'
+    updateTime: '2026-05-10'
   },
   {
     id: 'd3-loot',
@@ -122,8 +393,70 @@ export const resources = [
     tags: ['掉落查询', '装备掉落', '英文'],
     icon: '',
     isHot: false,
-    updateTime: '2026-05-07'
+    updateTime: '2026-05-10'
   },
+  // --- 新增 D3 工具 ---
+  {
+    id: 'd3-paragon-calculator-cndb',
+    name: '暗黑3巅峰计算器',
+    description: '计算赛季与非赛巅峰等级合并，支持1-20000级数据预计算',
+    url: 'https://www.cndb.net/d3tools',
+    category: 'tool',
+    gameVersion: 'D3',
+    tags: ['巅峰计算器', '赛季转换', '等级计算'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'd3-comprehensive-tools',
+    name: '暗黑3综合工具',
+    description: '提供非赛与赛季巅峰等级合并计算等功能',
+    url: 'https://d3.suoyl.com/',
+    category: 'tool',
+    gameVersion: 'D3',
+    tags: ['巅峰计算', '综合工具', '赛季转换'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'blizzard-d3-leaderboard',
+    name: '暴雪官方天梯排名',
+    description: '暗黑破坏神3官方天梯排名查询系统',
+    url: 'https://kr.diablo3.blizzard.com/zh-tw/rankings/era/16/rift-barbarian',
+    category: 'tool',
+    gameVersion: 'D3',
+    tags: ['天梯查询', '官方', '排名'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'd3-bis-equipment',
+    name: 'D3 BIS装备模拟器',
+    description: '暗黑破坏神3 BIS装备地址预览和模拟',
+    url: 'https://www.gamehodgepodge.com/archives/9743',
+    category: 'tool',
+    gameVersion: 'D3',
+    tags: ['装备模拟', 'BIS', '属性计算'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'd3-damage-simulator',
+    name: 'D3输出模拟器',
+    description: '支持装备、宝石、附魔、技能等综合输出的网页版模拟器',
+    url: 'https://ngabbs.com/read.php?tid=41547039',
+    category: 'tool',
+    gameVersion: 'D3',
+    tags: ['输出模拟', '伤害计算', '装备模拟'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+
   // ==================== Diablo 2 攻略 ====================
   {
     id: 'maxroll-d2',
@@ -135,7 +468,7 @@ export const resources = [
     tags: ['Build推荐', '开荒攻略', '英文'],
     icon: 'https://maxroll.gg/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-07'
+    updateTime: '2026-05-10'
   },
   {
     id: 'icy-veins-d2',
@@ -147,7 +480,7 @@ export const resources = [
     tags: ['Build推荐', '技能详解', '英文'],
     icon: 'https://www.icy-veins.com/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-07'
+    updateTime: '2026-05-10'
   },
   {
     id: 'd2-jsp',
@@ -159,45 +492,15 @@ export const resources = [
     tags: ['交易', '物品价格', '英文'],
     icon: '',
     isHot: false,
-    updateTime: '2026-05-07'
+    updateTime: '2026-05-10'
   },
-  // ==================== Diablo 2 工具 ====================
+  // --- 新增 D2 攻略 ---
   {
-    id: 'd2-planner',
-    name: 'D2 Planner',
-    description: 'D2Build模拟器，规划技能、装备',
-    url: 'https://d2planner.com',
-    category: 'tool',
-    gameVersion: 'D2',
-    tags: ['Build模拟', '技能规划', '英文'],
-    icon: '',
-    isHot: false,
-    updateTime: '2026-05-07'
-  },
-  {
-    id: 'd2-drop-calc',
-    name: 'D2 Drop Calculator',
-    description: 'D2掉落计算器，计算物品掉落概率',
-    url: 'https://dropcalc.silospen.com/',
-    category: 'tool',
-    gameVersion: 'D2',
-    tags: ['掉落计算', '概率计算', '英文'],
-    icon: '',
-    isHot: false,
-    updateTime: '2026-05-07'
-  },
-  // ==================== 中文资源 (P1) ====================
-  {
-    id: 'kain-zh',
-    name: '凯恩之角',
-    description: '中文暗黑社区，攻略、新闻、讨论',
-    url: 'https://bbs.d.163.com/',
-    category: 'guide',
-    gameVersion: 'ALL',
+    id: 'kain-zh-all',
     tags: ['中文社区', '攻略', '新闻'],
     icon: '',
     isHot: true,
-    updateTime: '2026-05-07'
+    updateTime: '2026-05-10'
   },
   {
     id: 'nga-diablo',
@@ -209,6 +512,345 @@ export const resources = [
     tags: ['中文社区', '攻略分享', '讨论'],
     icon: '',
     isHot: true,
-    updateTime: '2026-05-07'
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'ali213-d2-guide',
+    name: '游侠网暗黑破坏神2攻略专区',
+    description: '提供暗黑破坏神2全流程攻略、图文攻略、视频攻略、心得体会和游戏技巧',
+    url: 'https://gl.ali213.net/z/153/',
+    category: 'guide',
+    gameVersion: 'D2',
+    tags: ['攻略', '中文', '全流程'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'gamersky-d2r-guide',
+    name: '游民星空暗黑2重制版攻略',
+    description: '暗黑2重制版全职业加点、装备选择指南、地图详解等攻略专题',
+    url: 'https://www.gamersky.com/z/dresurrected/handbook/',
+    category: 'guide',
+    gameVersion: 'D2',
+    tags: ['攻略', '中文', '重制版'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'kainiao-d2',
+    name: '凯恩之角',
+    description: '国内最大的暗黑破坏神系列玩家社区，提供D2/D2R新闻、攻略和讨论',
+    url: 'https://d.163.com/',
+    category: 'guide',
+    gameVersion: 'D2',
+    tags: ['社区', '中文', '新闻'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'kainiao-wiki',
+    name: '凯恩之角百科',
+    description: '暗黑破坏神2物品数据库，包含暗金装备、符文之语、套装等详细资料',
+    url: 'http://wiki.d.163.com/',
+    category: 'tool',
+    gameVersion: 'D2',
+    tags: ['数据库', '中文', '百科'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'kainiao-forum',
+    name: '凯恩之角论坛',
+    description: '暗黑破坏神玩家专业论坛，讨论D2/D2R/D3/D4相关内容',
+    url: 'https://bbs.d.163.com/',
+    category: 'guide',
+    gameVersion: 'D2',
+    tags: ['论坛', '中文', '社区'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'diablo2-china',
+    name: '暗黑破坏神2中文网',
+    description: '暗黑2装备库专题站，含攻略、存档、补丁、修改器等资料',
+    url: 'http://diablo2.diablo2.com.cn/',
+    category: 'guide',
+    gameVersion: 'D2',
+    tags: ['装备库', '中文', '资料'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+
+  // ==================== Diablo 2 工具 ====================
+  {
+    id: 'd2-planner',
+    name: 'D2 Planner',
+    description: 'D2Build模拟器，规划技能、装备',
+    url: 'https://d2planner.com',
+    category: 'tool',
+    gameVersion: 'D2',
+    tags: ['Build模拟', '技能规划', '英文'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'd2-drop-calc',
+    name: 'D2 Drop Calculator',
+    description: 'D2掉落计算器，计算物品掉落概率',
+    url: 'https://dropcalc.silospen.com/',
+    category: 'tool',
+    gameVersion: 'D2',
+    tags: ['掉落计算', '概率计算', '英文'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  // --- 新增 D2 工具 ---
+  {
+    id: 'd2r-world',
+    name: 'D2R World',
+    description: '暗黑破坏神2重制版游戏物品数据库快速查询工具',
+    url: 'https://d2r.world/zh-TW',
+    category: 'tool',
+    gameVersion: 'D2',
+    tags: ['数据库', '中文', '物品查询'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'caimogu-runeword',
+    name: '踩蘑菇符文之语模拟器',
+    description: '在线符文之语模拟工具，可查询符文顺序、底材要求和属性效果',
+    url: 'https://www.caimogu.cc/d2r/tools/runeword.html',
+    category: 'tool',
+    gameVersion: 'D2',
+    tags: ['符文之语', '中文', '模拟器'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'diablofans-db',
+    name: 'DiabloFans数据库',
+    description: '暗黑2重制版数据库，提供暗金装备、套装、符文之语等查询',
+    url: 'http://db.diablofans.com.cn/',
+    category: 'tool',
+    gameVersion: 'D2',
+    tags: ['数据库', '中文', '装备查询'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'd2runewizard-planner',
+    name: 'D2Runewizard Build Planner',
+    description: 'Diablo 2 Resurrected角色Build规划工具，可配置装备、技能、雇佣兵等',
+    url: 'https://d2runewizard.com/build-planner',
+    category: 'tool',
+    gameVersion: 'D2',
+    tags: ['Build规划', '技能模拟', '装备模拟'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'd2runewizard-rw-calc',
+    name: 'D2Runewizard符文之语计算器',
+    description: '根据拥有的符文计算可制作的符文之语，支持筛选底材类型和孔数',
+    url: 'https://d2runewizard.com/runeword-calculator',
+    category: 'tool',
+    gameVersion: 'D2',
+    tags: ['符文之语', '计算器', '工具'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'd2-item-generator',
+    name: 'Diablo 2 Item Generator',
+    description: 'Diablo 2物品生成器，可创建并分享自定义装备',
+    url: 'https://www.diablo-2.net/item-generator/',
+    category: 'tool',
+    gameVersion: 'D2',
+    tags: ['物品生成', '工具', '自定义'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'd2r-tools',
+    name: 'D2R Tools',
+    description: 'Diablo 2 Resurrected免费工具集：攻击速度断点、经验率、物品生成等',
+    url: 'https://d2r-tools.com/',
+    category: 'tool',
+    gameVersion: 'D2',
+    tags: ['工具集', '断点计算', '经验计算'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'lootcube',
+    name: 'LootCube',
+    description: 'D2R符文之语数据库、暗金装备百科、刷装区域指南、断点计算器和掉落过滤器',
+    url: 'https://lootcube.net/en',
+    category: 'tool',
+    gameVersion: 'D2',
+    tags: ['数据库', '百科', '刷装指南'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'lootcube-hero-editor',
+    name: 'LootCube Hero Editor',
+    description: 'D2R角色规划器和存档编辑器，支持一键加载Build预设，自定义属性、技能、装备',
+    url: 'https://lootcube.net/en/tools/hero-editor',
+    category: 'tool',
+    gameVersion: 'D2',
+    tags: ['角色编辑器', 'Build规划', '存档编辑'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'warcrafttavern-skill',
+    name: 'Warcraft Tavern Skill Planner',
+    description: 'Diablo 2技能规划器，包含每个职业的交互式技能树，显示所需等级和协同技能',
+    url: 'https://www.warcrafttavern.com/d2/skill-planner/',
+    category: 'tool',
+    gameVersion: 'D2',
+    tags: ['技能规划', '技能树', '工具'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'pd2-planner',
+    name: 'PD2 Character Planner',
+    description: 'Project Diablo 2角色规划工具，支持词缀调整和属性优化',
+    url: 'https://pd2planner.net/',
+    category: 'tool',
+    gameVersion: 'D2',
+    tags: ['PD2', '角色规划', '词缀'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'pd2-tools-builds',
+    name: 'PD2 Tools Builds',
+    description: 'Project Diablo 2天梯前1000名角色Build数据分析，探索顶级Build和元游戏',
+    url: 'https://pd2.tools/builds',
+    category: 'tool',
+    gameVersion: 'D2',
+    tags: ['PD2', '天梯', 'Build分析'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'd2soj-ladder',
+    name: 'D2 SoJ Ladder',
+    description: '暗黑破坏神2天梯排名查询工具',
+    url: 'https://d2soj.com/html/ladder.php',
+    category: 'tool',
+    gameVersion: 'D2',
+    tags: ['天梯', '排名', '查询'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'diablobytes-rw-sim',
+    name: 'DiabloBytes符文之语模拟器',
+    description: '选择符文之语和底材，通过滑块调整可变属性，实时查看最终防御、伤害和所有属性',
+    url: 'https://diablobytes.com/tools/runeword-simulator/',
+    category: 'tool',
+    gameVersion: 'D2',
+    tags: ['符文之语', '模拟器', '属性计算'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'waypoint-drop',
+    name: 'WayPoint掉落计算器',
+    description: '暗黑破坏神2重制版物品掉落率计算器，按怪物搜索掉落概率',
+    url: 'https://www.waypoint.page/zh-CN/drop',
+    category: 'tool',
+    gameVersion: 'D2',
+    tags: ['掉落计算', '中文', '概率'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'd2-trade-terror-zones',
+    name: 'D2贸易平台恐惧区域查询',
+    description: '查询暗黑破坏神2恐惧区域（Terror Zones）的怪物等级和掉落信息',
+    url: 'https://www.d2-trade.com.cn/query/terror-zones',
+    category: 'tool',
+    gameVersion: 'D2',
+    tags: ['恐惧区域', '中文', '查询'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'nga-d2-forum',
+    name: 'NGA暗黑2重制版板块',
+    description: 'NGA玩家社区暗黑破坏神2重制版讨论区，国内最专业的游戏攻略讨论社区之一',
+    url: 'https://ngabbs.com/thread.php?fid=769',
+    category: 'guide',
+    gameVersion: 'D2',
+    tags: ['论坛', '中文', '社区'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'baidu-tieba-d2',
+    name: '百度贴吧暗黑破坏神2吧',
+    description: '百度暗黑破坏神2贴吧，涵盖D1/D2/D3/D4讨论和资源共享',
+    url: 'https://tieba.baidu.com/f?kw=暗黑破坏神2',
+    category: 'guide',
+    gameVersion: 'D2',
+    tags: ['贴吧', '中文', '社区'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: '17173-d2r',
+    name: '17173暗黑2专区',
+    description: '提供暗黑破坏神2重制版新闻、攻略、职业排名和数据分析',
+    url: 'https://news.17173.com/z/ah2/',
+    category: 'guide',
+    gameVersion: 'D2',
+    tags: ['新闻', '中文', '攻略'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-10'
+  },
+  {
+    id: 'd2-blizzard-cn',
+    name: '暗黑2重制版官网（中国）',
+    description: '暴雪中国暗黑破坏神2重制版官方网站，天梯赛季公告和新闻',
+    url: 'https://d2.blizzard.cn/',
+    category: 'guide',
+    gameVersion: 'D2',
+    tags: ['官网', '中文', '新闻'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-10'
   }
 ];
