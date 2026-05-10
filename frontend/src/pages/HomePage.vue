@@ -149,10 +149,47 @@
       <div class="diablo-section-divider-diamond"></div>
     </div>
 
+    <!-- 游戏工具 -->
+    <section class="mb-6">
+      <div class="diablo-section-header">
+        <span class="diablo-section-num">III</span>
+        <h3 class="diablo-title uppercase tracking-wider">游戏工具</h3>
+        <router-link
+          to="/tools"
+          class="text-xs no-underline transition-opacity hover:opacity-80 ml-auto mr-0"
+          style="color: var(--brand-gold)"
+        >
+          查看全部 &rarr;
+        </router-link>
+      </div>
+      <div class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-2 sm:gap-3">
+        <ResourceCard
+          v-for="(resource, idx) in filteredTools"
+          :key="resource.id"
+          :resource="resource"
+          class="diablo-stagger-item"
+          :style="{ animationDelay: (idx * 60) + 'ms' }"
+        />
+      </div>
+      <!-- 无工具提示 -->
+      <div
+        v-if="filteredTools.length === 0"
+        class="text-center py-6"
+        style="color: var(--ink-stone); font: var(--body-sm)"
+      >
+        暂无该版本的游戏工具
+      </div>
+    </section>
+
+    <!-- 装饰分隔 -->
+    <div class="diablo-section-divider">
+      <div class="diablo-section-divider-diamond"></div>
+    </div>
+
     <!-- 热门资源推荐 -->
     <section>
       <div class="diablo-section-header">
-        <span class="diablo-section-num">III</span>
+        <span class="diablo-section-num">IV</span>
         <h3 class="diablo-title uppercase tracking-wider">热门资源</h3>
       </div>
       <div class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-2 sm:gap-3">
@@ -270,6 +307,11 @@ var categoryLabel = function (category) {
   };
   return labels[category] || category;
 };
+
+var filteredTools = computed(function () {
+  var tools = resources.filter(function (r) { return r.category === 'tool' });
+  return filterByGameVersion(tools, currentVersion.value);
+});
 
 var filteredHotResources = computed(function () {
   var hot = resources.filter(function (r) { return r.isHot });
