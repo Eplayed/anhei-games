@@ -159,22 +159,24 @@
             查看全部 &rarr;
           </router-link>
         </div>
-        <div class="grid grid-cols-1 xs:grid-cols-2 gap-2 sm:gap-3">
-          <ResourceCard
-            v-for="(resource, idx) in filteredTools"
-            :key="resource.id"
-            :resource="resource"
-            class="diablo-stagger-item"
-            :style="{ animationDelay: (idx * 60) + 'ms' }"
-          />
-        </div>
-        <!-- 无工具提示 -->
-        <div
-          v-if="filteredTools.length === 0"
-          class="text-center py-6"
-          style="color: var(--ink-stone); font: var(--body-sm)"
-        >
-          暂无该版本的游戏工具
+        <div class="diablo-card-glass p-3 max-h-[400px] overflow-y-auto">
+          <div class="grid grid-cols-1 xs:grid-cols-2 gap-2 sm:gap-3">
+            <ResourceCard
+              v-for="(resource, idx) in filteredTools"
+              :key="resource.id"
+              :resource="resource"
+              class="diablo-stagger-item"
+              :style="{ animationDelay: (idx * 60) + 'ms' }"
+            />
+          </div>
+          <!-- 无工具提示 -->
+          <div
+            v-if="filteredTools.length === 0"
+            class="text-center py-4"
+            style="color: var(--ink-stone); font: var(--body-sm)"
+          >
+            暂无该版本的游戏工具
+          </div>
         </div>
       </section>
 
@@ -184,22 +186,24 @@
           <span class="diablo-section-num">IV</span>
           <h3 class="diablo-title uppercase tracking-wider">热门资源</h3>
         </div>
-        <div class="grid grid-cols-1 xs:grid-cols-2 gap-2 sm:gap-3">
-          <ResourceCard
-            v-for="(resource, idx) in filteredHotResources"
-            :key="resource.id"
-            :resource="resource"
-            class="diablo-stagger-item"
-            :style="{ animationDelay: (idx * 60) + 'ms' }"
-          />
-        </div>
-        <!-- 无资源提示 -->
-        <div
-          v-if="filteredHotResources.length === 0"
-          class="text-center py-6"
-          style="color: var(--ink-stone); font: var(--body-sm)"
-        >
-          暂无该版本的热门资源
+        <div class="diablo-card-glass p-3 max-h-[400px] overflow-y-auto">
+          <div class="grid grid-cols-1 xs:grid-cols-2 gap-2 sm:gap-3">
+            <ResourceCard
+              v-for="(resource, idx) in filteredHotResources"
+              :key="resource.id"
+              :resource="resource"
+              class="diablo-stagger-item"
+              :style="{ animationDelay: (idx * 60) + 'ms' }"
+            />
+          </div>
+          <!-- 无资源提示 -->
+          <div
+            v-if="filteredHotResources.length === 0"
+            class="text-center py-4"
+            style="color: var(--ink-stone); font: var(--body-sm)"
+          >
+            暂无该版本的热门资源
+          </div>
         </div>
       </section>
     </div>
