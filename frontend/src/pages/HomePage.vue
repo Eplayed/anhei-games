@@ -104,7 +104,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
 
         <!-- 左栏 2/3：游戏工具 + 热门资源 -->
-        <div class="lg:col-span-2 flex flex-col gap-5 min-w-0">
+        <div class="lg:col-span-2 flex flex-col gap-4 min-w-0">
 
           <!-- 游戏工具 -->
           <section>
@@ -119,21 +119,43 @@
                 查看全部 &rarr;
               </router-link>
             </div>
-            <div class="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
-              <ResourceCard
-                v-for="(resource, idx) in filteredTools.slice(0, 6)"
+            <div class="overflow-y-auto" style="max-height: 200px;">
+              <a
+                v-for="resource in filteredTools"
                 :key="resource.id"
-                :resource="resource"
-                class="diablo-stagger-item"
-                :style="{ animationDelay: (idx * 60) + 'ms' }"
-              />
-            </div>
-            <div
-              v-if="filteredTools.length === 0"
-              class="text-center py-6"
-              style="color: var(--ink-stone); font: var(--body-sm)"
-            >
-              暂无该版本的游戏工具
+                :href="resource.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="diablo-mini-card no-underline group"
+              >
+                <img
+                  v-if="resource.icon"
+                  :src="resource.icon"
+                  :alt="resource.name"
+                  class="w-5 h-5 rounded-sm flex-shrink-0"
+                  style="border: 1px solid var(--hairline)"
+                />
+                <span
+                  v-else
+                  class="w-5 h-5 rounded-sm flex items-center justify-center text-[10px] font-bold flex-shrink-0"
+                  style="background: var(--brand-gold-dim); color: var(--ink-on-gold)"
+                >{{ resource.name.charAt(0) }}</span>
+                <span class="text-sm truncate flex-1" style="color: var(--ink-heading)">{{ resource.name }}</span>
+                <span
+                  v-for="tag in resource.tags.slice(0, 2)"
+                  :key="tag"
+                  class="diablo-tag text-[10px] hidden sm:inline-flex"
+                >{{ tag }}</span>
+                <span class="diablo-tag text-[10px] hidden lg:inline-flex" style="border-color: var(--ink-stone); color: var(--ink-mute)">{{ resource.gameVersion }}</span>
+                <svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:translate-x-0.5" style="color: var(--ink-stone)" viewBox="0 0 16 16" fill="currentColor"><path d="M6 3l5 5-5 5z"/></svg>
+              </a>
+              <div
+                v-if="filteredTools.length === 0"
+                class="text-center py-4"
+                style="color: var(--ink-stone); font: var(--body-sm)"
+              >
+                暂无该版本的游戏工具
+              </div>
             </div>
           </section>
 
@@ -143,21 +165,46 @@
               <span class="diablo-section-num">III</span>
               <h3 class="diablo-title uppercase tracking-wider">热门资源</h3>
             </div>
-            <div class="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
-              <ResourceCard
-                v-for="(resource, idx) in filteredHotResources.slice(0, 6)"
+            <div class="overflow-y-auto" style="max-height: 200px;">
+              <a
+                v-for="resource in filteredHotResources"
                 :key="resource.id"
-                :resource="resource"
-                class="diablo-stagger-item"
-                :style="{ animationDelay: (idx * 60) + 'ms' }"
-              />
-            </div>
-            <div
-              v-if="filteredHotResources.length === 0"
-              class="text-center py-6"
-              style="color: var(--ink-stone); font: var(--body-sm)"
-            >
-              暂无该版本的热门资源
+                :href="resource.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="diablo-mini-card no-underline group"
+              >
+                <img
+                  v-if="resource.icon"
+                  :src="resource.icon"
+                  :alt="resource.name"
+                  class="w-5 h-5 rounded-sm flex-shrink-0"
+                  style="border: 1px solid var(--hairline)"
+                />
+                <span
+                  v-else
+                  class="w-5 h-5 rounded-sm flex items-center justify-center text-[10px] font-bold flex-shrink-0"
+                  style="background: var(--brand-gold-dim); color: var(--ink-on-gold)"
+                >{{ resource.name.charAt(0) }}</span>
+                <span
+                  v-if="resource.isHot"
+                  class="diablo-badge-hot text-[9px]"
+                >HOT</span>
+                <span class="text-sm truncate flex-1" style="color: var(--ink-heading)">{{ resource.name }}</span>
+                <span
+                  v-for="tag in resource.tags.slice(0, 2)"
+                  :key="tag"
+                  class="diablo-tag text-[10px] hidden sm:inline-flex"
+                >{{ tag }}</span>
+                <svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:translate-x-0.5" style="color: var(--ink-stone)" viewBox="0 0 16 16" fill="currentColor"><path d="M6 3l5 5-5 5z"/></svg>
+              </a>
+              <div
+                v-if="filteredHotResources.length === 0"
+                class="text-center py-4"
+                style="color: var(--ink-stone); font: var(--body-sm)"
+              >
+                暂无该版本的热门资源
+              </div>
             </div>
           </section>
         </div>
@@ -214,7 +261,6 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue';
 import SearchBar from '../components/SearchBar.vue';
-import ResourceCard from '../components/ResourceCard.vue';
 import { useVersion } from '../composables/useVersion.js';
 import {
   getWorldBoss, getLegion, getHelltide,
@@ -406,7 +452,19 @@ var filteredHotResources = computed(function () {
   50% { transform: translateX(-50%) translateY(8px); }
 }
 
-/* ====== 主内容区域 ====== */
+/* ====== 首页紧凑小卡片行 ====== */
+.diablo-mini-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background var(--ease-base);
+}
+.diablo-mini-card:hover {
+  background: var(--fill-raised);
+}
+
 .diablo-main-content {
   max-width: 1200px;
   margin: 0 auto;
