@@ -99,108 +99,110 @@
       <div class="diablo-section-divider-diamond"></div>
     </div>
 
-    <!-- 蓝贴速递（左） + 游戏工具 & 热门资源（右）：双栏布局 -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 mb-6">
+    <!-- 游戏工具 + 热门资源（左2/3）+ 蓝贴速递（右1/3）：磨砂双栏 -->
+    <div class="diablo-card-glass p-4 sm:p-5 mb-6">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
 
-      <!-- 左栏：蓝贴速递（4/12） -->
-      <section class="lg:col-span-4 min-w-0">
-        <div class="diablo-section-header">
-          <span class="diablo-section-num">II</span>
-          <h3 class="diablo-title uppercase tracking-wider">蓝贴速递</h3>
-          <router-link
-            to="/news"
-            class="text-xs no-underline transition-opacity hover:opacity-80 ml-auto mr-0"
-            style="color: var(--brand-gold)"
-          >
-            查看全部 &rarr;
-          </router-link>
+        <!-- 左栏 2/3：游戏工具 + 热门资源 -->
+        <div class="lg:col-span-2 flex flex-col gap-5 min-w-0">
+
+          <!-- 游戏工具 -->
+          <section>
+            <div class="diablo-section-header">
+              <span class="diablo-section-num">II</span>
+              <h3 class="diablo-title uppercase tracking-wider">游戏工具</h3>
+              <router-link
+                to="/tools"
+                class="text-xs no-underline transition-opacity hover:opacity-80 ml-auto mr-0"
+                style="color: var(--brand-gold)"
+              >
+                查看全部 &rarr;
+              </router-link>
+            </div>
+            <div class="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
+              <ResourceCard
+                v-for="(resource, idx) in filteredTools.slice(0, 6)"
+                :key="resource.id"
+                :resource="resource"
+                class="diablo-stagger-item"
+                :style="{ animationDelay: (idx * 60) + 'ms' }"
+              />
+            </div>
+            <div
+              v-if="filteredTools.length === 0"
+              class="text-center py-6"
+              style="color: var(--ink-stone); font: var(--body-sm)"
+            >
+              暂无该版本的游戏工具
+            </div>
+          </section>
+
+          <!-- 热门资源 -->
+          <section>
+            <div class="diablo-section-header">
+              <span class="diablo-section-num">III</span>
+              <h3 class="diablo-title uppercase tracking-wider">热门资源</h3>
+            </div>
+            <div class="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
+              <ResourceCard
+                v-for="(resource, idx) in filteredHotResources.slice(0, 6)"
+                :key="resource.id"
+                :resource="resource"
+                class="diablo-stagger-item"
+                :style="{ animationDelay: (idx * 60) + 'ms' }"
+              />
+            </div>
+            <div
+              v-if="filteredHotResources.length === 0"
+              class="text-center py-6"
+              style="color: var(--ink-stone); font: var(--body-sm)"
+            >
+              暂无该版本的热门资源
+            </div>
+          </section>
         </div>
-        <div class="diablo-card-glass p-3 space-y-1.5 overflow-y-auto" style="max-height: 480px;">
-          <a
-            v-for="post in filteredBluePosts"
-            :key="post.id"
-            :href="post.url"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="diablo-post-item no-underline"
-          >
-            <span
-              class="diablo-tag flex-shrink-0"
-              :style="versionTagStyle(post.gameVersion)"
-            >{{ versionLabel(post.gameVersion) }}</span>
-            <span
-              v-if="post.category"
-              class="diablo-tag flex-shrink-0 text-[10px]"
-              style="border-color: var(--ink-stone); color: var(--ink-mute)"
-            >{{ categoryLabel(post.category) }}</span>
-            <span class="text-sm truncate flex-1" style="color: var(--ink-body)">{{ post.title }}</span>
-            <span class="flex-shrink-0 hidden sm:inline" style="font: var(--micro); color: var(--ink-stone)">{{ post.publishTime }}</span>
-          </a>
-          <div
-            v-if="filteredBluePosts.length === 0"
-            class="text-center py-4"
-            style="color: var(--ink-stone); font: var(--body-sm)"
-          >
-            暂无该版本的蓝贴资讯
-          </div>
-        </div>
-      </section>
 
-      <!-- 右栏：游戏工具 + 热门资源（8/12，上下叠放） -->
-      <div class="lg:col-span-8 flex flex-col gap-4 min-w-0">
-
-        <!-- 游戏工具 -->
-        <section>
+        <!-- 右栏 1/3：蓝贴速递 -->
+        <section class="lg:col-span-1 min-w-0">
           <div class="diablo-section-header">
-            <span class="diablo-section-num">III</span>
-            <h3 class="diablo-title uppercase tracking-wider">游戏工具</h3>
+            <span class="diablo-section-num">IV</span>
+            <h3 class="diablo-title uppercase tracking-wider">蓝贴速递</h3>
             <router-link
-              to="/tools"
+              to="/news"
               class="text-xs no-underline transition-opacity hover:opacity-80 ml-auto mr-0"
               style="color: var(--brand-gold)"
             >
-              查看全部 &rarr;
+              更多 &rarr;
             </router-link>
           </div>
-          <div class="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-3">
-            <ResourceCard
-              v-for="(resource, idx) in filteredTools.slice(0, 8)"
-              :key="resource.id"
-              :resource="resource"
-              class="diablo-stagger-item"
-              :style="{ animationDelay: (idx * 60) + 'ms' }"
-            />
-          </div>
-          <div
-            v-if="filteredTools.length === 0"
-            class="text-center py-6"
-            style="color: var(--ink-stone); font: var(--body-sm)"
-          >
-            暂无该版本的游戏工具
-          </div>
-        </section>
-
-        <!-- 热门资源 -->
-        <section>
-          <div class="diablo-section-header">
-            <span class="diablo-section-num">IV</span>
-            <h3 class="diablo-title uppercase tracking-wider">热门资源</h3>
-          </div>
-          <div class="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-3">
-            <ResourceCard
-              v-for="(resource, idx) in filteredHotResources.slice(0, 8)"
-              :key="resource.id"
-              :resource="resource"
-              class="diablo-stagger-item"
-              :style="{ animationDelay: (idx * 60) + 'ms' }"
-            />
-          </div>
-          <div
-            v-if="filteredHotResources.length === 0"
-            class="text-center py-6"
-            style="color: var(--ink-stone); font: var(--body-sm)"
-          >
-            暂无该版本的热门资源
+          <div class="space-y-1.5 overflow-y-auto" style="max-height: 420px;">
+            <a
+              v-for="post in filteredBluePosts"
+              :key="post.id"
+              :href="post.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="diablo-post-item no-underline"
+            >
+              <span
+                class="diablo-tag flex-shrink-0"
+                :style="versionTagStyle(post.gameVersion)"
+              >{{ versionLabel(post.gameVersion) }}</span>
+              <span
+                v-if="post.category"
+                class="diablo-tag flex-shrink-0 text-[10px]"
+                style="border-color: var(--ink-stone); color: var(--ink-mute)"
+              >{{ categoryLabel(post.category) }}</span>
+              <span class="text-sm truncate flex-1" style="color: var(--ink-body)">{{ post.title }}</span>
+              <span class="flex-shrink-0 hidden sm:inline" style="font: var(--micro); color: var(--ink-stone)">{{ post.publishTime }}</span>
+            </a>
+            <div
+              v-if="filteredBluePosts.length === 0"
+              class="text-center py-4"
+              style="color: var(--ink-stone); font: var(--body-sm)"
+            >
+              暂无该版本的蓝贴资讯
+            </div>
           </div>
         </section>
       </div>
