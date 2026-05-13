@@ -5,7 +5,7 @@
       <div class="diablo-hero-content">
         <!-- 纪念碑式大标题 -->
         <h2 class="diablo-hero-title">
-          暗黑破坏神<br class="sm:hidden" />玩家导航
+          暗黑导航
         </h2>
         <!-- 版本副标题 -->
         <p class="diablo-hero-sub">

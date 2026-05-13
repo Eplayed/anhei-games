@@ -30,7 +30,7 @@
           >GitHub</a>
         </div>
         <p style="font: var(--micro); color: var(--ink-ash)">
-          暗黑破坏神为暴雪娱乐注册商标
+          暗黑为暴雪娱乐注册商标
         </p>
       </div>
     </div>

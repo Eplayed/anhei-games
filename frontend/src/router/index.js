@@ -12,31 +12,31 @@ const routes = [
     path: '/',
     name: 'Home',
     component: HomePage,
-    meta: { title: '首页 - 暗黑破坏神玩家导航' }
+    meta: { title: '首页' }
   },
   {
     path: '/guides',
     name: 'Guides',
     component: GuidesPage,
-    meta: { title: '攻略社区 - 暗黑破坏神玩家导航' }
+    meta: { title: '攻略社区' }
   },
   {
     path: '/tools',
     name: 'Tools',
     component: ToolsPage,
-    meta: { title: '工具集合 - 暗黑破坏神玩家导航' }
+    meta: { title: '工具集合' }
   },
   {
     path: '/news',
     name: 'News',
     component: NewsPage,
-    meta: { title: '新闻资讯 - 暗黑破坏神玩家导航' }
+    meta: { title: '新闻资讯' }
   },
   {
     path: '/favorites',
     name: 'Favorites',
     component: FavoritesPage,
-    meta: { title: '我的收藏 - 暗黑破坏神玩家导航' }
+    meta: { title: '我的收藏' }
   }
 ];
 
