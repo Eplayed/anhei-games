@@ -123,10 +123,11 @@
               <a
                 v-for="resource in filteredTools"
                 :key="resource.id"
-                :href="resource.url"
-                target="_blank"
-                rel="noopener noreferrer"
+                :href="resource.isDead ? undefined : resource.url"
+                :target="resource.isDead ? undefined : '_blank'"
+                :rel="resource.isDead ? undefined : 'noopener noreferrer'"
                 class="diablo-mini-card no-underline group"
+                :class="{ 'opacity-40 pointer-events-none': resource.isDead }"
               >
                 <img
                   v-if="resource.icon"
@@ -169,10 +170,11 @@
               <a
                 v-for="resource in filteredHotResources"
                 :key="resource.id"
-                :href="resource.url"
-                target="_blank"
-                rel="noopener noreferrer"
+                :href="resource.isDead ? undefined : resource.url"
+                :target="resource.isDead ? undefined : '_blank'"
+                :rel="resource.isDead ? undefined : 'noopener noreferrer'"
                 class="diablo-mini-card no-underline group"
+                :class="{ 'opacity-40 pointer-events-none': resource.isDead }"
               >
                 <img
                   v-if="resource.icon"

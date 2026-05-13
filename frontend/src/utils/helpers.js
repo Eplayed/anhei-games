@@ -67,8 +67,8 @@ export function filterResources(resources, query) {
  * @returns {Array} - 过滤后的资源列表
  */
 export function filterByGameVersion(resources, version) {
-  if (!version || version === 'ALL') return resources;
-  return resources.filter(resource => 
-    resource.gameVersion === version || resource.gameVersion === 'ALL'
-  );
+  if (!version || version === 'ALL') return resources.filter(function (r) { return !r.isDead; });
+  return resources.filter(function (r) {
+    return !r.isDead && (r.gameVersion === version || r.gameVersion === 'ALL');
+  });
 }

@@ -1,0 +1,49 @@
+name: Sync Resources
+
+on:
+  schedule:
+    # 每月1号北京时间 10:00 (02:00 UTC)
+    - cron: '0 2 1 * *'
+  workflow_dispatch: # 支持手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: cd scripts && npm install
+
+      - name: Run resources health check
+        run: node scripts/resources-fetcher.mjs
+
+      - name: Check for changes
+        id: check
+        run: |
+          git diff --quiet frontend/src/data/resources.js || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add frontend/src/data/resources.js
+          git commit -m "chore: auto-sync resources health check [skip ci]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: No changes
+        if: steps.check.outputs.changed != 'true'
+        run: echo "No resource changes, skipping commit."

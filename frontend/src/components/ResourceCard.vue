@@ -1,5 +1,5 @@
 <template>
-  <div class="diablo-card diablo-card-hover transition-all duration-200">
+  <div class="diablo-card diablo-card-hover transition-all duration-200" :class="{ 'opacity-40': resource.isDead }">
     <!-- 资源图标 + 名称 + 收藏 -->
     <div class="flex items-start gap-2 sm:gap-3 mb-2 sm:mb-3">
       <img
@@ -74,13 +74,16 @@
       </span>
 
       <a
-        :href="resource.url"
-        target="_blank"
-        rel="noopener noreferrer"
+        :href="resource.isDead ? undefined : resource.url"
+        :target="resource.isDead ? undefined : '_blank'"
+        :rel="resource.isDead ? undefined : 'noopener noreferrer'"
         class="diablo-btn text-[10px] sm:text-xs px-2 sm:px-3 py-0.5 sm:py-1 no-underline flex-shrink-0"
+        :class="{ 'pointer-events-none': resource.isDead }"
       >
-        <span class="hidden sm:inline">访问 →</span>
-        <span class="sm:hidden">→</span>
+        <span v-if="resource.isDead" class="hidden sm:inline">已失效</span>
+        <span v-else class="hidden sm:inline">访问 →</span>
+        <span v-if="resource.isDead" class="sm:hidden">✕</span>
+        <span v-else class="sm:hidden">→</span>
       </a>
     </div>
   </div>
