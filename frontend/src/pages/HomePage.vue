@@ -279,8 +279,8 @@ var scrollToContent = function () {
 };
 
 // ===== 赛季倒计时（D4 专属） =====
-var seasonName = ref('第5赛季');
-var seasonEndDate = ref('2026-08-01');
+var seasonName = ref('第13赛季');
+var seasonEndDate = ref('2026-07-28');
 var now = ref(Date.now());
 var timer = null;
 
