@@ -244,6 +244,102 @@ export const resources = [
     isHot: true,
     updateTime: '2026-05-10'
   },
+  {
+    id: 'd4-blizzard-cn',
+    name: '暗黑4官网（中国）',
+    description: '暴雪中国暗黑破坏神4官方网站，赛季公告、版本更新、活动资讯',
+    url: 'https://d4.blizzard.cn/',
+    category: 'guide',
+    gameVersion: 'D4',
+    tags: ['官网', '中文', '新闻', '赛季公告'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-13'
+  },
+  {
+    id: 'd4-blizzard-news-cn',
+    name: '暗黑4官网新闻',
+    description: '暴雪中国暗黑4新闻中心，蓝贴、补丁说明、活动公告',
+    url: 'https://d4.blizzard.cn/news/',
+    category: 'guide',
+    gameVersion: 'D4',
+    tags: ['官网', '中文', '蓝贴', '补丁说明'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-13'
+  },
+  {
+    id: 'bluetracker-d4',
+    name: 'BlueTracker蓝贴追踪',
+    description: '暗黑4蓝贴实时追踪，英文社区经理发帖聚合',
+    url: 'https://www.bluetracker.gg/diablo4/',
+    category: 'guide',
+    gameVersion: 'D4',
+    tags: ['蓝贴', '追踪', '英文', '社区'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-13'
+  },
+  {
+    id: 'wowhead-d4-blue',
+    name: 'Wowhead蓝贴聚合',
+    description: 'Wowhead暗黑4蓝贴中文聚合页，快速浏览官方社区动态',
+    url: 'https://www.wowhead.com/diablo-4/cn/blue-tracker',
+    category: 'guide',
+    gameVersion: 'D4',
+    tags: ['蓝贴', '中文', '聚合'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-13'
+  },
+  {
+    id: 'diablo4-gg-armory',
+    name: 'Diablo4.gg数据库',
+    description: '暗黑4综合数据库，装备属性查询、Build收藏、赛季进度追踪',
+    url: 'https://diablo4.gg/armory',
+    category: 'tool',
+    gameVersion: 'D4',
+    tags: ['数据库', '装备查询', 'Build收藏', '英文'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-13'
+  },
+  {
+    id: 'd4-blizzard-events',
+    name: '暗黑4官网活动页',
+    description: '暴雪中国暗黑4赛季活动、暗黑秘境、抽奖等限时活动入口',
+    url: 'https://d4.blizzard.cn/h5/20260428/ahmj/',
+    category: 'guide',
+    gameVersion: 'D4',
+    tags: ['官网', '中文', '活动', '赛季'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-13'
+  },
+  {
+    id: 'diabloloot-news',
+    name: 'DiabloLoot资讯站',
+    description: '暗黑系列综合资讯站，最新D4新闻、补丁和赛季动态',
+    url: 'https://diabloloot.com/news',
+    category: 'guide',
+    gameVersion: 'D4',
+    tags: ['资讯', '英文', '新闻', '补丁'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-13'
+  },
+  {
+    id: 'blizzpro-d4',
+    name: 'BlizzPro暗黑4',
+    description: '暴雪游戏资讯站暗黑4板块，提供Hotfix、补丁说明等即时更新',
+    url: 'https://blizzpro.com/',
+    category: 'guide',
+    gameVersion: 'D4',
+    tags: ['资讯', '英文', 'Hotfix'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-13'
+  },
 
   // ==================== Diablo 4 工具 ====================
   {
@@ -368,6 +464,54 @@ export const resources = [
     icon: '',
     isHot: false,
     updateTime: '2026-05-10'
+  },
+  {
+    id: 'd3-blizzard-cn',
+    name: '暗黑3官网（中国）',
+    description: '暴雪中国暗黑破坏神3官方网站，版本更新公告和活动资讯',
+    url: 'https://d3.blizzard.cn/',
+    category: 'guide',
+    gameVersion: 'D3',
+    tags: ['官网', '中文', '新闻', '公告'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-13'
+  },
+  {
+    id: 'd3-blizzard-news-cn',
+    name: '暗黑3官网新闻',
+    description: '暴雪中国暗黑3新闻中心，补丁说明、赛季公告、社区动态',
+    url: 'https://d3.blizzard.cn/news/',
+    category: 'guide',
+    gameVersion: 'D3',
+    tags: ['官网', '中文', '蓝贴', '补丁说明'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-13'
+  },
+  {
+    id: 'diablofans-cn-d3',
+    name: '暗黑3中文网数据库',
+    description: '暗黑破坏神3中文数据库，装备图鉴、技能模拟、职业攻略',
+    url: 'https://www.diablofans.com.cn/',
+    category: 'guide',
+    gameVersion: 'D3',
+    tags: ['数据库', '中文', '图鉴', '攻略'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-13'
+  },
+  {
+    id: 'reddit-diablo3',
+    name: 'Reddit r/Diablo3',
+    description: 'Reddit暗黑3社区，全球玩家讨论、Build分享、赛季进度',
+    url: 'https://www.reddit.com/r/Diablo3/',
+    category: 'guide',
+    gameVersion: 'D3',
+    tags: ['社区', '英文', 'Build分享'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-13'
   },
 
   // ==================== Diablo 3 工具 ====================
@@ -497,10 +641,15 @@ export const resources = [
   // --- 新增 D2 攻略 ---
   {
     id: 'kain-zh-all',
+    name: '凯恩之角暗黑全系列',
+    description: '暴雪官方合作中文网站，覆盖暗黑全系列资讯、攻略、论坛等全方位内容',
+    url: 'https://d.163.com/',
+    category: 'guide',
+    gameVersion: 'ALL',
     tags: ['中文社区', '攻略', '新闻'],
     icon: '',
     isHot: true,
-    updateTime: '2026-05-10'
+    updateTime: '2026-05-13'
   },
   {
     id: 'nga-diablo',
@@ -852,5 +1001,77 @@ export const resources = [
     icon: '',
     isHot: true,
     updateTime: '2026-05-10'
+  },
+  {
+    id: 'd2-blizzard-news-cn',
+    name: '暗黑2官网新闻',
+    description: '暴雪中国暗黑2重制版新闻中心，天梯赛季公告、补丁说明',
+    url: 'https://d2.blizzard.cn/news/',
+    category: 'guide',
+    gameVersion: 'D2',
+    tags: ['官网', '中文', '蓝贴', '天梯公告'],
+    icon: '',
+    isHot: true,
+    updateTime: '2026-05-13'
+  },
+  {
+    id: 'd2emu-ladder',
+    name: 'D2Emu天梯排名',
+    description: '暗黑2重制版在线天梯排名查询，按职业和模式筛选',
+    url: 'https://www.d2emu.com/ladder',
+    category: 'tool',
+    gameVersion: 'D2',
+    tags: ['天梯', '排名', '查询', '英文'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-13'
+  },
+  {
+    id: 'diablo2-cn-photo',
+    name: '暗黑2中文网壁纸',
+    description: '暗黑破坏神2壁纸和截图收藏',
+    url: 'http://diablo2.com.cn/photo/',
+    category: 'guide',
+    gameVersion: 'D2',
+    tags: ['壁纸', '中文', '截图'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-13'
+  },
+  {
+    id: '3dmgame-d2r',
+    name: '3DM暗黑2重制版专区',
+    description: '3DM暗黑2重制版专题，提供攻略、MOD下载和玩家讨论',
+    url: 'https://www.3dmgame.com/games/diablo2re/tu/',
+    category: 'guide',
+    gameVersion: 'D2',
+    tags: ['专区', '中文', 'MOD', '攻略'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-13'
+  },
+  {
+    id: 'caimogu-talisman',
+    name: '踩蘑菇护身符模拟器',
+    description: '暗黑2重制版小护身符、大型护身符、超大护身符词缀查询和筛选工具',
+    url: 'https://www.caimogu.cc/d2r/tools/talisman.html',
+    category: 'tool',
+    gameVersion: 'D2',
+    tags: ['护身符', '中文', '词缀查询'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-13'
+  },
+  {
+    id: 'caimogu-d4',
+    name: '踩蘑菇暗黑4专区',
+    description: '踩蘑菇游戏社区暗黑4专区，BD推荐、赛季攻略、工具合集',
+    url: 'https://www.caimogu.cc/d4.html',
+    category: 'guide',
+    gameVersion: 'D4',
+    tags: ['中文', 'BD推荐', '赛季攻略'],
+    icon: '',
+    isHot: false,
+    updateTime: '2026-05-13'
   }
 ];
