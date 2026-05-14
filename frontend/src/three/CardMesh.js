@@ -59,27 +59,23 @@ export function createCardTexture(resource, options) {
   var iconX = 16
   var iconY = 16
 
-  if (resource.icon) {
-    // 有图标URL时绘制占位符（实际图标需异步加载）
-    ctx.fillStyle = '#2a2535'
-    ctx.fillRect(iconX, iconY, iconSize, iconSize)
-    ctx.strokeStyle = colors.primary + '60'
-    ctx.lineWidth = 1
-    ctx.strokeRect(iconX, iconY, iconSize, iconSize)
-  } else {
-    // 首字母作为图标
-    ctx.fillStyle = '#2a2535'
-    ctx.fillRect(iconX, iconY, iconSize, iconSize)
-    ctx.fillStyle = colors.primary
-    ctx.font = 'bold 20px "Cinzel", serif'
-    ctx.textAlign = 'center'
-    ctx.textBaseline = 'middle'
-    ctx.fillText((resource.name || '?')[0], iconX + iconSize / 2, iconY + iconSize / 2)
-  }
+  // 绘制图标背景
+  ctx.fillStyle = '#2a2535'
+  ctx.fillRect(iconX, iconY, iconSize, iconSize)
+  ctx.strokeStyle = colors.primary + '60'
+  ctx.lineWidth = 1
+  ctx.strokeRect(iconX, iconY, iconSize, iconSize)
+
+  // 首字母作为图标（使用系统字体确保兼容性）
+  ctx.fillStyle = colors.primary
+  ctx.font = 'bold 20px system-ui, -apple-system, sans-serif'
+  ctx.textAlign = 'center'
+  ctx.textBaseline = 'middle'
+  ctx.fillText((resource.name || '?')[0], iconX + iconSize / 2, iconY + iconSize / 2)
 
   // ---- 名称 ----
   ctx.fillStyle = '#e8e6f0'
-  ctx.font = 'bold 14px "Cinzel", "Inter", sans-serif'
+  ctx.font = 'bold 14px system-ui, -apple-system, sans-serif'
   ctx.textAlign = 'left'
   ctx.textBaseline = 'top'
   var nameX = iconX + iconSize + 10
@@ -96,7 +92,7 @@ export function createCardTexture(resource, options) {
   var tags = resource.tags || []
   var tagY = iconY + iconSize + 12
   var tagX = 16
-  ctx.font = '10px "Inter", sans-serif'
+  ctx.font = '10px system-ui, -apple-system, sans-serif'
   for (var i = 0; i < Math.min(tags.length, 3); i++) {
     var tag = tags[i]
     var tagWidth = ctx.measureText(tag).width + 12
@@ -109,15 +105,17 @@ export function createCardTexture(resource, options) {
     ctx.strokeRect(tagX, tagY, tagWidth, 18)
     ctx.fillStyle = colors.accent
     ctx.textAlign = 'center'
-    ctx.fillText(tag, tagX + tagWidth / 2, tagY + 5)
+    ctx.textBaseline = 'middle'
+    ctx.fillText(tag, tagX + tagWidth / 2, tagY + 9)
     tagX += tagWidth + 6
   }
 
   // ---- 描述 ----
   if (resource.description) {
     ctx.fillStyle = '#9b99a8'
-    ctx.font = '11px "Inter", sans-serif'
+    ctx.font = '11px system-ui, -apple-system, sans-serif'
     ctx.textAlign = 'left'
+    ctx.textBaseline = 'top'
     var descY = tagY + 30
     var words = resource.description.split('')
     var line = ''
@@ -135,7 +133,7 @@ export function createCardTexture(resource, options) {
         line = testLine
       }
     }
-    if (lineCount < maxLines) {
+    if (lineCount < maxLines && line) {
       ctx.fillText(line, 16, descY)
     }
   }
@@ -149,9 +147,10 @@ export function createCardTexture(resource, options) {
   ctx.lineWidth = 1
   ctx.strokeRect(16, height - 36, 36, 20)
   ctx.fillStyle = versionColor
-  ctx.font = 'bold 10px "Inter", sans-serif'
+  ctx.font = 'bold 10px system-ui, -apple-system, sans-serif'
   ctx.textAlign = 'center'
-  ctx.fillText(resource.gameVersion || 'ALL', 34, height - 22)
+  ctx.textBaseline = 'middle'
+  ctx.fillText(resource.gameVersion || 'ALL', 34, height - 26)
 
   // HOT 徽章
   if (resource.isHot) {
@@ -159,16 +158,18 @@ export function createCardTexture(resource, options) {
     var hotX = width - 50
     ctx.fillRect(hotX, height - 36, 34, 20)
     ctx.fillStyle = '#ffffff'
-    ctx.font = 'bold 10px "Inter", sans-serif'
+    ctx.font = 'bold 10px system-ui, -apple-system, sans-serif'
     ctx.textAlign = 'center'
-    ctx.fillText('HOT', hotX + 17, height - 22)
+    ctx.textBaseline = 'middle'
+    ctx.fillText('HOT', hotX + 17, height - 26)
   }
 
   // 箭头
   ctx.fillStyle = colors.primary
   ctx.font = '14px sans-serif'
   ctx.textAlign = 'right'
-  ctx.fillText('\u2192', width - 16, height - 22)
+  ctx.textBaseline = 'middle'
+  ctx.fillText('\u2192', width - 16, height - 26)
 
   return canvas
 }

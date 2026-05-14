@@ -63,6 +63,9 @@ function SceneManager(options) {
   this._initLights()
   // 创建共享卡片背面纹理
   this.cardBackTexture = createCardBackTexture()
+
+  // 设置场景背景为透明
+  this.scene.background = null
 }
 
 // ---- 灯光 ----
@@ -116,6 +119,10 @@ SceneManager.prototype.setResources = function(resources) {
     card.position.set(sp.position.x, sp.position.y, sp.position.z)
     card.rotation.set(sp.rotation.x, sp.rotation.y, sp.rotation.z)
 
+    // 存储目标位置用于交互恢复
+    card.userData.targetPosition = { x: sp.position.x, y: sp.position.y, z: sp.position.z }
+    card.userData.targetRotation = { x: sp.rotation.x, y: sp.rotation.y, z: sp.rotation.z }
+
     this.scene.add(card)
     this.cards.push(card)
   }
@@ -163,7 +170,15 @@ SceneManager.prototype.hoverCard = function(index) {
   // 还原上一个悬停卡片
   if (this.hoveredIndex >= 0 && this.hoveredIndex < this.cards.length) {
     var prev = this.cards[this.hoveredIndex]
-    animateTo(prev.position, { z: prev.userData.baseZ || prev.position.z - 1.5 }, 0.2, easeOutCubic)
+    var prevTarget = prev.userData.targetPosition
+    if (prevTarget) {
+      animateTo(prev.position, { x: prevTarget.x, y: prevTarget.y, z: prevTarget.z }, 0.3, easeOutCubic)
+    }
+    // 恢复边框透明度
+    var prevEdge = prev.getObjectByName('card-edge')
+    if (prevEdge) {
+      prevEdge.material.opacity = 0.4
+    }
   }
 
   this.hoveredIndex = index
@@ -171,8 +186,10 @@ SceneManager.prototype.hoverCard = function(index) {
   // 新悬停卡片前移
   if (index >= 0 && index < this.cards.length) {
     var card = this.cards[index]
-    if (!card.userData.baseZ) card.userData.baseZ = card.position.z
-    animateTo(card.position, { z: card.position.z + 1.5 }, 0.2, easeOutCubic)
+    var target = card.userData.targetPosition
+    if (target) {
+      animateTo(card.position, { x: target.x, y: target.y, z: target.z + 1.5 }, 0.3, easeOutCubic)
+    }
 
     // 金色边框高亮
     var edge = card.getObjectByName('card-edge')

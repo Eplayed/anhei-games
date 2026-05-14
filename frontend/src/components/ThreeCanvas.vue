@@ -92,6 +92,62 @@ onMounted(async function() {
     // 监听 WebGL 上下文丢失
     canvasEl.value.addEventListener('webglcontextlost', handleContextLost)
 
+    // 鼠标交互事件
+    var isDragging = false
+    var lastMouseX = 0
+    var lastMouseY = 0
+
+    function onMouseMove(e) {
+      if (!sceneManager || !canvasContainer.value) return
+      var rect = canvasContainer.value.getBoundingClientRect()
+      var ndcX = ((e.clientX - rect.left) / rect.width) * 2 - 1
+      var ndcY = -((e.clientY - rect.top) / rect.height) * 2 + 1
+
+      // 射线检测悬停
+      var hit = sceneManager.raycastCards(ndcX, ndcY)
+      if (hit) {
+        sceneManager.hoverCard(hit.index)
+        canvasContainer.value.style.cursor = 'pointer'
+      } else {
+        sceneManager.hoverCard(-1)
+        canvasContainer.value.style.cursor = 'default'
+      }
+
+      // 相机轻微跟随鼠标
+      if (!isDragging && sceneManager.camera) {
+        var targetX = ndcX * 0.5
+        var targetY = ndcY * 0.3 + 2
+        sceneManager.camera.position.x += (targetX - sceneManager.camera.position.x) * 0.02
+        sceneManager.camera.position.y += (targetY - sceneManager.camera.position.y) * 0.02
+        sceneManager.camera.lookAt(0, 0, 0)
+      }
+
+      lastMouseX = e.clientX
+      lastMouseY = e.clientY
+    }
+
+    function onClick(e) {
+      if (!sceneManager || !canvasContainer.value) return
+      var rect = canvasContainer.value.getBoundingClientRect()
+      var ndcX = ((e.clientX - rect.left) / rect.width) * 2 - 1
+      var ndcY = -((e.clientY - rect.top) / rect.height) * 2 + 1
+
+      var hit = sceneManager.raycastCards(ndcX, ndcY)
+      if (hit && hit.index >= 0) {
+        var resource = props.resources[hit.index]
+        if (resource && resource.url && !resource.isDead) {
+          window.open(resource.url, '_blank', 'noopener noreferrer')
+        }
+      }
+    }
+
+    canvasContainer.value.addEventListener('mousemove', onMouseMove)
+    canvasContainer.value.addEventListener('click', onClick)
+
+    // 存储事件处理器以便清理
+    canvasContainer.value._mouseMoveHandler = onMouseMove
+    canvasContainer.value._clickHandler = onClick
+
   } catch (e) {
     console.error('[ThreeCanvas] 初始化失败:', e)
   }
@@ -114,8 +170,16 @@ function cleanup() {
     sceneManager.dispose()
     sceneManager = null
   }
-  if (canvasContainer.value && canvasContainer.value._resizeObserver) {
-    canvasContainer.value._resizeObserver.disconnect()
+  if (canvasContainer.value) {
+    if (canvasContainer.value._resizeObserver) {
+      canvasContainer.value._resizeObserver.disconnect()
+    }
+    if (canvasContainer.value._mouseMoveHandler) {
+      canvasContainer.value.removeEventListener('mousemove', canvasContainer.value._mouseMoveHandler)
+    }
+    if (canvasContainer.value._clickHandler) {
+      canvasContainer.value.removeEventListener('click', canvasContainer.value._clickHandler)
+    }
   }
   if (canvasEl.value) {
     canvasEl.value.removeEventListener('webglcontextlost', handleContextLost)

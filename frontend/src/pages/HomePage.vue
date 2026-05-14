@@ -1,34 +1,16 @@
 <template>
   <div>
-    <!-- ====== 3D 模式 ====== -->
-    <template v-if="is3DMode">
-      <!-- 3D 画布（懒加载） -->
-      <AsyncThreeCanvas
-        :resources="filteredResources"
-        :current-version="currentVersion"
-      />
+    <!-- ====== 3D 背景层（仅 3D 模式） ====== -->
+    <AsyncThreeCanvas
+      v-if="is3DMode"
+      :resources="filteredResources"
+      :current-version="currentVersion"
+    />
 
-      <!-- 3D 模式浮层 -->
-      <div class="three-overlay">
-        <!-- 搜索栏 -->
-        <div class="three-overlay-search">
-          <SearchBar />
-        </div>
-        <!-- 版本标签 -->
-        <div class="three-overlay-version">
-          <GameVersionTabs />
-        </div>
-        <!-- 版本副标题 -->
-        <p class="three-overlay-sub">
-          {{ currentVersionName() }} &middot; 一站式资源入口
-        </p>
-      </div>
-    </template>
-
-    <!-- ====== 2D 模式（原有布局） ====== -->
-    <template v-if="!is3DMode">
+    <!-- ====== 主内容层 ====== -->
+    <div :class="is3DMode ? 'three-mode-content' : ''">
       <!-- P0: 全视口沉浸式 Hero -->
-      <section class="diablo-hero">
+      <section class="diablo-hero" :class="is3DMode ? 'three-mode-hero' : ''">
         <div class="diablo-hero-content">
           <p class="diablo-hero-sub">
             {{ currentVersionName() }} &middot; 一站式资源入口
@@ -37,7 +19,7 @@
             <SearchBar />
           </div>
         </div>
-        <div class="diablo-hero-scroll" @click="scrollToContent">
+        <div v-if="!is3DMode" class="diablo-hero-scroll" @click="scrollToContent">
           <svg class="diablo-scroll-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
@@ -277,7 +259,7 @@
         </div>
       </div>
       </div><!-- /diablo-main-content -->
-    </template>
+    </div><!-- /主内容层 -->
   </div>
 </template>
 
@@ -471,37 +453,19 @@ var categoryLabel = function (category) {
   padding-bottom: 48px;
 }
 
-/* ====== 3D 模式浮层 ====== */
-.three-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  z-index: 10;
-  pointer-events: none;
-  padding: 80px 24px 0;
+/* ====== 3D 模式内容层 ====== */
+.three-mode-content {
+  position: relative;
+  z-index: 1;
 }
 
-.three-overlay-search {
-  max-width: 480px;
-  margin: 0 auto;
-  pointer-events: auto;
+.three-mode-hero {
+  min-height: auto;
+  padding: 100px 16px 40px;
+  background: transparent;
 }
 
-.three-overlay-version {
-  position: fixed;
-  top: 16px;
-  right: 24px;
-  pointer-events: auto;
-  z-index: 11;
-}
-
-.three-overlay-sub {
-  text-align: center;
-  font: var(--heading-sm);
-  color: var(--ink-mute);
-  letter-spacing: 1px;
-  margin-top: 12px;
-  opacity: 0.6;
+.three-mode-content .diablo-main-content {
+  background: linear-gradient(to bottom, transparent 0%, var(--canvas-base) 200px);
 }
 </style>
