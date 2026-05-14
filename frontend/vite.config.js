@@ -15,4 +15,16 @@ export default defineConfig({
       }
     })
   ],
+  optimizeDeps: {
+    include: ['three']
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules/three')) return 'three'
+        }
+      }
+    }
+  }
 })
