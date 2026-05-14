@@ -57,8 +57,6 @@
 
       <!-- 工具按钮组 -->
       <div class="hidden md:flex items-center space-x-2">
-        <ThreeDModeToggle />
-
         <button
           class="diablo-btn-ghost text-xs px-3 py-1.5"
           @click="setHomepageRef.openModal()"
@@ -193,7 +191,6 @@ import { ref, onMounted, onUnmounted } from 'vue';
 import { useRoute } from 'vue-router';
 import GameVersionTabs from './GameVersionTabs.vue';
 import SetHomepage from './SetHomepage.vue';
-import ThreeDModeToggle from './ThreeDModeToggle.vue';
 
 var route = useRoute();
 var mobileMenuOpen = ref(false);
