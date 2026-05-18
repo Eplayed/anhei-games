@@ -1,6 +1,15 @@
 const bluePosts = [
   // ===== D4 暗黑破坏神4 最新蓝贴 =====
   {
+    id: 'bp-d4-24271857',
+    title: '《暗黑破坏神 IV》补丁说明',
+    summary: '',
+    url: 'https://d4.blizzard.cn/news/24271857/index.html',
+    publishTime: '2026-05-13',
+    gameVersion: 'D4',
+    category: 'patch'
+  },
+  {
     id: 'bp-d4-24267729',
     title: '迎接清算：“憎恨之王”扩展内容现已全球同步上线',
     summary: '',
@@ -17,6 +26,15 @@ const bluePosts = [
     publishTime: '2026-04-30',
     gameVersion: 'D4',
     category: 'announcement'
+  },
+  {
+    id: 'bp-d4-20260428',
+    title: '「中国神话」系列外观现已上线',
+    summary: '',
+    url: 'https://d4.blizzard.cn/h5/20260428/luckydraw/?channel=gw',
+    publishTime: '2026-04-30',
+    gameVersion: 'D4',
+    category: 'event'
   },
   {
     id: 'bp-d4-20260430',
@@ -37,15 +55,6 @@ const bluePosts = [
     category: 'event'
   },
   {
-    id: 'bp-d4-20260428',
-    title: '《暗黑破坏神Ⅳ》直播掉宝多平台上线',
-    summary: '',
-    url: 'https://d4.blizzard.cn/news/20260428/43086_1298235.html',
-    publishTime: '2026-04-28',
-    gameVersion: 'D4',
-    category: 'event'
-  },
-  {
     id: 'bp-d4-24267731',
     title: 'A Light Extinguished: A Tribute',
     summary: 'Some flames burn so fiercely, they consume themselves. Pay tribute to one who sacrificed everything. ',
@@ -53,15 +62,6 @@ const bluePosts = [
     publishTime: '2026-04-24',
     gameVersion: 'D4',
     category: 'announcement'
-  },
-  {
-    id: 'bp-d4-24271857',
-    title: 'Diablo IV Patch Notes',
-    summary: 'We will continually update this article with all patches the development team implements for Diablo IV. ',
-    url: 'https://news.blizzard.com/en-us/article/24271857/diablo-iv-patch-notes',
-    publishTime: '2026-04-23',
-    gameVersion: 'D4',
-    category: 'patch'
   },
   {
     id: 'bp-d4-24264017',
@@ -519,12 +519,12 @@ const bluePosts = [
   // ===== D2 暗黑破坏神2 重制版 最新蓝贴 =====
   {
     id: 'bp-d2-24261478',
-    title: 'Diablo II: Resurrected Ladder Season 14 Coming Soon',
-    summary: 'Ladder Season 14 begins on May 22. Glean the differences coming with Patch 3.2 based off your feedback from our recent PTR. ',
-    url: 'https://news.blizzard.com/en-us/article/24261478/diablo-ii-resurrected-ladder-season-14-coming-soon',
-    publishTime: '2026-05-08',
+    title: '《暗黑破坏神2》重制版天梯第14赛季5月23日开启',
+    summary: '',
+    url: 'https://d2.blizzard.cn/news/24261478/index.html',
+    publishTime: '2026-05-11',
     gameVersion: 'D2',
-    category: 'season'
+    category: 'ladder'
   },
   {
     id: 'bp-d2-24266710',
@@ -644,6 +644,15 @@ const bluePosts = [
     category: 'event'
   },
   {
+    id: 'bp-d2-24226703',
+    title: 'Diablo II: Resurrected Ladder Season 12 Has Concluded',
+    summary: 'Ladder Season 12 begins on October 3! Muster the might to liberate Sanctuary’s denizens from sinister influences as you race to Level 99. ',
+    url: 'https://news.blizzard.com/en-us/article/24226703/diablo-ii-resurrected-ladder-season-12-has-concluded',
+    publishTime: '2025-10-04',
+    gameVersion: 'D2',
+    category: 'season'
+  },
+  {
     id: 'bp-d2-20250929',
     title: '《暗黑破坏神II》重制版国服环境净化处罚公告（9月29日更新）',
     summary: '',
@@ -651,15 +660,6 @@ const bluePosts = [
     publishTime: '2025-09-29',
     gameVersion: 'D2',
     category: 'announcement'
-  },
-  {
-    id: 'bp-d2-24226703',
-    title: '《暗黑破坏神II》重制版首个赛季10月4日上线',
-    summary: '',
-    url: 'https://d2.blizzard.cn/news/24226703/index.html',
-    publishTime: '2025-09-25',
-    gameVersion: 'D2',
-    category: 'season'
   },
   {
     id: 'bp-d2-24208340',
