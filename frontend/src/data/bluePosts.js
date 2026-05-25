@@ -1,6 +1,15 @@
 const bluePosts = [
   // ===== D4 暗黑破坏神4 最新蓝贴 =====
   {
+    id: 'bp-d4-24243867',
+    title: 'Join the Next Sanctuary Sitdown',
+    summary: 'Before our next Public Test Realm, join us in the Sanctuary Discord for the next Sanctuary Sitdown. ',
+    url: 'https://news.blizzard.com/en-us/article/24243867/join-the-next-sanctuary-sitdown',
+    publishTime: '2026-05-21',
+    gameVersion: 'D4',
+    category: 'announcement'
+  },
+  {
     id: 'bp-d4-24271857',
     title: '《暗黑破坏神 IV》补丁说明',
     summary: '',
@@ -242,15 +251,6 @@ const bluePosts = [
     publishTime: '2025-12-01',
     gameVersion: 'D4',
     category: 'patch'
-  },
-  {
-    id: 'bp-d4-24246200',
-    title: 'Blend Devilish Brews with Diablo: Drinks, Potions, & Elixirs',
-    summary: 'Ghoulish concoctions and bold tinctures await in Diablo: Drinks, Potions, & Elixirs, a new book from Insight Editions. ',
-    url: 'https://news.blizzard.com/en-us/article/24246200/blend-devilish-brews-with-diablo-drinks-potions-elixirs',
-    publishTime: '2025-11-07',
-    gameVersion: 'D4',
-    category: 'announcement'
   },
 
   // ===== D3 暗黑破坏神3 最新蓝贴 =====
@@ -519,7 +519,7 @@ const bluePosts = [
   // ===== D2 暗黑破坏神2 重制版 最新蓝贴 =====
   {
     id: 'bp-d2-24261478',
-    title: '《暗黑破坏神2》重制版天梯第14赛季5月23日开启',
+    title: '《暗黑破坏神2》重制版天梯第14赛季现已开启',
     summary: '',
     url: 'https://d2.blizzard.cn/news/24261478/index.html',
     publishTime: '2026-05-11',
