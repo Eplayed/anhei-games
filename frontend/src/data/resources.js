@@ -11,7 +11,7 @@ export const resources = [
     tags: ['资讯', '英文', 'Hotfix'],
     icon: '',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'bluetracker-d4',
@@ -23,7 +23,7 @@ export const resources = [
     tags: ['蓝贴', '追踪', '英文', '社区'],
     icon: '',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'd4-builds',
@@ -35,7 +35,7 @@ export const resources = [
     tags: ['Build分享', '玩家原创', '英文'],
     icon: 'https://d4builds.gg/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'diabloloot-news',
@@ -47,7 +47,7 @@ export const resources = [
     tags: ['资讯', '英文', '新闻', '补丁'],
     icon: 'https://diabloloot.com/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'icy-veins-d4',
@@ -59,7 +59,7 @@ export const resources = [
     tags: ['Build推荐', '技能详解', '英文'],
     icon: 'https://www.icy-veins.com/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'maxroll-d4',
@@ -71,7 +71,7 @@ export const resources = [
     tags: ['Build推荐', '开荒攻略', '赛季指南', '英文'],
     icon: 'https://maxroll.gg/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'nga-d4',
@@ -83,7 +83,7 @@ export const resources = [
     tags: ['论坛', '社区', '攻略'],
     icon: 'https://ngabbs.com/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'opgg-d4',
@@ -93,9 +93,9 @@ export const resources = [
     category: 'guide',
     gameVersion: 'D4',
     tags: ['数据', '强度榜', '攻略', '装备'],
-    icon: '',
+    icon: 'https://op.gg/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'wowhead-d4-blue',
@@ -107,7 +107,7 @@ export const resources = [
     tags: ['蓝贴', '中文', '聚合'],
     icon: '',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'bubaigi-d4-pit',
@@ -132,7 +132,7 @@ export const resources = [
     tags: ['攻略', '资讯', '论坛', '官方合作'],
     icon: 'https://hero.d.163.com/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'd-163-com',
@@ -144,7 +144,7 @@ export const resources = [
     tags: ['攻略', '资讯', '专区'],
     icon: 'https://d.163.com/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'd4-blizzard-cn',
@@ -156,7 +156,7 @@ export const resources = [
     tags: ['官网', '中文', '新闻', '赛季公告'],
     icon: 'https://d4.blizzard.cn/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'd4-blizzard-news-cn',
@@ -168,7 +168,7 @@ export const resources = [
     tags: ['官网', '中文', '蓝贴', '补丁说明'],
     icon: 'https://d4.blizzard.cn/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'd4-blizzard-events',
@@ -180,7 +180,7 @@ export const resources = [
     tags: ['官网', '中文', '活动', '赛季'],
     icon: 'https://d4.blizzard.cn/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'd2core-com',
@@ -192,7 +192,7 @@ export const resources = [
     tags: ['社区', '攻略', '数据库', '模拟器', '交易'],
     icon: '',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'caimogu-d4',
@@ -204,7 +204,7 @@ export const resources = [
     tags: ['中文', 'BD推荐', '赛季攻略'],
     icon: 'https://www.caimogu.cc/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
 
   // ==================== Diablo 4 工具 ====================
@@ -231,7 +231,7 @@ export const resources = [
     tags: ['附魔模拟', '工具', '概率计算'],
     icon: 'https://www.d4craft.com/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'd4-market',
@@ -243,7 +243,7 @@ export const resources = [
     tags: ['市场', '交易', '筛选'],
     icon: 'https://www.d4market.net/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'd4tracker',
@@ -253,10 +253,9 @@ export const resources = [
     category: 'tool',
     gameVersion: 'D4',
     tags: ['地图', '追踪', '进度'],
-    icon: '',
+    icon: 'https://d4tracker.org/favicon.ico',
     isHot: false,
-    isDead: true,
-    updateTime: '2026-05-10'
+    updateTime: '2026-06-01'
   },
   {
     id: 'diablo-trade',
@@ -268,7 +267,7 @@ export const resources = [
     tags: ['交易', '市场', '金币'],
     icon: 'https://diablo.trade/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'diablo4-gg-armory',
@@ -293,7 +292,7 @@ export const resources = [
     tags: ['工具合集', 'Build指南', '追踪器'],
     icon: 'https://diablo4.life/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'diablo4build',
@@ -305,6 +304,7 @@ export const resources = [
     tags: ['Build规划', '技能树', '巅峰', '交易价格'],
     icon: '',
     isHot: true,
+    isDead: true,
     updateTime: '2026-05-13'
   },
   {
@@ -317,7 +317,7 @@ export const resources = [
     tags: ['宝石', '计算器', '升级'],
     icon: 'https://diabloclan.com/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'helltides-pit',
@@ -329,7 +329,7 @@ export const resources = [
     tags: ['排行榜', '深渊', '天梯', '排名'],
     icon: 'https://helltides.com/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'infinitytools-d4-zh',
@@ -341,7 +341,7 @@ export const resources = [
     tags: ['数据库', '中文', '物品', '威能', '词缀'],
     icon: 'https://tools.infinitybuilds.gg/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'maxroll-d4-planner',
@@ -353,7 +353,7 @@ export const resources = [
     tags: ['Build模拟', '技能规划', '英文'],
     icon: 'https://maxroll.gg/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'mobalytics-d4',
@@ -365,7 +365,7 @@ export const resources = [
     tags: ['Build规划', '分享'],
     icon: '',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'purediablo-planner',
@@ -377,7 +377,7 @@ export const resources = [
     tags: ['Build规划', '巅峰', '装备'],
     icon: 'https://www.purediablo.com/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
 
   // ==================== Diablo 3 攻略 ====================
@@ -391,7 +391,7 @@ export const resources = [
     tags: ['中文攻略', '职业攻略', '版本追踪'],
     icon: 'https://d3.17173.com/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: '3dmgame-d3-forum',
@@ -403,7 +403,7 @@ export const resources = [
     tags: ['中文论坛', '资讯', '玩家讨论'],
     icon: 'https://bbs.3dmgame.com/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'diablofans-d3',
@@ -415,7 +415,7 @@ export const resources = [
     tags: ['社区论坛', '攻略分享', '英文'],
     icon: '',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'icy-veins-d3',
@@ -427,7 +427,7 @@ export const resources = [
     tags: ['Build推荐', '技能详解', '英文'],
     icon: 'https://www.icy-veins.com/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'maxroll-d3',
@@ -439,7 +439,7 @@ export const resources = [
     tags: ['Build推荐', '赛季攻略', '英文'],
     icon: 'https://maxroll.gg/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'nga-d3-forum',
@@ -451,7 +451,7 @@ export const resources = [
     tags: ['中文论坛', '攻略讨论', '社区'],
     icon: 'http://d3.nga.cn/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'reddit-diablo3',
@@ -461,10 +461,9 @@ export const resources = [
     category: 'guide',
     gameVersion: 'D3',
     tags: ['社区', '英文', 'Build分享'],
-    icon: '',
+    icon: 'https://www.reddit.com/favicon.ico',
     isHot: false,
-    isDead: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'kain-163-d3',
@@ -476,7 +475,7 @@ export const resources = [
     tags: ['中文攻略', '数据库', '天梯查询', '社区'],
     icon: 'https://d.163.com/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'diablofans-cn-d3',
@@ -488,7 +487,7 @@ export const resources = [
     tags: ['数据库', '中文', '图鉴', '攻略'],
     icon: 'https://www.diablofans.com.cn/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'd3-blizzard-cn',
@@ -500,7 +499,7 @@ export const resources = [
     tags: ['官网', '中文', '新闻', '公告'],
     icon: 'https://d3.blizzard.cn/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'd3-blizzard-news-cn',
@@ -512,7 +511,7 @@ export const resources = [
     tags: ['官网', '中文', '蓝贴', '补丁说明'],
     icon: 'https://d3.blizzard.cn/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'gamersky-d3',
@@ -524,7 +523,7 @@ export const resources = [
     tags: ['中文攻略', '游戏指南', '秘籍'],
     icon: 'https://gl.ali213.net/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
 
   // ==================== Diablo 3 工具 ====================
@@ -538,6 +537,7 @@ export const resources = [
     tags: ['装备模拟', 'BIS', '属性计算'],
     icon: 'https://www.gamehodgepodge.com/favicon.ico',
     isHot: false,
+    isDead: true,
     updateTime: '2026-05-13'
   },
   {
@@ -550,7 +550,7 @@ export const resources = [
     tags: ['伤害模拟', 'Build规划', '英文'],
     icon: 'https://www.d3planner.com/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'd3-damage-simulator',
@@ -562,7 +562,7 @@ export const resources = [
     tags: ['输出模拟', '伤害计算', '装备模拟'],
     icon: 'https://ngabbs.com/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'd3-loot',
@@ -600,7 +600,7 @@ export const resources = [
     tags: ['巅峰计算', '综合工具', '赛季转换'],
     icon: 'https://d3.suoyl.com/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'blizzard-d3-leaderboard',
@@ -612,7 +612,7 @@ export const resources = [
     tags: ['天梯查询', '官方', '排名'],
     icon: 'https://kr.diablo3.blizzard.com/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
 
   // ==================== Diablo 2 攻略 ====================
@@ -626,7 +626,7 @@ export const resources = [
     tags: ['新闻', '中文', '攻略'],
     icon: 'https://news.17173.com/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: '3dmgame-d2r',
@@ -638,7 +638,7 @@ export const resources = [
     tags: ['专区', '中文', 'MOD', '攻略'],
     icon: 'https://www.3dmgame.com/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'd2-jsp',
@@ -650,7 +650,7 @@ export const resources = [
     tags: ['交易', '物品价格', '英文'],
     icon: 'https://diablo2.io/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'icy-veins-d2',
@@ -662,6 +662,7 @@ export const resources = [
     tags: ['Build推荐', '技能详解', '英文'],
     icon: 'https://www.icy-veins.com/favicon.ico',
     isHot: true,
+    isDead: true,
     updateTime: '2026-05-13'
   },
   {
@@ -674,7 +675,7 @@ export const resources = [
     tags: ['Build推荐', '开荒攻略', '英文'],
     icon: 'https://maxroll.gg/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'nga-d2-forum',
@@ -686,7 +687,7 @@ export const resources = [
     tags: ['论坛', '中文', '社区'],
     icon: 'https://ngabbs.com/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'kainiao-d2',
@@ -698,7 +699,7 @@ export const resources = [
     tags: ['社区', '中文', '新闻'],
     icon: 'https://d.163.com/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'kainiao-forum',
@@ -710,7 +711,7 @@ export const resources = [
     tags: ['论坛', '中文', '社区'],
     icon: 'https://bbs.d.163.com/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'diablo2-cn-photo',
@@ -722,7 +723,7 @@ export const resources = [
     tags: ['壁纸', '中文', '截图'],
     icon: 'http://diablo2.com.cn/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'd2-blizzard-news-cn',
@@ -734,7 +735,7 @@ export const resources = [
     tags: ['官网', '中文', '蓝贴', '天梯公告'],
     icon: 'https://d2.blizzard.cn/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'd2-blizzard-cn',
@@ -746,7 +747,7 @@ export const resources = [
     tags: ['官网', '中文', '新闻'],
     icon: 'https://d2.blizzard.cn/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'diablo2-china',
@@ -758,7 +759,7 @@ export const resources = [
     tags: ['装备库', '中文', '资料'],
     icon: 'http://diablo2.diablo2.com.cn/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'ali213-d2-guide',
@@ -770,7 +771,7 @@ export const resources = [
     tags: ['攻略', '中文', '全流程'],
     icon: 'https://gl.ali213.net/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'gamersky-d2r-guide',
@@ -782,7 +783,7 @@ export const resources = [
     tags: ['攻略', '中文', '重制版'],
     icon: 'https://www.gamersky.com/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'baidu-tieba-d2',
@@ -794,7 +795,7 @@ export const resources = [
     tags: ['贴吧', '中文', '社区'],
     icon: 'https://tieba.baidu.com/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
 
   // ==================== Diablo 2 工具 ====================
@@ -808,7 +809,7 @@ export const resources = [
     tags: ['掉落计算', '概率计算', '英文'],
     icon: 'https://dropcalc.silospen.com/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'd2-planner',
@@ -833,7 +834,7 @@ export const resources = [
     tags: ['天梯', '排名', '查询'],
     icon: 'https://d2soj.com/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'd2emu-ladder',
@@ -845,7 +846,7 @@ export const resources = [
     tags: ['天梯', '排名', '查询', '英文'],
     icon: 'https://www.d2emu.com/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'd2r-tools',
@@ -857,7 +858,7 @@ export const resources = [
     tags: ['工具集', '断点计算', '经验计算'],
     icon: 'https://d2r-tools.com/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'd2r-world',
@@ -869,7 +870,7 @@ export const resources = [
     tags: ['数据库', '中文', '物品查询'],
     icon: '',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'd2runewizard-planner',
@@ -881,7 +882,7 @@ export const resources = [
     tags: ['Build规划', '技能模拟', '装备模拟'],
     icon: 'https://d2runewizard.com/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'd2runewizard-rw-calc',
@@ -893,7 +894,7 @@ export const resources = [
     tags: ['符文之语', '计算器', '工具'],
     icon: 'https://d2runewizard.com/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'd2-trade-terror-zones',
@@ -905,7 +906,7 @@ export const resources = [
     tags: ['恐惧区域', '中文', '查询'],
     icon: 'https://www.d2-trade.com.cn/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'd2-item-generator',
@@ -917,7 +918,7 @@ export const resources = [
     tags: ['物品生成', '工具', '自定义'],
     icon: 'https://www.diablo-2.net/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'diablobytes-rw-sim',
@@ -929,7 +930,7 @@ export const resources = [
     tags: ['符文之语', '模拟器', '属性计算'],
     icon: '',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'diablofans-db',
@@ -941,7 +942,7 @@ export const resources = [
     tags: ['数据库', '中文', '装备查询'],
     icon: '',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'lootcube',
@@ -953,7 +954,7 @@ export const resources = [
     tags: ['数据库', '百科', '刷装指南'],
     icon: 'https://lootcube.net/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'lootcube-hero-editor',
@@ -965,7 +966,7 @@ export const resources = [
     tags: ['角色编辑器', 'Build规划', '存档编辑'],
     icon: 'https://lootcube.net/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'pd2-planner',
@@ -977,7 +978,7 @@ export const resources = [
     tags: ['PD2', '角色规划', '词缀'],
     icon: '',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'pd2-tools-builds',
@@ -989,7 +990,7 @@ export const resources = [
     tags: ['PD2', '天梯', 'Build分析'],
     icon: '',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'warcrafttavern-skill',
@@ -1001,7 +1002,7 @@ export const resources = [
     tags: ['技能规划', '技能树', '工具'],
     icon: '',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'waypoint-drop',
@@ -1013,7 +1014,7 @@ export const resources = [
     tags: ['掉落计算', '中文', '概率'],
     icon: 'https://www.waypoint.page/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'kainiao-wiki',
@@ -1025,7 +1026,7 @@ export const resources = [
     tags: ['数据库', '中文', '百科'],
     icon: 'http://wiki.d.163.com/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'caimogu-talisman',
@@ -1037,7 +1038,7 @@ export const resources = [
     tags: ['护身符', '中文', '词缀查询'],
     icon: 'https://www.caimogu.cc/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
   {
     id: 'caimogu-runeword',
@@ -1049,7 +1050,7 @@ export const resources = [
     tags: ['符文之语', '中文', '模拟器'],
     icon: 'https://www.caimogu.cc/favicon.ico',
     isHot: false,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   },
 
   // ==================== 全系列 攻略 ====================
@@ -1076,6 +1077,6 @@ export const resources = [
     tags: ['中文社区', '攻略', '新闻'],
     icon: 'https://d.163.com/favicon.ico',
     isHot: true,
-    updateTime: '2026-05-13'
+    updateTime: '2026-06-01'
   }
 ];
