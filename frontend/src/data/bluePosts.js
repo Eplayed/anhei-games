@@ -1,6 +1,24 @@
 const bluePosts = [
   // ===== D4 暗黑破坏神4 最新蓝贴 =====
   {
+    id: 'bp-d4-24259077',
+    title: 'The 3.1 PTR: What You Need to Know',
+    summary: 'Preview the return of Realmwalkers, reworked Mythic Uniques system, and more in the upcoming 3.1. PTR. ',
+    url: 'https://news.blizzard.com/en-us/article/24259077/the-3-1-ptr-what-you-need-to-know',
+    publishTime: '2026-05-28',
+    gameVersion: 'D4',
+    category: 'announcement'
+  },
+  {
+    id: 'bp-d4-24281840',
+    title: '欢庆《暗黑破坏神 IV》周年',
+    summary: '',
+    url: 'https://d4.blizzard.cn/news/24281840/index.html',
+    publishTime: '2026-05-27',
+    gameVersion: 'D4',
+    category: 'announcement'
+  },
+  {
     id: 'bp-d4-24243867',
     title: 'Join the Next Sanctuary Sitdown',
     summary: 'Before our next Public Test Realm, join us in the Sanctuary Discord for the next Sanctuary Sitdown. ',
@@ -10,10 +28,10 @@ const bluePosts = [
     category: 'announcement'
   },
   {
-    id: 'bp-d4-24271857',
+    id: 'bp-d4-20260525',
     title: '《暗黑破坏神 IV》补丁说明',
     summary: '',
-    url: 'https://d4.blizzard.cn/news/24271857/index.html',
+    url: 'https://d4.blizzard.cn/news/20260525/43086_1300122.html',
     publishTime: '2026-05-13',
     gameVersion: 'D4',
     category: 'patch'
@@ -71,6 +89,15 @@ const bluePosts = [
     publishTime: '2026-04-24',
     gameVersion: 'D4',
     category: 'announcement'
+  },
+  {
+    id: 'bp-d4-24271857',
+    title: 'Diablo IV Patch Notes',
+    summary: 'We will continually update this article with all patches the development team implements for Diablo IV. ',
+    url: 'https://news.blizzard.com/en-us/article/24271857/diablo-iv-patch-notes',
+    publishTime: '2026-04-23',
+    gameVersion: 'D4',
+    category: 'patch'
   },
   {
     id: 'bp-d4-24264017',
@@ -226,29 +253,11 @@ const bluePosts = [
     category: 'announcement'
   },
   {
-    id: 'bp-d4-24244466',
-    title: 'Diablo IV Patch Notes (2.5)',
-    summary: 'We will continually update this article with all patches the development team implements for Diablo IV. ',
-    url: 'https://news.blizzard.com/en-us/article/24244466/diablo-iv-patch-notes-2-5',
-    publishTime: '2025-12-03',
-    gameVersion: 'D4',
-    category: 'patch'
-  },
-  {
     id: 'bp-d4-24244465',
     title: 'Vanquish the Lesser Evils in Season of Divine Intervention',
     summary: 'Harness the power of the High Heavens to beat back the invasion of the lesser evils. Fear Azmodan’s arrival in Season of Divine Intervention. ',
     url: 'https://news.blizzard.com/en-us/article/24244465/vanquish-the-lesser-evils-in-season-of-divine-intervention',
     publishTime: '2025-12-03',
-    gameVersion: 'D4',
-    category: 'patch'
-  },
-  {
-    id: 'bp-d4-24250347',
-    title: 'Join our next Developer Update Livestream',
-    summary: 'Tune in to our next Developer Update Stream, which will cover Season of Divine Intervention, and earn the Unhilted Striker One-handed Sword cosmetic.',
-    url: 'https://news.blizzard.com/en-us/article/24250347/join-our-next-developer-update-livestream',
-    publishTime: '2025-12-01',
     gameVersion: 'D4',
     category: 'patch'
   },
@@ -712,15 +721,6 @@ const bluePosts = [
     summary: 'Ladder Season 7 begins on May 23! Muster the might to liberate Sanctuary’s denizens from sinister influences and an untimely demise as you race to Level 99. ',
     url: 'https://news.blizzard.com/en-us/article/24096018/diablo-ii-resurrected-ladder-season-7-has-concluded',
     publishTime: '2024-05-24',
-    gameVersion: 'D2',
-    category: 'patch'
-  },
-  {
-    id: 'bp-d2-24061888',
-    title: 'Diablo II: Resurrected Ladder Season 6 Has Concluded',
-    summary: 'Ladder Season 6 begins on February 22! Muster the might to liberate Sanctuary’s denizens from sinister influences as you race to Level 99. ',
-    url: 'https://news.blizzard.com/en-us/article/24061888/diablo-ii-resurrected-ladder-season-6-has-concluded',
-    publishTime: '2024-02-15',
     gameVersion: 'D2',
     category: 'patch'
   }
