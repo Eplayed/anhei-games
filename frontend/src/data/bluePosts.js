@@ -1,6 +1,15 @@
 const bluePosts = [
   // ===== D4 暗黑破坏神4 最新蓝贴 =====
   {
+    id: 'bp-d4-24280283',
+    title: 'Join our Next Developer Update Livestream',
+    summary: 'Tune in to our next Developer Update Livestream, which will cover the Season of Death Awakening. ',
+    url: 'https://news.blizzard.com/en-us/article/24280283/join-our-next-developer-update-livestream',
+    publishTime: '2026-06-16',
+    gameVersion: 'D4',
+    category: 'announcement'
+  },
+  {
     id: 'bp-d4-24259077',
     title: 'The 3.1 PTR: What You Need to Know',
     summary: 'Preview the return of Realmwalkers, reworked Mythic Uniques system, and more in the upcoming 3.1. PTR. ',
@@ -252,17 +261,17 @@ const bluePosts = [
     gameVersion: 'D4',
     category: 'announcement'
   },
-  {
-    id: 'bp-d4-24244465',
-    title: 'Vanquish the Lesser Evils in Season of Divine Intervention',
-    summary: 'Harness the power of the High Heavens to beat back the invasion of the lesser evils. Fear Azmodan’s arrival in Season of Divine Intervention. ',
-    url: 'https://news.blizzard.com/en-us/article/24244465/vanquish-the-lesser-evils-in-season-of-divine-intervention',
-    publishTime: '2025-12-03',
-    gameVersion: 'D4',
-    category: 'patch'
-  },
 
   // ===== D3 暗黑破坏神3 最新蓝贴 =====
+  {
+    id: 'bp-d3-24287549',
+    title: 'Season 39: Shades of the Nephalem - Preview',
+    summary: 'Diablo III Season 39 beings on June 26. Eradicate Hell’s emissaries using powerful boons granted by the season theme, and more.',
+    url: 'https://news.blizzard.com/en-us/article/24287549/season-39-shades-of-the-nephalem-preview',
+    publishTime: '2026-06-20',
+    gameVersion: 'D3',
+    category: 'season'
+  },
   {
     id: 'bp-d3-24262572',
     title: '《暗黑破坏神III》第 38 赛季：无形之忆3月27日开启',
@@ -515,17 +524,17 @@ const bluePosts = [
     gameVersion: 'D3',
     category: 'announcement'
   },
-  {
-    id: 'bp-d3-23893119',
-    title: 'Diablo III PTR 2.7.5 - Has Concluded',
-    summary: 'The Diablo III 2.7.5 PTR begins on January 31st and lasts one week. Join us in testing the new Altar of Rites—where you choose your path to power, and more. ',
-    url: 'https://news.blizzard.com/en-us/article/23893119/diablo-iii-ptr-2-7-5-has-concluded',
-    publishTime: '2023-01-26',
-    gameVersion: 'D3',
-    category: 'patch'
-  },
 
   // ===== D2 暗黑破坏神2 重制版 最新蓝贴 =====
+  {
+    id: 'bp-d2-24285074',
+    title: 'Hardcore Level 99 Race: The Grimoire of the Unfallen — 300 Champions',
+    summary: 'Celebrate the victory of 300 stalwart adventurers who stared Death in the face -- and won the Hardcore Level 99 Race of the Demon Sorceress. ',
+    url: 'https://news.blizzard.com/en-us/article/24285074/hardcore-level-99-race-the-grimoire-of-the-unfallen-300-champions',
+    publishTime: '2026-06-16',
+    gameVersion: 'D2',
+    category: 'announcement'
+  },
   {
     id: 'bp-d2-24261478',
     title: '《暗黑破坏神2》重制版天梯第14赛季现已开启',
@@ -712,15 +721,6 @@ const bluePosts = [
     summary: 'Ladder Season 8 begins on August 23! Muster the might to liberate Sanctuary’s denizens from sinister influences as you race to Level 99. ',
     url: 'https://news.blizzard.com/en-us/article/24111638/diablo-ii-resurrected-ladder-season-8-has-concluded',
     publishTime: '2024-08-09',
-    gameVersion: 'D2',
-    category: 'patch'
-  },
-  {
-    id: 'bp-d2-24096018',
-    title: 'Diablo II: Resurrected Ladder Season 7 Has Concluded',
-    summary: 'Ladder Season 7 begins on May 23! Muster the might to liberate Sanctuary’s denizens from sinister influences and an untimely demise as you race to Level 99. ',
-    url: 'https://news.blizzard.com/en-us/article/24096018/diablo-ii-resurrected-ladder-season-7-has-concluded',
-    publishTime: '2024-05-24',
     gameVersion: 'D2',
     category: 'patch'
   }
