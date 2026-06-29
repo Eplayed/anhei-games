@@ -1,6 +1,24 @@
 const bluePosts = [
   // ===== D4 暗黑破坏神4 最新蓝贴 =====
   {
+    id: 'bp-d4-24268702',
+    title: '苏醒赛季即将到来 准备深入混沌裂隙',
+    summary: '',
+    url: 'https://d4.blizzard.cn/news/24268702/index.html',
+    publishTime: '2026-06-24',
+    gameVersion: 'D4',
+    category: 'season'
+  },
+  {
+    id: 'bp-d4-24287406',
+    title: 'Diablo IV Patch Notes',
+    summary: 'We will continually update this article with all patches the development team implements for Diablo IV. ',
+    url: 'https://news.blizzard.com/en-us/article/24287406/diablo-iv-patch-notes',
+    publishTime: '2026-06-23',
+    gameVersion: 'D4',
+    category: 'patch'
+  },
+  {
     id: 'bp-d4-24280283',
     title: 'Join our Next Developer Update Livestream',
     summary: 'Tune in to our next Developer Update Livestream, which will cover the Season of Death Awakening. ',
@@ -101,9 +119,9 @@ const bluePosts = [
   },
   {
     id: 'bp-d4-24271857',
-    title: 'Diablo IV Patch Notes',
+    title: 'Diablo IV Patch Notes (3.0)',
     summary: 'We will continually update this article with all patches the development team implements for Diablo IV. ',
-    url: 'https://news.blizzard.com/en-us/article/24271857/diablo-iv-patch-notes',
+    url: 'https://news.blizzard.com/en-us/article/24271857/diablo-iv-patch-notes-3-0',
     publishTime: '2026-04-23',
     gameVersion: 'D4',
     category: 'patch'
@@ -243,32 +261,14 @@ const bluePosts = [
     gameVersion: 'D4',
     category: 'announcement'
   },
-  {
-    id: 'bp-d4-24247511',
-    title: 'Stand Against Mephisto: Pre-Purchase Lord of Hatred',
-    summary: 'Make your final stand against the Prime Evil Mephisto in a rich new campaign, master two new classes, and discover the ancient region of Skovos. ',
-    url: 'https://news.blizzard.com/en-us/article/24247511/stand-against-mephisto-pre-purchase-lord-of-hatred',
-    publishTime: '2025-12-12',
-    gameVersion: 'D4',
-    category: 'announcement'
-  },
-  {
-    id: 'bp-d4-24244399',
-    title: 'Wield Divine Might as The Paladin',
-    summary: 'Play as our newest Paladin Class by pre-purchasing Lord of Hatred. Take up your hammer and shield and wield Holy Light to rain down heavenly justice. ',
-    url: 'https://news.blizzard.com/en-us/article/24244399/wield-divine-might-as-the-paladin',
-    publishTime: '2025-12-12',
-    gameVersion: 'D4',
-    category: 'announcement'
-  },
 
   // ===== D3 暗黑破坏神3 最新蓝贴 =====
   {
     id: 'bp-d3-24287549',
-    title: 'Season 39: Shades of the Nephalem - Preview',
-    summary: 'Diablo III Season 39 beings on June 26. Eradicate Hell’s emissaries using powerful boons granted by the season theme, and more.',
-    url: 'https://news.blizzard.com/en-us/article/24287549/season-39-shades-of-the-nephalem-preview',
-    publishTime: '2026-06-20',
+    title: '《暗黑破坏神III》第39赛季：奈非天之影6月26日开启',
+    summary: '',
+    url: 'https://d3.blizzard.cn/news/24287549/index.html',
+    publishTime: '2026-06-23',
     gameVersion: 'D3',
     category: 'season'
   },
@@ -382,9 +382,9 @@ const bluePosts = [
   },
   {
     id: 'bp-d3-20250408',
-    title: '暗黑破坏神系列总经理致国服玩家寄语',
+    title: '《暗黑破坏神III》国服即将重启！',
     summary: '',
-    url: 'https://d3.blizzard.cn/news/20250408/41611_1224115.html',
+    url: 'https://d3.blizzard.cn/news/20250408/41611_1224094.html',
     publishTime: '2025-04-09',
     gameVersion: 'D3',
     category: 'announcement'
