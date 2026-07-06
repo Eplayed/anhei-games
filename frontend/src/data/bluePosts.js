@@ -2,12 +2,21 @@ const bluePosts = [
   // ===== D4 暗黑破坏神4 最新蓝贴 =====
   {
     id: 'bp-d4-24268702',
-    title: '苏醒赛季即将到来 准备深入混沌裂隙',
+    title: '苏醒赛季现已开放 准备深入混沌裂隙',
     summary: '',
     url: 'https://d4.blizzard.cn/news/24268702/index.html',
-    publishTime: '2026-06-24',
+    publishTime: '2026-07-01',
     gameVersion: 'D4',
     category: 'season'
+  },
+  {
+    id: 'bp-d4-20260701',
+    title: '《守望先锋》联动藏骨匣上线 免费领取专属外观',
+    summary: '',
+    url: 'https://d4.blizzard.cn/news/20260701/43086_1306072.html',
+    publishTime: '2026-07-01',
+    gameVersion: 'D4',
+    category: 'event'
   },
   {
     id: 'bp-d4-24287406',
@@ -714,15 +723,6 @@ const bluePosts = [
     publishTime: '2024-12-06',
     gameVersion: 'D2',
     category: 'announcement'
-  },
-  {
-    id: 'bp-d2-24111638',
-    title: 'Diablo II: Resurrected Ladder Season 8 Has Concluded',
-    summary: 'Ladder Season 8 begins on August 23! Muster the might to liberate Sanctuary’s denizens from sinister influences as you race to Level 99. ',
-    url: 'https://news.blizzard.com/en-us/article/24111638/diablo-ii-resurrected-ladder-season-8-has-concluded',
-    publishTime: '2024-08-09',
-    gameVersion: 'D2',
-    category: 'patch'
   }
 ]
 
