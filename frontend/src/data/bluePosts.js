@@ -1,6 +1,15 @@
 const bluePosts = [
   // ===== D4 暗黑破坏神4 最新蓝贴 =====
   {
+    id: 'bp-d4-24287406',
+    title: '《暗黑破坏神 IV》补丁说明',
+    summary: '',
+    url: 'https://d4.blizzard.cn/news/24287406/index.html',
+    publishTime: '2026-07-11',
+    gameVersion: 'D4',
+    category: 'patch'
+  },
+  {
     id: 'bp-d4-24268702',
     title: '苏醒赛季现已开放 准备深入混沌裂隙',
     summary: '',
@@ -17,15 +26,6 @@ const bluePosts = [
     publishTime: '2026-07-01',
     gameVersion: 'D4',
     category: 'event'
-  },
-  {
-    id: 'bp-d4-24287406',
-    title: 'Diablo IV Patch Notes',
-    summary: 'We will continually update this article with all patches the development team implements for Diablo IV. ',
-    url: 'https://news.blizzard.com/en-us/article/24287406/diablo-iv-patch-notes',
-    publishTime: '2026-06-23',
-    gameVersion: 'D4',
-    category: 'patch'
   },
   {
     id: 'bp-d4-24280283',
