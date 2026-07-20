@@ -536,6 +536,15 @@ const bluePosts = [
 
   // ===== D2 暗黑破坏神2 重制版 最新蓝贴 =====
   {
+    id: 'bp-d2-20260203',
+    title: '《暗黑破坏神II》重制版国服环境净化处罚公告（7月15日更新）',
+    summary: '',
+    url: 'https://d2.blizzard.cn/news/20260203/42929_1285202.html',
+    publishTime: '2026-07-15',
+    gameVersion: 'D2',
+    category: 'announcement'
+  },
+  {
     id: 'bp-d2-24285074',
     title: 'Hardcore Level 99 Race: The Grimoire of the Unfallen — 300 Champions',
     summary: 'Celebrate the victory of 300 stalwart adventurers who stared Death in the face -- and won the Hardcore Level 99 Race of the Demon Sorceress. ',
@@ -559,15 +568,6 @@ const bluePosts = [
     summary: 'The 3.2 PTR introduces balance changes for the Warlock Class, alongside updates to Terror Zones. Jump into the PTR to experience them firsthand on April 14 at 10:00 a.m. PT. ',
     url: 'https://news.blizzard.com/en-us/article/24266710/diablo-ii-resurrected-ptr-3-2-now-live',
     publishTime: '2026-04-10',
-    gameVersion: 'D2',
-    category: 'announcement'
-  },
-  {
-    id: 'bp-d2-20260203',
-    title: '《暗黑破坏神II》重制版国服环境净化处罚公告（4月5日更新）',
-    summary: '',
-    url: 'https://d2.blizzard.cn/news/20260203/42929_1285202.html',
-    publishTime: '2026-04-05',
     gameVersion: 'D2',
     category: 'announcement'
   },
