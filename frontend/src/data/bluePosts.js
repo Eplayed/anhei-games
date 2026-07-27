@@ -1,6 +1,15 @@
 const bluePosts = [
   // ===== D4 暗黑破坏神4 最新蓝贴 =====
   {
+    id: 'bp-d4-24271884',
+    title: '携《暗黑破坏神 IV》暴雪嘉年华纪念典藏礼包，掀起地狱狂潮！',
+    summary: '',
+    url: 'https://d4.blizzard.cn/news/24271884/index.html',
+    publishTime: '2026-07-23',
+    gameVersion: 'D4',
+    category: 'announcement'
+  },
+  {
     id: 'bp-d4-24287406',
     title: '《暗黑破坏神 IV》补丁说明',
     summary: '',
@@ -258,15 +267,6 @@ const bluePosts = [
     summary: 'Goblin Greedings descends on Sanctuary as Treasure Goblin variants roam in increased numbers and bountiful spoils. Earn bonus Whisper Caches and claim free holiday cosmetics. ',
     url: 'https://news.blizzard.com/en-us/article/24243642/goblins-and-gifts-galore-in-goblin-greedings',
     publishTime: '2025-12-16',
-    gameVersion: 'D4',
-    category: 'announcement'
-  },
-  {
-    id: 'bp-d4-24243641',
-    title: 'A New Tale: “The Calling”',
-    summary: 'Gather ‘round to hear the arduous journey to become a Paladin in this rousing new tale. ',
-    url: 'https://news.blizzard.com/en-us/article/24243641/a-new-tale-the-calling',
-    publishTime: '2025-12-15',
     gameVersion: 'D4',
     category: 'announcement'
   },
