@@ -1,6 +1,15 @@
 const bluePosts = [
   // ===== D4 暗黑破坏神4 最新蓝贴 =====
   {
+    id: 'bp-d4-24292852',
+    title: 'The 3.2.0 PTR: What You Need to Know',
+    summary: 'Preview seasonal Soul Splinters, new legacy Uniques, Mythic Unique changes, new Charms, and more in the upcoming 3.2.0 PTR. ',
+    url: 'https://news.blizzard.com/en-us/article/24292852/the-3-2-0-ptr-what-you-need-to-know',
+    publishTime: '2026-07-30',
+    gameVersion: 'D4',
+    category: 'announcement'
+  },
+  {
     id: 'bp-d4-24271884',
     title: '携《暗黑破坏神 IV》暴雪嘉年华纪念典藏礼包，掀起地狱狂潮！',
     summary: '',
@@ -89,42 +98,6 @@ const bluePosts = [
     publishTime: '2026-04-30',
     gameVersion: 'D4',
     category: 'expansion'
-  },
-  {
-    id: 'bp-d4-20260417',
-    title: '《暗黑破坏神Ⅳ》国服限时免费领取现已开启',
-    summary: '',
-    url: 'https://d4.blizzard.cn/news/20260417/43086_1296479.html',
-    publishTime: '2026-04-30',
-    gameVersion: 'D4',
-    category: 'announcement'
-  },
-  {
-    id: 'bp-d4-20260428',
-    title: '「中国神话」系列外观现已上线',
-    summary: '',
-    url: 'https://d4.blizzard.cn/h5/20260428/luckydraw/?channel=gw',
-    publishTime: '2026-04-30',
-    gameVersion: 'D4',
-    category: 'event'
-  },
-  {
-    id: 'bp-d4-20260430',
-    title: '《暗黑破坏神Ⅳ》× 闪迪推出联合礼盒',
-    summary: '',
-    url: 'https://d4.blizzard.cn/news/20260430/43086_1298562.html',
-    publishTime: '2026-04-30',
-    gameVersion: 'D4',
-    category: 'announcement'
-  },
-  {
-    id: 'bp-d4-20260429',
-    title: '网鱼×NVIDIA×《暗黑破坏神Ⅳ》联动开启！',
-    summary: '',
-    url: 'https://d4.blizzard.cn/news/20260429/43086_1298498.html',
-    publishTime: '2026-04-29',
-    gameVersion: 'D4',
-    category: 'event'
   },
   {
     id: 'bp-d4-24267731',
@@ -258,15 +231,6 @@ const bluePosts = [
     summary: 'Prepare to enter the Tower and Leaderboards Beta, an all-new challenge for the Seasonal Realm. Ascend the Tower and help shape this mode for seasons to come. ',
     url: 'https://news.blizzard.com/en-us/article/24247514/dominate-the-tower-and-leaderboards-beta',
     publishTime: '2026-01-09',
-    gameVersion: 'D4',
-    category: 'announcement'
-  },
-  {
-    id: 'bp-d4-24243642',
-    title: 'Goblins and Gifts Galore in Goblin Greedings',
-    summary: 'Goblin Greedings descends on Sanctuary as Treasure Goblin variants roam in increased numbers and bountiful spoils. Earn bonus Whisper Caches and claim free holiday cosmetics. ',
-    url: 'https://news.blizzard.com/en-us/article/24243642/goblins-and-gifts-galore-in-goblin-greedings',
-    publishTime: '2025-12-16',
     gameVersion: 'D4',
     category: 'announcement'
   },
@@ -721,6 +685,42 @@ const bluePosts = [
     summary: 'Sleigh your way through Diablo II: Resurrected this holiday season across 22 Nights of Terror, where frightfully festive gameplay modifiers will rotate daily. ',
     url: 'https://news.blizzard.com/en-us/article/24161249/22-nights-of-terror-holiday-event',
     publishTime: '2024-12-06',
+    gameVersion: 'D2',
+    category: 'announcement'
+  },
+  {
+    id: 'bp-d2-24111638',
+    title: 'Diablo II: Resurrected Ladder Season 8 Has Concluded',
+    summary: 'Ladder Season 8 begins on August 23! Muster the might to liberate Sanctuary’s denizens from sinister influences as you race to Level 99. ',
+    url: 'https://news.blizzard.com/en-us/article/24111638/diablo-ii-resurrected-ladder-season-8-has-concluded',
+    publishTime: '2024-08-09',
+    gameVersion: 'D2',
+    category: 'patch'
+  },
+  {
+    id: 'bp-d2-24096018',
+    title: 'Diablo II: Resurrected Ladder Season 7 Has Concluded',
+    summary: 'Ladder Season 7 begins on May 23! Muster the might to liberate Sanctuary’s denizens from sinister influences and an untimely demise as you race to Level 99. ',
+    url: 'https://news.blizzard.com/en-us/article/24096018/diablo-ii-resurrected-ladder-season-7-has-concluded',
+    publishTime: '2024-05-24',
+    gameVersion: 'D2',
+    category: 'patch'
+  },
+  {
+    id: 'bp-d2-24061888',
+    title: 'Diablo II: Resurrected Ladder Season 6 Has Concluded',
+    summary: 'Ladder Season 6 begins on February 22! Muster the might to liberate Sanctuary’s denizens from sinister influences as you race to Level 99. ',
+    url: 'https://news.blizzard.com/en-us/article/24061888/diablo-ii-resurrected-ladder-season-6-has-concluded',
+    publishTime: '2024-02-15',
+    gameVersion: 'D2',
+    category: 'patch'
+  },
+  {
+    id: 'bp-d2-24030419',
+    title: '22 Nights of Terror Holiday Event Returns!',
+    summary: 'Sleigh your way through Diablo II: Resurrected this holiday season across 22 Nights of Terror, where frightfully festive gameplay modifiers will rotate daily. ',
+    url: 'https://news.blizzard.com/en-us/article/24030419/22-nights-of-terror-holiday-event-returns',
+    publishTime: '2023-12-08',
     gameVersion: 'D2',
     category: 'announcement'
   }
