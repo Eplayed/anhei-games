@@ -500,6 +500,15 @@ const bluePosts = [
 
   // ===== D2 暗黑破坏神2 重制版 最新蓝贴 =====
   {
+    id: 'bp-d2-24296140',
+    title: '《暗黑破坏神2》重制版天梯第15赛季即将开启',
+    summary: '',
+    url: 'https://d2.blizzard.cn/news/24296140/index.html',
+    publishTime: '2026-08-10',
+    gameVersion: 'D2',
+    category: 'ladder'
+  },
+  {
     id: 'bp-d2-20260203',
     title: '《暗黑破坏神II》重制版国服环境净化处罚公告（7月15日更新）',
     summary: '',
@@ -642,15 +651,6 @@ const bluePosts = [
     publishTime: '2025-10-04',
     gameVersion: 'D2',
     category: 'season'
-  },
-  {
-    id: 'bp-d2-20250929',
-    title: '《暗黑破坏神II》重制版国服环境净化处罚公告（9月29日更新）',
-    summary: '',
-    url: 'https://d2.blizzard.cn/news/20250929/42929_1262557.html',
-    publishTime: '2025-09-29',
-    gameVersion: 'D2',
-    category: 'announcement'
   },
   {
     id: 'bp-d2-24208340',
