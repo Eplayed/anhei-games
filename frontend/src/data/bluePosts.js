@@ -82,15 +82,6 @@ const bluePosts = [
     category: 'announcement'
   },
   {
-    id: 'bp-d4-20260525',
-    title: '《暗黑破坏神 IV》补丁说明',
-    summary: '',
-    url: 'https://d4.blizzard.cn/news/20260525/43086_1300122.html',
-    publishTime: '2026-05-13',
-    gameVersion: 'D4',
-    category: 'patch'
-  },
-  {
     id: 'bp-d4-24267729',
     title: '迎接清算：“憎恨之王”扩展内容现已全球同步上线',
     summary: '',
@@ -723,6 +714,15 @@ const bluePosts = [
     publishTime: '2023-12-08',
     gameVersion: 'D2',
     category: 'announcement'
+  },
+  {
+    id: 'bp-d2-23991801',
+    title: 'Diablo II: Resurrected Ladder Season 5 Has Concluded',
+    summary: 'Ladder Season 5 begins on September 28! Muster the might to liberate Sanctuary’s denizens from sinister influences as you race to Level 99. ',
+    url: 'https://news.blizzard.com/en-us/article/23991801/diablo-ii-resurrected-ladder-season-5-has-concluded',
+    publishTime: '2023-11-14',
+    gameVersion: 'D2',
+    category: 'patch'
   }
 ]
 
