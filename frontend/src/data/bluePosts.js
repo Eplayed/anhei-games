@@ -492,7 +492,7 @@ const bluePosts = [
   // ===== D2 暗黑破坏神2 重制版 最新蓝贴 =====
   {
     id: 'bp-d2-24296140',
-    title: '《暗黑破坏神2》重制版天梯第15赛季即将开启',
+    title: '《暗黑破坏神2》重制版天梯第15赛季现已开启',
     summary: '',
     url: 'https://d2.blizzard.cn/news/24296140/index.html',
     publishTime: '2026-08-10',
