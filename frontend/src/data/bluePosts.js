@@ -1,6 +1,69 @@
 const bluePosts = [
   // ===== D4 暗黑破坏神4 最新蓝贴 =====
   {
+    id: 'bp-d4-24297205',
+    title: '《暗黑破坏神IV》：下一步计划座谈会回顾',
+    summary: '',
+    url: 'https://d4.blizzard.cn/news/24297205/index.html',
+    publishTime: '2026-09-14',
+    gameVersion: 'D4',
+    category: 'announcement'
+  },
+  {
+    id: 'bp-d4-24295385',
+    title: '神性魔牛哞菲斯托社区挑战现已开启',
+    summary: '',
+    url: 'https://d4.blizzard.cn/news/24295385/index.html',
+    publishTime: '2026-09-13',
+    gameVersion: 'D4',
+    category: 'announcement'
+  },
+  {
+    id: 'bp-d4-24295394',
+    title: '地狱遗赠赛季即将开启，共庆《暗黑破坏神》30周年',
+    summary: '',
+    url: 'https://d4.blizzard.cn/news/24295394/index.html',
+    publishTime: '2026-09-13',
+    gameVersion: 'D4',
+    category: 'season'
+  },
+  {
+    id: 'bp-d4-24297204',
+    title: 'Diablo V: Forging the Next Era',
+    summary: 'Diablo V arrives Spring 2029. Read on for the burning details revealed during our BlizzCon panel, including the next era’s darker vision of Sanctuary and the road ahead. ',
+    url: 'https://news.blizzard.com/en-us/article/24297204/diablo-v-forging-the-next-era',
+    publishTime: '2026-09-12',
+    gameVersion: 'D4',
+    category: 'announcement'
+  },
+  {
+    id: 'bp-d4-24301509',
+    title: 'Diablo’s Next Era Revealed at BlizzCon 2026: Opening Ceremonies Recap',
+    summary: 'Diablo V is coming in Spring 2029, a Diablo animated series is being developed with Netflix, the Amazon is the next class in Diablo IV, and more. Catch up on our announcements from Opening Ceremonies at BlizzCon 2026. ',
+    url: 'https://news.blizzard.com/en-us/article/24301509/diablos-next-era-revealed-at-blizzcon-2026-opening-ceremonies-recap',
+    publishTime: '2026-09-12',
+    gameVersion: 'D4',
+    category: 'announcement'
+  },
+  {
+    id: 'bp-d4-24297203',
+    title: 'Diablo V is Coming Spring 2029',
+    summary: 'The next dark era of the Diablo saga begins in Diablo V, coming Spring 2029. ',
+    url: 'https://news.blizzard.com/en-us/article/24297203/diablo-v-is-coming-spring-2029',
+    publishTime: '2026-09-12',
+    gameVersion: 'D4',
+    category: 'announcement'
+  },
+  {
+    id: 'bp-d4-24293056',
+    title: 'Your Preview Guide to Diablo at BlizzCon 2026',
+    summary: 'BlizzCon 2026 brings a full panel schedule covering Diablo, a roster of amazing content creators, three BlizzCon Twitch drops, a first-ever Twitch chat badge, and a new season-themed Twitch cosmetic. Whether you\'re attending in person or at home, there\'s a lot to follow this year! ',
+    url: 'https://news.blizzard.com/en-us/article/24293056/your-preview-guide-to-diablo-at-blizzcon-2026',
+    publishTime: '2026-09-08',
+    gameVersion: 'D4',
+    category: 'announcement'
+  },
+  {
     id: 'bp-d4-24292852',
     title: 'The 3.2.0 PTR: What You Need to Know',
     summary: 'Preview seasonal Soul Splinters, new legacy Uniques, Mythic Unique changes, new Charms, and more in the upcoming 3.2.0 PTR. ',
@@ -65,10 +128,10 @@ const bluePosts = [
   },
   {
     id: 'bp-d4-24281840',
-    title: '欢庆《暗黑破坏神 IV》周年',
-    summary: '',
-    url: 'https://d4.blizzard.cn/news/24281840/index.html',
-    publishTime: '2026-05-27',
+    title: 'Celebrate the DIV Anniversary',
+    summary: 'Celebrate Diablo IV’s 3rd anniversary with resplendent free gifts, March of the Goblins, Mother’s Blessing, and more. ',
+    url: 'https://news.blizzard.com/en-us/article/24281840/celebrate-the-div-anniversary',
+    publishTime: '2026-05-26',
     gameVersion: 'D4',
     category: 'announcement'
   },
@@ -82,20 +145,20 @@ const bluePosts = [
     category: 'announcement'
   },
   {
-    id: 'bp-d4-24267729',
-    title: '迎接清算：“憎恨之王”扩展内容现已全球同步上线',
-    summary: '',
-    url: 'https://d4.blizzard.cn/news/24267729/index.html',
-    publishTime: '2026-04-30',
-    gameVersion: 'D4',
-    category: 'expansion'
-  },
-  {
     id: 'bp-d4-24267731',
     title: 'A Light Extinguished: A Tribute',
     summary: 'Some flames burn so fiercely, they consume themselves. Pay tribute to one who sacrificed everything. ',
     url: 'https://news.blizzard.com/en-us/article/24267731/a-light-extinguished-a-tribute',
     publishTime: '2026-04-24',
+    gameVersion: 'D4',
+    category: 'announcement'
+  },
+  {
+    id: 'bp-d4-24267729',
+    title: 'Prepare for the Reckoning: Lord of Hatred Draws Near',
+    summary: 'Prepare for the ultimate reckoning against Mephisto. Lord of Hatred burns into Sanctuary next week. ',
+    url: 'https://news.blizzard.com/en-us/article/24267729/prepare-for-the-reckoning-lord-of-hatred-draws-near',
+    publishTime: '2026-04-23',
     gameVersion: 'D4',
     category: 'announcement'
   },
@@ -162,71 +225,53 @@ const bluePosts = [
     gameVersion: 'D4',
     category: 'announcement'
   },
-  {
-    id: 'bp-d4-24244648',
-    title: 'Become the Butcher in Season of Slaughter',
-    summary: 'Become the Butcher and turn your enemies into Fresh Meat in Season of Slaughter, and play as the Paladin for free up to Level 25. ',
-    url: 'https://news.blizzard.com/en-us/article/24244648/become-the-butcher-in-season-of-slaughter',
-    publishTime: '2026-03-05',
-    gameVersion: 'D4',
-    category: 'patch'
-  },
-  {
-    id: 'bp-d4-24265936',
-    title: 'Join Our Next Developer Update Livestream',
-    summary: 'Tune in to our next Developer Update Stream, which includes a deep dive for the new Warlock Class and upcoming Season. ',
-    url: 'https://news.blizzard.com/en-us/article/24265936/join-our-next-developer-update-livestream',
-    publishTime: '2026-03-02',
-    gameVersion: 'D4',
-    category: 'announcement'
-  },
-  {
-    id: 'bp-d4-24243862',
-    title: 'Catch Up on the Diablo 30th Anniversary Spotlight',
-    summary: 'Catch up on the Diablo Spotlight, showcasing our newest class: the Warlock, new skill tree updates, and more. ',
-    url: 'https://news.blizzard.com/en-us/article/24243862/catch-up-on-the-diablo-30th-anniversary-spotlight',
-    publishTime: '2026-02-11',
-    gameVersion: 'D4',
-    category: 'patch'
-  },
-  {
-    id: 'bp-d4-24259137',
-    title: 'Tune-in to the Diablo 30th Anniversary Spotlight',
-    summary: 'Join us at 2 p.m., February 11th to behold the next class coming to Diablo IV. ',
-    url: 'https://news.blizzard.com/en-us/article/24259137/tune-in-to-the-diablo-30th-anniversary-spotlight',
-    publishTime: '2026-02-05',
-    gameVersion: 'D4',
-    category: 'announcement'
-  },
-  {
-    id: 'bp-d4-24247517',
-    title: 'Arouse Celestial Fortune in Lunar Awakening',
-    summary: 'The Lunar New Year is upon us! Activate any Shrine for 100% bonus experience and earn Ancestral Favor Reputation to receive festive rewards. ',
-    url: 'https://news.blizzard.com/en-us/article/24247517/arouse-celestial-fortune-in-lunar-awakening',
-    publishTime: '2026-02-04',
-    gameVersion: 'D4',
-    category: 'announcement'
-  },
-  {
-    id: 'bp-d4-24247516',
-    title: 'The 2.6.0 PTR: What You Need to Know',
-    summary: 'Preview the upcoming Killstreak system, powerful Bloodied Items, and more in the 2.6.0 PTR. ',
-    url: 'https://news.blizzard.com/en-us/article/24247516/the-2-6-0-ptr-what-you-need-to-know',
-    publishTime: '2026-01-29',
-    gameVersion: 'D4',
-    category: 'announcement'
-  },
-  {
-    id: 'bp-d4-24247514',
-    title: 'Dominate The Tower and Leaderboards Beta',
-    summary: 'Prepare to enter the Tower and Leaderboards Beta, an all-new challenge for the Seasonal Realm. Ascend the Tower and help shape this mode for seasons to come. ',
-    url: 'https://news.blizzard.com/en-us/article/24247514/dominate-the-tower-and-leaderboards-beta',
-    publishTime: '2026-01-09',
-    gameVersion: 'D4',
-    category: 'announcement'
-  },
 
   // ===== D3 暗黑破坏神3 最新蓝贴 =====
+  {
+    id: 'bp-d3-24301510',
+    title: '第 40 赛季：光明的呼唤',
+    summary: '',
+    url: 'https://d3.blizzard.cn/news/24301510/index.html',
+    publishTime: '2026-09-13',
+    gameVersion: 'D3',
+    category: 'season'
+  },
+  {
+    id: 'bp-d3-24297204',
+    title: 'Diablo V: Forging the Next Era',
+    summary: 'Diablo V arrives Spring 2029. Read on for the burning details revealed during our BlizzCon panel, including the next era’s darker vision of Sanctuary and the road ahead. ',
+    url: 'https://news.blizzard.com/en-us/article/24297204/diablo-v-forging-the-next-era',
+    publishTime: '2026-09-12',
+    gameVersion: 'D3',
+    category: 'announcement'
+  },
+  {
+    id: 'bp-d3-24301509',
+    title: 'Diablo’s Next Era Revealed at BlizzCon 2026: Opening Ceremonies Recap',
+    summary: 'Diablo V is coming in Spring 2029, a Diablo animated series is being developed with Netflix, the Amazon is the next class in Diablo IV, and more. Catch up on our announcements from Opening Ceremonies at BlizzCon 2026. ',
+    url: 'https://news.blizzard.com/en-us/article/24301509/diablos-next-era-revealed-at-blizzcon-2026-opening-ceremonies-recap',
+    publishTime: '2026-09-12',
+    gameVersion: 'D3',
+    category: 'announcement'
+  },
+  {
+    id: 'bp-d3-24297203',
+    title: 'Diablo V is Coming Spring 2029',
+    summary: 'The next dark era of the Diablo saga begins in Diablo V, coming Spring 2029. ',
+    url: 'https://news.blizzard.com/en-us/article/24297203/diablo-v-is-coming-spring-2029',
+    publishTime: '2026-09-12',
+    gameVersion: 'D3',
+    category: 'announcement'
+  },
+  {
+    id: 'bp-d3-24293056',
+    title: 'Your Preview Guide to Diablo at BlizzCon 2026',
+    summary: 'BlizzCon 2026 brings a full panel schedule covering Diablo, a roster of amazing content creators, three BlizzCon Twitch drops, a first-ever Twitch chat badge, and a new season-themed Twitch cosmetic. Whether you\'re attending in person or at home, there\'s a lot to follow this year! ',
+    url: 'https://news.blizzard.com/en-us/article/24293056/your-preview-guide-to-diablo-at-blizzcon-2026',
+    publishTime: '2026-09-08',
+    gameVersion: 'D3',
+    category: 'announcement'
+  },
   {
     id: 'bp-d3-24287549',
     title: '《暗黑破坏神III》第39赛季：奈非天之影6月26日开启',
@@ -345,15 +390,6 @@ const bluePosts = [
     category: 'announcement'
   },
   {
-    id: 'bp-d3-20250408',
-    title: '《暗黑破坏神III》国服即将重启！',
-    summary: '',
-    url: 'https://d3.blizzard.cn/news/20250408/41611_1224094.html',
-    publishTime: '2025-04-09',
-    gameVersion: 'D3',
-    category: 'announcement'
-  },
-  {
     id: 'bp-d3-24186408',
     title: 'Play Diablo III on Game Pass now!',
     summary: 'The legendary action-RPG is now available on Game Pass, including the original game and the Reaper of Souls expansion. ',
@@ -381,19 +417,19 @@ const bluePosts = [
     category: 'announcement'
   },
   {
-    id: 'bp-d3-24137819',
-    title: 'Season 33: Shades of the Nephalem – Has Concluded',
-    summary: 'Diablo III Season 33 begins on October 25. Eradicate Hell’s emissaries using powerful boons granted by the season theme, and more. ',
-    url: 'https://news.blizzard.com/en-us/article/24137819/season-33-shades-of-the-nephalem-has-concluded',
+    id: 'bp-d3-24104599',
+    title: 'Season 32: Ethereal Memory – Has Concluded',
+    summary: 'Diablo III Season 32 begins on July 12. Exterminate Hell’s emissaries using powerful boons granted by the season theme, and more. ',
+    url: 'https://news.blizzard.com/en-us/article/24104599/season-32-ethereal-memory-has-concluded',
     publishTime: '2024-10-26',
     gameVersion: 'D3',
     category: 'patch'
   },
   {
-    id: 'bp-d3-24104599',
-    title: 'Season 32: Ethereal Memory – Has Concluded',
-    summary: 'Diablo III Season 32 begins on July 12. Exterminate Hell’s emissaries using powerful boons granted by the season theme, and more. ',
-    url: 'https://news.blizzard.com/en-us/article/24104599/season-32-ethereal-memory-has-concluded',
+    id: 'bp-d3-24137819',
+    title: 'Season 33: Shades of the Nephalem – Has Concluded',
+    summary: 'Diablo III Season 33 begins on October 25. Eradicate Hell’s emissaries using powerful boons granted by the season theme, and more. ',
+    url: 'https://news.blizzard.com/en-us/article/24137819/season-33-shades-of-the-nephalem-has-concluded',
     publishTime: '2024-10-26',
     gameVersion: 'D3',
     category: 'patch'
@@ -443,53 +479,44 @@ const bluePosts = [
     gameVersion: 'D3',
     category: 'announcement'
   },
-  {
-    id: 'bp-d3-24009159',
-    title: 'Raise Hell with the BlizzCon Collection',
-    summary: 'Celebrate and raise Hell with the BlizzCon Collection. Secure the Lapisvein Mount, Trophies, and more in-game items. ',
-    url: 'https://news.blizzard.com/en-us/article/24009159/raise-hell-with-the-blizzcon-collection',
-    publishTime: '2023-10-09',
-    gameVersion: 'D3',
-    category: 'announcement'
-  },
-  {
-    id: 'bp-d3-23999068',
-    title: 'Season 29 Visions of Enmity – Has Concluded',
-    summary: 'Season 29 Visions of Enmity goes live on September 15 at 5 p.m. PDT/CET/KST. Enter Diabolical Fissures and slash through fearsome foes for helpful rewards. ',
-    url: 'https://news.blizzard.com/en-us/article/23999068/season-29-visions-of-enmity-has-concluded',
-    publishTime: '2023-09-08',
-    gameVersion: 'D3',
-    category: 'patch'
-  },
-  {
-    id: 'bp-d3-23987087',
-    title: 'Diablo III PTR 2.7.6 - Has Concluded',
-    summary: 'The Diablo III 2.7.6 PTR begins on August 16 and lasts two weeks. Join us in testing the new Solo Self Found feature, Visions of Enmity Season theme, and more. ',
-    url: 'https://news.blizzard.com/en-us/article/23987087/diablo-iii-ptr-2-7-6-has-concluded',
-    publishTime: '2023-08-29',
-    gameVersion: 'D3',
-    category: 'announcement'
-  },
-  {
-    id: 'bp-d3-23897180',
-    title: 'Season 28 Rites of Sanctuary - Has Ended',
-    summary: 'Season 28 Rites of Sanctuary goes live on February 24 at 5 p.m. PST/CET/KST. Unlock formidable powers in the Altar of Rites as you complete the Seasonal Journey. ',
-    url: 'https://news.blizzard.com/en-us/article/23897180/season-28-rites-of-sanctuary-has-ended',
-    publishTime: '2023-08-28',
-    gameVersion: 'D3',
-    category: 'patch'
-  },
-  {
-    id: 'bp-d3-23893120',
-    title: 'Hell’s Ink Tattoo Shop Takeover Tour Has Reignited',
-    summary: 'The Diablo Hell’s Ink Tattoo Shop Takeover Tour has reignited! This time, we’re bathing four new cities in ink straight from the Burning Hells—read on to see how you can enter to win a custom Diablo tattoo. ',
-    url: 'https://news.blizzard.com/en-us/article/23893120/hells-ink-tattoo-shop-takeover-tour-has-reignited',
-    publishTime: '2023-02-01',
-    gameVersion: 'D3',
-    category: 'announcement'
-  },
 
   // ===== D2 暗黑破坏神2 重制版 最新蓝贴 =====
+  {
+    id: 'bp-d2-24297204',
+    title: 'Diablo V: Forging the Next Era',
+    summary: 'Diablo V arrives Spring 2029. Read on for the burning details revealed during our BlizzCon panel, including the next era’s darker vision of Sanctuary and the road ahead. ',
+    url: 'https://news.blizzard.com/en-us/article/24297204/diablo-v-forging-the-next-era',
+    publishTime: '2026-09-12',
+    gameVersion: 'D2',
+    category: 'announcement'
+  },
+  {
+    id: 'bp-d2-24301509',
+    title: 'Diablo’s Next Era Revealed at BlizzCon 2026: Opening Ceremonies Recap',
+    summary: 'Diablo V is coming in Spring 2029, a Diablo animated series is being developed with Netflix, the Amazon is the next class in Diablo IV, and more. Catch up on our announcements from Opening Ceremonies at BlizzCon 2026. ',
+    url: 'https://news.blizzard.com/en-us/article/24301509/diablos-next-era-revealed-at-blizzcon-2026-opening-ceremonies-recap',
+    publishTime: '2026-09-12',
+    gameVersion: 'D2',
+    category: 'announcement'
+  },
+  {
+    id: 'bp-d2-24297203',
+    title: 'Diablo V is Coming Spring 2029',
+    summary: 'The next dark era of the Diablo saga begins in Diablo V, coming Spring 2029. ',
+    url: 'https://news.blizzard.com/en-us/article/24297203/diablo-v-is-coming-spring-2029',
+    publishTime: '2026-09-12',
+    gameVersion: 'D2',
+    category: 'announcement'
+  },
+  {
+    id: 'bp-d2-24293056',
+    title: 'Your Preview Guide to Diablo at BlizzCon 2026',
+    summary: 'BlizzCon 2026 brings a full panel schedule covering Diablo, a roster of amazing content creators, three BlizzCon Twitch drops, a first-ever Twitch chat badge, and a new season-themed Twitch cosmetic. Whether you\'re attending in person or at home, there\'s a lot to follow this year! ',
+    url: 'https://news.blizzard.com/en-us/article/24293056/your-preview-guide-to-diablo-at-blizzcon-2026',
+    publishTime: '2026-09-08',
+    gameVersion: 'D2',
+    category: 'announcement'
+  },
   {
     id: 'bp-d2-24296140',
     title: '《暗黑破坏神2》重制版天梯第15赛季现已开启',
@@ -694,33 +721,6 @@ const bluePosts = [
     summary: 'Ladder Season 7 begins on May 23! Muster the might to liberate Sanctuary’s denizens from sinister influences and an untimely demise as you race to Level 99. ',
     url: 'https://news.blizzard.com/en-us/article/24096018/diablo-ii-resurrected-ladder-season-7-has-concluded',
     publishTime: '2024-05-24',
-    gameVersion: 'D2',
-    category: 'patch'
-  },
-  {
-    id: 'bp-d2-24061888',
-    title: 'Diablo II: Resurrected Ladder Season 6 Has Concluded',
-    summary: 'Ladder Season 6 begins on February 22! Muster the might to liberate Sanctuary’s denizens from sinister influences as you race to Level 99. ',
-    url: 'https://news.blizzard.com/en-us/article/24061888/diablo-ii-resurrected-ladder-season-6-has-concluded',
-    publishTime: '2024-02-15',
-    gameVersion: 'D2',
-    category: 'patch'
-  },
-  {
-    id: 'bp-d2-24030419',
-    title: '22 Nights of Terror Holiday Event Returns!',
-    summary: 'Sleigh your way through Diablo II: Resurrected this holiday season across 22 Nights of Terror, where frightfully festive gameplay modifiers will rotate daily. ',
-    url: 'https://news.blizzard.com/en-us/article/24030419/22-nights-of-terror-holiday-event-returns',
-    publishTime: '2023-12-08',
-    gameVersion: 'D2',
-    category: 'announcement'
-  },
-  {
-    id: 'bp-d2-23991801',
-    title: 'Diablo II: Resurrected Ladder Season 5 Has Concluded',
-    summary: 'Ladder Season 5 begins on September 28! Muster the might to liberate Sanctuary’s denizens from sinister influences as you race to Level 99. ',
-    url: 'https://news.blizzard.com/en-us/article/23991801/diablo-ii-resurrected-ladder-season-5-has-concluded',
-    publishTime: '2023-11-14',
     gameVersion: 'D2',
     category: 'patch'
   }
