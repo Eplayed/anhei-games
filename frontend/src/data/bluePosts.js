@@ -20,7 +20,7 @@ const bluePosts = [
   },
   {
     id: 'bp-d4-24295394',
-    title: '地狱遗赠赛季即将开启，共庆《暗黑破坏神》30周年',
+    title: '地狱遗赠赛季现已开启，共庆《暗黑破坏神》30周年',
     summary: '',
     url: 'https://d4.blizzard.cn/news/24295394/index.html',
     publishTime: '2026-09-13',
