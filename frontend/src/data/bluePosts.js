@@ -1,6 +1,24 @@
 const bluePosts = [
   // ===== D4 暗黑破坏神4 最新蓝贴 =====
   {
+    id: 'bp-d4-24295395',
+    title: 'Diablo IV Patch Notes',
+    summary: 'We will continually update this article with all patches the development team implements for Diablo IV. ',
+    url: 'https://news.blizzard.com/en-us/article/24295395/diablo-iv-patch-notes',
+    publishTime: '2026-09-25',
+    gameVersion: 'D4',
+    category: 'patch'
+  },
+  {
+    id: 'bp-d4-20260924',
+    title: '“神树赠礼”活动现已开启',
+    summary: '',
+    url: 'https://d4.blizzard.cn/news/20260924/43086_1314968.html',
+    publishTime: '2026-09-24',
+    gameVersion: 'D4',
+    category: 'event'
+  },
+  {
     id: 'bp-d4-24297205',
     title: '《暗黑破坏神IV》：下一步计划座谈会回顾',
     summary: '',
@@ -91,15 +109,6 @@ const bluePosts = [
     category: 'patch'
   },
   {
-    id: 'bp-d4-24268702',
-    title: '苏醒赛季现已开放 准备深入混沌裂隙',
-    summary: '',
-    url: 'https://d4.blizzard.cn/news/24268702/index.html',
-    publishTime: '2026-07-01',
-    gameVersion: 'D4',
-    category: 'season'
-  },
-  {
     id: 'bp-d4-20260701',
     title: '《守望先锋》联动藏骨匣上线 免费领取专属外观',
     summary: '',
@@ -107,6 +116,15 @@ const bluePosts = [
     publishTime: '2026-07-01',
     gameVersion: 'D4',
     category: 'event'
+  },
+  {
+    id: 'bp-d4-24268702',
+    title: 'Hunt the Death Cult in Season of Death Awakening',
+    summary: 'Seek out new threats from the Death Cults, dominate the Tower and Leaderboards, and enjoy a free Warlock Trial in Season of Death Awakening. ',
+    url: 'https://news.blizzard.com/en-us/article/24268702/hunt-the-death-cult-in-season-of-death-awakening',
+    publishTime: '2026-06-23',
+    gameVersion: 'D4',
+    category: 'season'
   },
   {
     id: 'bp-d4-24280283',
@@ -213,15 +231,6 @@ const bluePosts = [
     summary: 'Gather round to hear the perilous journey walked by any who are damned to become a Warlock. ',
     url: 'https://news.blizzard.com/en-us/article/24259141/a-new-tale-the-lost-the-damned',
     publishTime: '2026-03-18',
-    gameVersion: 'D4',
-    category: 'announcement'
-  },
-  {
-    id: 'bp-d4-24267728',
-    title: 'Master Hell Itself with the Warlock',
-    summary: 'Harness the demonic powers of Hell as the all-new Warlock class. This visceral caster summons demonic legions and wields hellish energies to unleash devastation. ',
-    url: 'https://news.blizzard.com/en-us/article/24267728/master-hell-itself-with-the-warlock',
-    publishTime: '2026-03-05',
     gameVersion: 'D4',
     category: 'announcement'
   },
@@ -712,15 +721,6 @@ const bluePosts = [
     summary: 'Ladder Season 8 begins on August 23! Muster the might to liberate Sanctuary’s denizens from sinister influences as you race to Level 99. ',
     url: 'https://news.blizzard.com/en-us/article/24111638/diablo-ii-resurrected-ladder-season-8-has-concluded',
     publishTime: '2024-08-09',
-    gameVersion: 'D2',
-    category: 'patch'
-  },
-  {
-    id: 'bp-d2-24096018',
-    title: 'Diablo II: Resurrected Ladder Season 7 Has Concluded',
-    summary: 'Ladder Season 7 begins on May 23! Muster the might to liberate Sanctuary’s denizens from sinister influences and an untimely demise as you race to Level 99. ',
-    url: 'https://news.blizzard.com/en-us/article/24096018/diablo-ii-resurrected-ladder-season-7-has-concluded',
-    publishTime: '2024-05-24',
     gameVersion: 'D2',
     category: 'patch'
   }
