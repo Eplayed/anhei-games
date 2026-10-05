@@ -109,15 +109,6 @@ const bluePosts = [
     category: 'patch'
   },
   {
-    id: 'bp-d4-20260701',
-    title: '《守望先锋》联动藏骨匣上线 免费领取专属外观',
-    summary: '',
-    url: 'https://d4.blizzard.cn/news/20260701/43086_1306072.html',
-    publishTime: '2026-07-01',
-    gameVersion: 'D4',
-    category: 'event'
-  },
-  {
     id: 'bp-d4-24268702',
     title: 'Hunt the Death Cult in Season of Death Awakening',
     summary: 'Seek out new threats from the Death Cults, dominate the Tower and Leaderboards, and enjoy a free Warlock Trial in Season of Death Awakening. ',
@@ -721,6 +712,15 @@ const bluePosts = [
     summary: 'Ladder Season 8 begins on August 23! Muster the might to liberate Sanctuary’s denizens from sinister influences as you race to Level 99. ',
     url: 'https://news.blizzard.com/en-us/article/24111638/diablo-ii-resurrected-ladder-season-8-has-concluded',
     publishTime: '2024-08-09',
+    gameVersion: 'D2',
+    category: 'patch'
+  },
+  {
+    id: 'bp-d2-24096018',
+    title: 'Diablo II: Resurrected Ladder Season 7 Has Concluded',
+    summary: 'Ladder Season 7 begins on May 23! Muster the might to liberate Sanctuary’s denizens from sinister influences and an untimely demise as you race to Level 99. ',
+    url: 'https://news.blizzard.com/en-us/article/24096018/diablo-ii-resurrected-ladder-season-7-has-concluded',
+    publishTime: '2024-05-24',
     gameVersion: 'D2',
     category: 'patch'
   }
