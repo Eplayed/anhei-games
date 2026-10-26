@@ -1,6 +1,15 @@
 const bluePosts = [
   // ===== D4 暗黑破坏神4 最新蓝贴 =====
   {
+    id: 'bp-d4-24302578',
+    title: 'The 3.3.0 PTR: What You Need to Know',
+    summary: 'Preview significant changes to War Plans, the new Horadric Items system, and more in the upcoming 3.3.0 PTR. ',
+    url: 'https://news.blizzard.com/en-us/article/24302578/the-3-3-0-ptr-what-you-need-to-know',
+    publishTime: '2026-10-22',
+    gameVersion: 'D4',
+    category: 'announcement'
+  },
+  {
     id: 'bp-d4-24295395',
     title: 'Diablo IV Patch Notes',
     summary: 'We will continually update this article with all patches the development team implements for Diablo IV. ',
@@ -215,15 +224,6 @@ const bluePosts = [
     publishTime: '2026-03-20',
     gameVersion: 'D4',
     category: 'patch'
-  },
-  {
-    id: 'bp-d4-24259141',
-    title: 'A New Tale: “The Lost & the Damned”',
-    summary: 'Gather round to hear the perilous journey walked by any who are damned to become a Warlock. ',
-    url: 'https://news.blizzard.com/en-us/article/24259141/a-new-tale-the-lost-the-damned',
-    publishTime: '2026-03-18',
-    gameVersion: 'D4',
-    category: 'announcement'
   },
 
   // ===== D3 暗黑破坏神3 最新蓝贴 =====
